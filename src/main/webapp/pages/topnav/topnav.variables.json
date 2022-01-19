@@ -1,0 +1,21 @@
+{
+  "statFabCertificateMenu" : {
+    "_id" : "wm-statFabCertificateMenu-wm.Variable-1536746479105",
+    "name" : "statFabCertificateMenu",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "Sortseq" : "1",
+      "Name" : "Certified Fabrics",
+      "Action" : "Variables.goToPage_CertifiedFabrics.invoke()"
+    }, {
+      "Sortseq" : "2",
+      "Name" : "Provisional Faabrics",
+      "Action" : "Variables.goToPage_ProvFabCCF.invoke()"
+    } ],
+    "type" : "string",
+    "isList" : true,
+    "saveInPhonegap" : false
+  }
+}

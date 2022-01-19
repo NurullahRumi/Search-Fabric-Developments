@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <sql-query name="QryStrLcnCod">
+        <![CDATA[
+        select itemdes
+from rft850
+where lovfld = 'SMPSTORE'
+and itemcod = :strcod
+and nvl(sts,'?') <> 'C'
+        ]]>
+    <query-param name="strcod" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="QryStrLcnCod__count">
+        <![CDATA[
+        select count(*) from (select itemdes
+from rft850
+where lovfld = 'SMPSTORE'
+and itemcod = :strcod
+and nvl(sts,'?') <> 'C') wmTempTable
+        ]]>
+    <query-param name="strcod" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qryLovSwatchFormat">
+        <![CDATA[
+        select fbformatcode,description,uom,minmtsperunit
+    from srt009
+    where sts is null
+    And (Purpose=:p_Purpose Or Purpose Is Null)
+    order by fbformatcode
+        ]]>
+    <query-param name="p_Purpose" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qryLovSwatchFormat__count">
+        <![CDATA[
+        select count(*) from (select fbformatcode,description,uom,minmtsperunit
+    from srt009
+    where sts is null
+    And (Purpose=:p_Purpose Or Purpose Is Null)
+    order by fbformatcode) wmTempTable
+        ]]>
+    <query-param name="p_Purpose" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qryGetFabtyp">
+        <![CDATA[
+        select fabtyp, fabdes
+  from rft220
+  where fabsts is null
+        ]]>
+    </sql-query>
+
+    <sql-query name="qryGetFabtyp__count">
+        <![CDATA[
+        select count(*) from (select fabtyp, fabdes
+  from rft220
+  where fabsts is null) wmTempTable
+        ]]>
+    </sql-query>
+
+    <sql-query name="qryLovItems">
+        <![CDATA[
+        Select itemcod, itemdes, itemdes2 from rft850 
+where :pLovfld = lovfld
+and Tab = :pTab
+and nvl(sts,'?') <> 'C'
+union all
+Select '%', '%', '%' from dual
+where :pShowAll = 'Y'
+        ]]>
+    <query-param name="pLovfld" type="java.lang.String"/>
+    <query-param name="pTab" type="java.lang.String"/>
+    <query-param name="pShowAll" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="qryLovItems__count">
+        <![CDATA[
+        select count(*) from (Select itemcod, itemdes, itemdes2 from rft850 
+where :pLovfld = lovfld
+and Tab = :pTab
+and nvl(sts,'?') <> 'C'
+union all
+Select '%', '%', '%' from dual
+where :pShowAll = 'Y') wmTempTable
+        ]]>
+    <query-param name="pLovfld" type="java.lang.String"/>
+    <query-param name="pTab" type="java.lang.String"/>
+    <query-param name="pShowAll" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="QryWarehouseLoc">
+        <![CDATA[
+        Select detaildes 
+      from rft850 
+      where lovfld = 'SEARCHWH'
+      and tab = 'RFT020'
+      and itemdes3 = :pitemdes3
+        ]]>
+    <query-param name="pitemdes3" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="QryWarehouseLoc__count">
+        <![CDATA[
+        select count(*) from (Select detaildes 
+      from rft850 
+      where lovfld = 'SEARCHWH'
+      and tab = 'RFT020'
+      and itemdes3 = :pitemdes3) wmTempTable
+        ]]>
+    <query-param name="pitemdes3" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="QryStrCodLcn">
+        <![CDATA[
+        select itemdes,itemcod
+from rft850
+where lovfld like '%STORE'
+and nvl(sts,'?') <> 'C'
+        ]]>
+    </sql-query>
+
+    <sql-query name="QryStrCodLcn__count">
+        <![CDATA[
+        select count(*) from (select itemdes,itemcod
+from rft850
+where lovfld like '%STORE'
+and nvl(sts,'?') <> 'C') wmTempTable
+        ]]>
+    </sql-query>
+
+    <sql-query name="QryFabSubCat">
+        <![CDATA[
+        Select FABTYP,   FABSUBCAT,  SUBCATDES
+From rft223
+where FABSTS IS NULL
+        ]]>
+    </sql-query>
+
+    <sql-query name="QryFabSubCat__count">
+        <![CDATA[
+        select count(*) from (Select FABTYP,   FABSUBCAT,  SUBCATDES
+From rft223
+where FABSTS IS NULL) wmTempTable
+        ]]>
+    </sql-query>
+
+    <sql-query name="QryStockLocation">
+        <![CDATA[
+        Select itemcod, itemdes 
+      from rft850 
+      where lovfld = 'SEARCHLOC'
+      and tab = 'RFT020'
+      and itemdes2 = :pStockType
+      order by 1
+        ]]>
+    <query-param name="pStockType" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="QryStockLocation__count">
+        <![CDATA[
+        select count(*) from (Select itemcod, itemdes 
+      from rft850 
+      where lovfld = 'SEARCHLOC'
+      and tab = 'RFT020'
+      and itemdes2 = :pStockType
+      order by 1) wmTempTable
+        ]]>
+    <query-param name="pStockType" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="QryYarnId">
+        <![CDATA[
+        select seqnum, yrnlot, yrnori, yrncnt, yrncps, yrnclr, yrnfrac, yrncod, yrnqlty,yrnsubqltya,
+yrnsubqltyb, yrnff
+from knt150 where ordnum = :pOrdnum and yrnid = :pYrnid
+        ]]>
+    <query-param name="pOrdnum" type="java.lang.String"/>
+    <query-param name="pYrnid" type="java.lang.Integer"/>
+    </sql-query>
+
+    <sql-query name="QryYarnId__count">
+        <![CDATA[
+        select count(*) from (select seqnum, yrnlot, yrnori, yrncnt, yrncps, yrnclr, yrnfrac, yrncod, yrnqlty,yrnsubqltya,
+yrnsubqltyb, yrnff
+from knt150 where ordnum = :pOrdnum and yrnid = :pYrnid) wmTempTable
+        ]]>
+    <query-param name="pOrdnum" type="java.lang.String"/>
+    <query-param name="pYrnid" type="java.lang.Integer"/>
+    </sql-query>
+
+    <sql-query name="QryGetThemes">
+        <![CDATA[
+        Select distinct theme
+from rft1037 
+where processgroup in ('STRIPE','PRTING')
+and upper(theme) like upper(:pTheme) || '%'
+union all
+select '%' from dual
+        ]]>
+    <query-param name="pTheme" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="QryGetThemes__count">
+        <![CDATA[
+        select count(*) from (Select distinct theme
+from rft1037 
+where processgroup in ('STRIPE','PRTING')
+and upper(theme) like upper(:pTheme) || '%'
+union all
+select '%' from dual) wmTempTable
+        ]]>
+    <query-param name="pTheme" type="java.lang.String"/>
+    </sql-query>
+</hibernate-mapping>

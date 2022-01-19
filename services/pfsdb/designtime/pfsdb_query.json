@@ -1,0 +1,591 @@
+{
+  "QryFabSubCat" : {
+    "name" : "QryFabSubCat",
+    "description" : "Get FabSubCat",
+    "version" : "V2",
+    "queryString" : "Select FABTYP,   FABSUBCAT,  SUBCATDES\nFrom rft223\nwhere FABSTS IS NULL",
+    "countQueryString" : "select count(*) from (Select FABTYP,   FABSUBCAT,  SUBCATDES\nFrom rft223\nwhere FABSTS IS NULL) wmTempTable",
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.query.QryFabSubCatResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "FABTYP",
+        "fieldName" : "fabtyp",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "FABSUBCAT",
+        "fieldName" : "fabsubcat",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "SUBCATDES",
+        "fieldName" : "subcatdes",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "QryGetThemes" : {
+    "name" : "QryGetThemes",
+    "description" : "QryGetThemes for stock search",
+    "version" : "V2",
+    "queryString" : "Select distinct theme\nfrom rft1037 \nwhere processgroup in ('STRIPE','PRTING')\nand upper(theme) like upper(:pTheme) || '%'\nunion all\nselect '%' from dual",
+    "countQueryString" : "select count(*) from (Select distinct theme\nfrom rft1037 \nwhere processgroup in ('STRIPE','PRTING')\nand upper(theme) like upper(:pTheme) || '%'\nunion all\nselect '%' from dual) wmTempTable",
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ {
+      "name" : "pTheme",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "%",
+      "required" : false
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.query.QryGetThemesResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "THEME",
+        "fieldName" : "theme",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "QryStockLocation" : {
+    "name" : "QryStockLocation",
+    "description" : "list of store location for the StockType",
+    "version" : "V2",
+    "queryString" : "Select itemcod, itemdes \n      from rft850 \n      where lovfld = 'SEARCHLOC'\n      and tab = 'RFT020'\n      and itemdes2 = :pStockType\n      order by 1",
+    "countQueryString" : "select count(*) from (Select itemcod, itemdes \n      from rft850 \n      where lovfld = 'SEARCHLOC'\n      and tab = 'RFT020'\n      and itemdes2 = :pStockType\n      order by 1) wmTempTable",
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ {
+      "name" : "pStockType",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "FAB",
+      "required" : false
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.query.QryStockLocationResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "ITEMCOD",
+        "fieldName" : "itemcod",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "ITEMDES",
+        "fieldName" : "itemdes",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "QryStrCodLcn" : {
+    "name" : "QryStrCodLcn",
+    "description" : "Store code and location",
+    "version" : "V2",
+    "queryString" : "select itemdes,itemcod\nfrom rft850\nwhere lovfld like '%STORE'\nand nvl(sts,'?') <> 'C'",
+    "countQueryString" : "select count(*) from (select itemdes,itemcod\nfrom rft850\nwhere lovfld like '%STORE'\nand nvl(sts,'?') <> 'C') wmTempTable",
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.query.QryStrCodLcnResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "ITEMDES",
+        "fieldName" : "itemdes",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "ITEMCOD",
+        "fieldName" : "itemcod",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "QryStrLcnCod" : {
+    "name" : "QryStrLcnCod",
+    "description" : "Find the location of a store",
+    "version" : "V2",
+    "queryString" : "select itemdes\nfrom rft850\nwhere lovfld = 'SMPSTORE'\nand itemcod = :strcod\nand nvl(sts,'?') <> 'C'",
+    "countQueryString" : "select count(*) from (select itemdes\nfrom rft850\nwhere lovfld = 'SMPSTORE'\nand itemcod = :strcod\nand nvl(sts,'?') <> 'C') wmTempTable",
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ {
+      "name" : "strcod",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FM1SAM",
+      "required" : false
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.query.QryStrLcnCodResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "ITEMDES",
+        "fieldName" : "itemdes",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "QryWarehouseLoc" : {
+    "name" : "QryWarehouseLoc",
+    "description" : "QryWarehouseLoc",
+    "version" : "V2",
+    "queryString" : "Select detaildes \n      from rft850 \n      where lovfld = 'SEARCHWH'\n      and tab = 'RFT020'\n      and itemdes3 = :pitemdes3",
+    "countQueryString" : "select count(*) from (Select detaildes \n      from rft850 \n      where lovfld = 'SEARCHWH'\n      and tab = 'RFT020'\n      and itemdes3 = :pitemdes3) wmTempTable",
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ {
+      "name" : "pitemdes3",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "MRUGF",
+      "required" : false
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.query.QryWarehouseLocResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "DETAILDES",
+        "fieldName" : "detaildes",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "QryYarnId" : {
+    "name" : "QryYarnId",
+    "description" : "Query Yarn Details",
+    "version" : "V2",
+    "queryString" : "select seqnum, yrnlot, yrnori, yrncnt, yrncps, yrnclr, yrnfrac, yrncod, yrnqlty,yrnsubqltya,\nyrnsubqltyb, yrnff\nfrom knt150 where ordnum = :pOrdnum and yrnid = :pYrnid",
+    "countQueryString" : "select count(*) from (select seqnum, yrnlot, yrnori, yrncnt, yrncps, yrnclr, yrnfrac, yrncod, yrnqlty,yrnsubqltya,\nyrnsubqltyb, yrnff\nfrom knt150 where ordnum = :pOrdnum and yrnid = :pYrnid) wmTempTable",
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ {
+      "name" : "pOrdnum",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "1700884A",
+      "required" : false
+    }, {
+      "name" : "pYrnid",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "1",
+      "required" : false
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.query.QryYarnIdResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "SEQNUM",
+        "fieldName" : "seqnum",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Byte",
+          "list" : false
+        }
+      }, {
+        "name" : "YRNLOT",
+        "fieldName" : "yrnlot",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "YRNORI",
+        "fieldName" : "yrnori",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "YRNCNT",
+        "fieldName" : "yrncnt",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "YRNCPS",
+        "fieldName" : "yrncps",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "YRNCLR",
+        "fieldName" : "yrnclr",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "YRNFRAC",
+        "fieldName" : "yrnfrac",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Short",
+          "list" : false
+        }
+      }, {
+        "name" : "YRNCOD",
+        "fieldName" : "yrncod",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "YRNQLTY",
+        "fieldName" : "yrnqlty",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "YRNSUBQLTYA",
+        "fieldName" : "yrnsubqltya",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "YRNSUBQLTYB",
+        "fieldName" : "yrnsubqltyb",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "YRNFF",
+        "fieldName" : "yrnff",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "qryGetFabtyp" : {
+    "name" : "qryGetFabtyp",
+    "description" : "qry get fab types",
+    "version" : "V1",
+    "queryString" : "select fabtyp, fabdes\n  from rft220\n  where fabsts is null",
+    "countQueryString" : "select count(*) from (select fabtyp, fabdes\n  from rft220\n  where fabsts is null) wmTempTable",
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.query.QryGetFabtypResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "FABTYP",
+        "fieldName" : "fabtyp",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "FABDES",
+        "fieldName" : "fabdes",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "qryLovItems" : {
+    "name" : "qryLovItems",
+    "description" : "Query Rft850 items",
+    "version" : "V2",
+    "queryString" : "Select itemcod, itemdes, itemdes2 from rft850 \nwhere :pLovfld = lovfld\nand Tab = :pTab\nand nvl(sts,'?') <> 'C'\nunion all\nSelect '%', '%', '%' from dual\nwhere :pShowAll = 'Y'",
+    "countQueryString" : "select count(*) from (Select itemcod, itemdes, itemdes2 from rft850 \nwhere :pLovfld = lovfld\nand Tab = :pTab\nand nvl(sts,'?') <> 'C'\nunion all\nSelect '%', '%', '%' from dual\nwhere :pShowAll = 'Y') wmTempTable",
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ {
+      "name" : "pLovfld",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "ENZYME",
+      "required" : false
+    }, {
+      "name" : "pTab",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "ORT120",
+      "required" : false
+    }, {
+      "name" : "pShowAll",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "N",
+      "required" : false
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.query.QryLovItemsResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "ITEMCOD",
+        "fieldName" : "itemcod",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "ITEMDES",
+        "fieldName" : "itemdes",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "ITEMDES2",
+        "fieldName" : "itemdes2",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "qryLovSwatchFormat" : {
+    "name" : "qryLovSwatchFormat",
+    "description" : "Query REquest For Swatch Format",
+    "version" : "V2",
+    "queryString" : "select fbformatcode,description,uom,minmtsperunit\n    from srt009\n    where sts is null\n    And (Purpose=:p_Purpose Or Purpose Is Null)\n    order by fbformatcode",
+    "countQueryString" : "select count(*) from (select fbformatcode,description,uom,minmtsperunit\n    from srt009\n    where sts is null\n    And (Purpose=:p_Purpose Or Purpose Is Null)\n    order by fbformatcode) wmTempTable",
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ {
+      "name" : "p_Purpose",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "CATALOGUE",
+      "required" : false
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.query.QryLovSwatchFormatResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "FBFORMATCODE",
+        "fieldName" : "fbformatcode",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "DESCRIPTION",
+        "fieldName" : "description",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "UOM",
+        "fieldName" : "uom",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "MINMTSPERUNIT",
+        "fieldName" : "minmtsperunit",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Float",
+          "list" : false
+        }
+      } ]
+    }
+  }
+}

@@ -1,0 +1,107 @@
+[ {
+  "name" : "CertifiedFabrics",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "ColourLibraries",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Common",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "DyedYarnStock",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "FabricDevSearch",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "pParam1",
+    "type" : "string"
+  }, {
+    "name" : "pFabOpt",
+    "type" : "string"
+  }, {
+    "name" : "pFabDevNo",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "Login",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Main",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "PartRequestSwatch",
+  "type" : "PARTIAL",
+  "params" : [ {
+    "name" : "pDisplayOrder",
+    "type" : "string"
+  }, {
+    "name" : "pOrdFabClrSq",
+    "type" : "string"
+  }, {
+    "name" : "pLcnStrCod",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "ProvFabCCF",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "TestPage",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "pParam1",
+    "type" : "string"
+  }, {
+    "name" : "pFabOpt",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "footer",
+  "type" : "FOOTER",
+  "params" : [ ]
+}, {
+  "name" : "header",
+  "type" : "HEADER",
+  "params" : [ {
+    "name" : "pTitle",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "leftnav",
+  "type" : "LEFTNAV",
+  "params" : [ ]
+}, {
+  "name" : "partCCFMatchDetails",
+  "type" : "PARTIAL",
+  "params" : [ {
+    "name" : "p_sintfabcertno",
+    "type" : "string"
+  }, {
+    "name" : "p_dintfabcertno",
+    "type" : "string"
+  }, {
+    "name" : "m_filterOp",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "partYrnDetails",
+  "type" : "PARTIAL",
+  "params" : [ {
+    "name" : "pYrnId",
+    "type" : "integer"
+  }, {
+    "name" : "pOrdnum",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "topnav",
+  "type" : "TOPNAV",
+  "params" : [ ]
+} ]

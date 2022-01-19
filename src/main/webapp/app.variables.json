@@ -1,0 +1,223 @@
+{
+  "appNotification" : {
+    "_id" : "wm-appNotification-wm.NotificationVariable-1482147367162",
+    "name" : "appNotification",
+    "owner" : "App",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "content",
+      "value" : "inline",
+      "type" : "string"
+    }, {
+      "target" : "duration",
+      "value" : "5000",
+      "type" : "number"
+    }, {
+      "target" : "class",
+      "value" : "Error",
+      "type" : "string"
+    }, {
+      "target" : "toasterPosition",
+      "value" : "bottom right",
+      "type" : "string"
+    } ],
+    "operation" : "toast"
+  },
+  "goToPage_CertifiedFabrics" : {
+    "_id" : "wm-goToPage_CertifiedFabrics-wm.NavigationVariable-1515754736316",
+    "name" : "goToPage_CertifiedFabrics",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "CertifiedFabrics",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "goToPage_ColourLibraries" : {
+    "_id" : "wm-goToPage_ColourLibraries-wm.NavigationVariable-1538992812407",
+    "name" : "goToPage_ColourLibraries",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "ColourLibraries",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "goToPage_DyedYarnStock" : {
+    "_id" : "wm-goToPage_DyedYarnStock-wm.NavigationVariable-1535602019055",
+    "name" : "goToPage_DyedYarnStock",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "DyedYarnStock",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "goToPage_FabricDevSearch" : {
+    "_id" : "wm-goToPage_FabricDevSearch-wm.NavigationVariable-1515734202068",
+    "name" : "goToPage_FabricDevSearch",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ {
+      "target" : "pageName",
+      "value" : "FabricDevSearch",
+      "type" : "string"
+    } ],
+    "operation" : "gotoPage",
+    "pageName" : "FabricDevSearch",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "goToPage_Main" : {
+    "_id" : "wm-wm.NavigationVariable1389180517517",
+    "name" : "goToPage_Main",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "operation" : "gotoPage",
+    "pageName" : "Main"
+  },
+  "goToPage_ProvFabCCF" : {
+    "_id" : "wm-goToPage_ProvFabCCF-wm.NavigationVariable-1536147065886",
+    "name" : "goToPage_ProvFabCCF",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "ProvFabCCF",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "goToPage_TestPage" : {
+    "_id" : "wm-goToPage_TestPage-wm.NavigationVariable-1515660922568",
+    "name" : "goToPage_TestPage",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "TestPage",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "loggedInUser" : {
+    "_id" : "wm-loggedInUser-wm.Variable-1491284484612",
+    "name" : "loggedInUser",
+    "owner" : "App",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "name" : "",
+      "id" : "",
+      "tenantId" : "",
+      "isAuthenticated" : false,
+      "isSecurityEnabled" : true,
+      "roles" : [ ]
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "loginAction" : {
+    "_id" : "wm-loginVariable-wm.LoginVariable-1491284484610",
+    "name" : "loginAction",
+    "owner" : "App",
+    "category" : "wm.LoginVariable",
+    "dataBinding" : [ {
+      "target" : "username",
+      "value" : "bind:Widgets.usernametext.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "password",
+      "value" : "bind:Widgets.passwordtext.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "rememberme",
+      "value" : "bind:Widgets.remembermecheck.datavalue",
+      "type" : "boolean"
+    } ],
+    "dataSet" : {
+      "username" : "",
+      "password" : "",
+      "rememberme" : false
+    },
+    "type" : "string",
+    "saveInPhonegap" : false,
+    "onError" : "loginVariableonError($event, $s)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "useDefaultSuccessHandler" : true
+  },
+  "logoutAction" : {
+    "_id" : "wm-logoutVariable-wm.LogoutVariable-1491284484611",
+    "name" : "logoutAction",
+    "owner" : "App",
+    "category" : "wm.LogoutVariable",
+    "type" : "string",
+    "saveInPhonegap" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "redirectTo" : "Main",
+    "useDefaultSuccessHandler" : true
+  },
+  "statAppid" : {
+    "_id" : "wm-statAppid-wm.Variable-1492076437535",
+    "name" : "statAppid",
+    "owner" : "App",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "dataValue",
+      "value" : "TT1000WB"
+    } ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "statAppName" : {
+    "_id" : "wm-statAppName-wm.Variable-1492076458033",
+    "name" : "statAppName",
+    "owner" : "App",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "dataValue",
+      "value" : "Fabric Search"
+    } ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "statAppUsrid" : {
+    "_id" : "wm-statAppUsrid-wm.Variable-1492235267577",
+    "name" : "statAppUsrid",
+    "owner" : "App",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "supportedLocale" : {
+    "_id" : "wm-wm.Variable1402640443182",
+    "name" : "supportedLocale",
+    "owner" : "App",
+    "category" : "wm.Variable",
+    "dataSet" : {
+      "en" : "English"
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  }
+}

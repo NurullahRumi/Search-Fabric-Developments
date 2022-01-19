@@ -1,0 +1,179 @@
+{
+  "statUom" : {
+    "_id" : "wm-statUom-wm.Variable-1521528863452",
+    "name" : "statUom",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "dataValue",
+      "value" : "bind:Widgets.selectFormat.datavalue.uom",
+      "type" : "string"
+    } ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "sv1QryStrLcnCod" : {
+    "_id" : "wm-sv1QryStrLcnCod-wm.ServiceVariable-1524037194221",
+    "name" : "sv1QryStrLcnCod",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.query.QryStrLcnCodResponse",
+    "service" : "pfsdb",
+    "operation" : "executeQryStrLcnCod",
+    "operationId" : "QueryExecutionController_executeQryStrLcnCod",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "svExecuteRequestSwatch" : {
+    "_id" : "wm-svExecuteRequestSwatch-wm.ServiceVariable-1524048160853",
+    "name" : "svExecuteRequestSwatch",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcSr741pk0requestSwatchResponse",
+    "service" : "pfsdb",
+    "operation" : "executeProcSr741pk0RequestSwatch",
+    "operationId" : "ProcedureExecutionController_executeProcSr741pk0RequestSwatch",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svGetPurpose" : {
+    "_id" : "wm-svGetPurpose-wm.ServiceVariable-1521200095995",
+    "name" : "svGetPurpose",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "pLovfld",
+      "value" : "PURPOSE",
+      "type" : "string"
+    }, {
+      "target" : "pTab",
+      "value" : "SRT745",
+      "type" : "string"
+    }, {
+      "target" : "pShowAll",
+      "value" : "N",
+      "type" : "string"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.query.QryLovItemsResponse",
+    "service" : "pfsdb",
+    "operation" : "executeQryLovItems",
+    "operationId" : "QueryExecutionController_executeQryLovItems",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "svGetTeamList" : {
+    "_id" : "wm-svGetTeamList-wm.ServiceVariable-1521196920134",
+    "name" : "svGetTeamList",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "pLovfld",
+      "value" : "FBREQGRP",
+      "type" : "string"
+    }, {
+      "target" : "pTab",
+      "value" : "SRT745",
+      "type" : "string"
+    }, {
+      "target" : "pShowAll",
+      "value" : "N",
+      "type" : "string"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.query.QryLovItemsResponse",
+    "service" : "pfsdb",
+    "operation" : "executeQryLovItems",
+    "operationId" : "QueryExecutionController_executeQryLovItems",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "svQryStrCodLcn" : {
+    "_id" : "wm-svQryStrCodLcn-wm.ServiceVariable-1524037251717",
+    "name" : "svQryStrCodLcn",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.query.QryStrCodLcnResponse",
+    "service" : "pfsdb",
+    "operation" : "executeQryStrCodLcn",
+    "operationId" : "QueryExecutionController_executeQryStrCodLcn",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "svSwatchFormat" : {
+    "_id" : "wm-svSwatchFormat-wm.ServiceVariable-1521193815930",
+    "name" : "svSwatchFormat",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "p_Purpose",
+      "value" : "bind:Widgets.sltPurpose.datavalue",
+      "type" : "string"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.query.QryLovSwatchFormatResponse",
+    "service" : "pfsdb",
+    "operation" : "executeQryLovSwatchFormat",
+    "operationId" : "QueryExecutionController_executeQryLovSwatchFormat",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  }
+}

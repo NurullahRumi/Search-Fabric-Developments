@@ -1,0 +1,312 @@
+<wm-page data-ng-controller="ColourLibrariesPageController" name="mainpage" pagetitle="bind:&quot;Fabric Search - &quot; + Variables.loggedInUser.dataSet.name.toUpperCase()"> 
+    <wm-header content="header" name="header1"> 
+        <wm-param name="pTitle" value="bind:Variables.statPrgname.dataSet.dataValue" type="string"></wm-param> 
+    </wm-header> 
+    <wm-top-nav content="topnav" name="top_nav1"></wm-top-nav> 
+    <wm-content height="800" name="content"> 
+        <wm-tabs name="colourlibraries"> 
+            <wm-tabpane padding="10px unset unset unset" title="Search Colours" name="tabpane1"> 
+                <wm-panel class="panel-primary" name="panel2" iconclass="" autoclose="outsideClick" title="Search Option"> 
+                    <wm-layoutgrid name="layoutgrid2"> 
+                        <wm-gridrow padding="unset 0px unset unset" name="gridrow2"> 
+                            <wm-gridcolumn name="gridcolumn3" columnwidth="6"> 
+                                <wm-layoutgrid name="layoutgrid3"> 
+                                    <wm-gridrow name="gridrow4" padding="unset 0px unset unset"> 
+                                        <wm-gridcolumn name="gridcolumn7" padding="0px unset unset unset" columnwidth="6"> 
+                                            <wm-composite name="composite5" padding="0px unset unset unset"> 
+                                                <wm-label name="label8" textalign="center" caption="Options" class="col-md-3 control-label"></wm-label> 
+                                                <wm-container name="container9" class="col-md-5"> 
+                                                    <wm-radioset name="radiosetClrFilterOpt" on-change="radiosetClrFilterOptChange($event, $scope, newVal, oldVal)" datafield="All Fields" selectedvalue="Choose Colour on Screen" dataset="Choose Colour on Screen, Input L.A.B values,Pantone C,Pantone TPX,Pantone TCX,Lab Reference" height="auto"></wm-radioset> 
+                                                </wm-container> 
+                                                <wm-checkbox datavalue="WITHLABREF" uncheckedvalue="WITHOUTLABREF" checkedvalue="WITHLABREF" name="cbValue" caption="With Lab Ref" class="col-md-4"></wm-checkbox> 
+                                            </wm-composite> 
+                                        </wm-gridcolumn> 
+                                        <wm-gridcolumn name="gridcolumn8" padding="unset 10px unset 5px" columnwidth="6"> 
+                                            <wm-container name="containerHexColour" padding="unset unset 5px unset" show="bind:Widgets.radiosetClrFilterOpt.displayValue === &quot;Choose Colour on Screen&quot;?true:false"> 
+                                                <wm-label name="label9" fontweight="bold" caption="Choose a Colour :" padding="unset 0.5em unset unset"></wm-label> 
+                                                <wm-colorpicker class="rooundcp" name="colorpickerSearchColour" show="true"></wm-colorpicker> 
+                                            </wm-container> 
+                                            <wm-container name="containerPantone" show="bind:Widgets.radiosetClrFilterOpt.displayValue === &quot;Pantone C&quot; || Widgets.radiosetClrFilterOpt.displayValue === &quot;Pantone TPX&quot; || Widgets.radiosetClrFilterOpt.displayValue === &quot;Pantone TCX&quot; ? true  : false"> 
+                                                <wm-label name="label10" fontweight="bold" caption="bind:Widgets.radiosetClrFilterOpt.displayValue === &quot;Pantone C&quot; || Widgets.radiosetClrFilterOpt.displayValue === &quot;Pantone TPX&quot; || Widgets.radiosetClrFilterOpt.displayValue === &quot;Pantone TCX&quot; ?(&quot;Enter &quot;+Widgets.radiosetClrFilterOpt.displayValue+&quot; : &quot;):&quot;&quot;" padding="unset 0.5em unset 0em"></wm-label> 
+                                                <wm-search displaylabel="clrcode" dataset="bind:Variables.svProcRf020pk0GetClrOpt.dataSet.poutLov" name="searchPantone" show="bind:Widgets.radiosetClrFilterOpt.displayValue === &quot;Pantone C&quot; || Widgets.radiosetClrFilterOpt.displayValue === &quot;Pantone TPX&quot; || Widgets.radiosetClrFilterOpt.displayValue === &quot;Pantone TCX&quot; ? true  : false" on-change="searchPantoneChange($event, $scope, newVal, oldVal)" datafield="All Fields" placeholder="Search Pantone" type="autocomplete"></wm-search> 
+                                            </wm-container> 
+                                            <wm-container name="containerLAB" show="bind:Widgets.radiosetClrFilterOpt.displayValue === &quot;Input L.A.B values&quot;?true:false" padding="5px unset unset unset"> 
+                                                <wm-composite name="composite6"> 
+                                                    <wm-label name="label11" textalign="center" caption="L :" class="col-md-3 control-label"></wm-label> 
+                                                    <wm-container name="container13" class="col-md-9"> 
+                                                        <wm-text on-change="txtLChange($event, $scope, newVal, oldVal)" name="txtL" placeholder="0.00 to 100.00" type="number"></wm-text> 
+                                                    </wm-container> 
+                                                </wm-composite> 
+                                                <wm-composite name="composite7"> 
+                                                    <wm-label name="label12" caption="A :" textalign="center" class="col-md-3 control-label"></wm-label> 
+                                                    <wm-container name="container14" class="col-md-9"> 
+                                                        <wm-text on-change="txtAChange($event, $scope, newVal, oldVal)" name="txtA" placeholder="-128.00 to 128.00" type="number"></wm-text> 
+                                                    </wm-container> 
+                                                </wm-composite> 
+                                                <wm-composite name="composite8"> 
+                                                    <wm-label name="label13" caption="B :" textalign="center" class="col-md-3 control-label"></wm-label> 
+                                                    <wm-container name="container15" class="col-md-9"> 
+                                                        <wm-text on-change="txtBChange($event, $scope, newVal, oldVal)" name="txtB" type="number" placeholder="-128.00 to 128.00"></wm-text> 
+                                                    </wm-container> 
+                                                </wm-composite> 
+                                            </wm-container> 
+                                            <wm-container name="containerLabRef" show="bind:Widgets.radiosetClrFilterOpt.displayValue === &quot;Lab Reference&quot;?true:false"> 
+                                                <wm-label name="label14" fontweight="bold" caption="Enter  Lab Ref :" padding="unset 0.5em unset unset"></wm-label> 
+                                                <wm-text name="txtLabRef" placeholder="Type Lab Reference"></wm-text> 
+                                            </wm-container> 
+                                        </wm-gridcolumn> 
+                                    </wm-gridrow> 
+                                </wm-layoutgrid> 
+                            </wm-gridcolumn> 
+                            <wm-gridcolumn name="gridcolumn4" columnwidth="2"> 
+                                <wm-composite show="bind:Widgets.radiosetClrFilterOpt.displayValue === &quot;Lab Reference&quot;?false:true" name="composite5_1"> 
+                                    <wm-label caption="Tolerance Delta E" name="label8_1" class="col-md-6 control-label"></wm-label> 
+                                    <wm-container name="container9_1" class="col-md-6"> 
+                                        <wm-text datavalue="10" maxvalue="20" minvalue="0" placeholder="Enter Tolerance Delta E" type="number" name="txtDeltaE"></wm-text> 
+                                    </wm-container> 
+                                </wm-composite> 
+                            </wm-gridcolumn> 
+                            <wm-gridcolumn name="gridcolumn11_1" columnwidth="4"></wm-gridcolumn> 
+                        </wm-gridrow> 
+                        <wm-gridrow padding="unset 0px unset unset" name="gridrow3"> 
+                            <wm-gridcolumn horizontalalign="right" name="gridcolumn6" columnwidth="6"> 
+                                <wm-composite name="composite19"></wm-composite> 
+                            </wm-gridcolumn> 
+                            <wm-gridcolumn horizontalalign="right" name="gridcolumn5" columnwidth="6"> 
+                                <wm-button on-click="btnFilterClick($event, $scope)" name="btnFilter" class="btn-default btn-primary" caption="SearchColours" type="button" margin="unset 0.5em"></wm-button> 
+                            </wm-gridcolumn> 
+                        </wm-gridrow> 
+                    </wm-layoutgrid> 
+                </wm-panel> 
+                <wm-layoutgrid name="layoutgrid4_1"> 
+                    <wm-gridrow padding="unset 0px unset unset" name="gridrow6_1"> 
+                        <wm-gridcolumn padding="unset unset unset 5px" name="gridcolumn12_1" columnwidth="6"> 
+                            <wm-table pagesize="10" show="bind:Variables.svgetColourLibraries.dataSet.length>0?true:false" width="100%" class="panel-primary" navigation="Basic" dataset="bind:Variables.svgetColourLibraries.dataSet" title="Colour Results" name="gridGetColourLibraries"> 
+                                <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="Pantone" binding="clrcode"></wm-table-column> 
+                                <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="Lab Ref" binding="clrref"></wm-table-column> 
+                                <wm-table-column readonly="false" show="true" type="integer" edit-widget-type="number" width="50px" caption="R" binding="rgbr"></wm-table-column> 
+                                <wm-table-column readonly="false" show="true" type="integer" edit-widget-type="number" width="50px" caption="G" binding="rgbg"></wm-table-column> 
+                                <wm-table-column readonly="false" show="true" type="integer" edit-widget-type="number" width="50px" caption="B" binding="rgbb"></wm-table-column> 
+                                <wm-table-column readonly="false" show="true" type="float" edit-widget-type="number" width="50px" caption="L" binding="labl"></wm-table-column> 
+                                <wm-table-column readonly="false" show="true" type="float" edit-widget-type="number" width="50px" caption="A" binding="laba"></wm-table-column> 
+                                <wm-table-column readonly="false" show="true" type="float" edit-widget-type="number" width="50px" caption="B" binding="labb"></wm-table-column> 
+                                <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" width="70px" caption="Deltae" binding="deltae"></wm-table-column> 
+                                <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" width="70px" caption="Colour" binding="hexval"> 
+                                    <wm-label caption="------------" class="" data-ng-class="" color="{{row.hexval}}" backgroundcolor="{{row.hexval}}"></wm-label> 
+                                </wm-table-column> 
+                            </wm-table> 
+                        </wm-gridcolumn> 
+                        <wm-gridcolumn name="gridcolumn13_1" columnwidth="6"></wm-gridcolumn> 
+                    </wm-gridrow> 
+                </wm-layoutgrid> 
+            </wm-tabpane> 
+            <wm-tabpane title="Compare Colours" name="tabpane2"> 
+                <wm-panel margin="15px unset unset unset" class="panel-primary" name="panel1" iconclass="" autoclose="outsideClick" title="Compare Colours"> 
+                    <wm-layoutgrid name="layoutgrid4"> 
+                        <wm-gridrow name="gridrow6"> 
+                            <wm-gridcolumn name="gridcolumn11" columnwidth="5"> 
+                                <wm-layoutgrid name="layoutgrid5"> 
+                                    <wm-gridrow name="gridrow8" padding="unset 0px unset unset"> 
+                                        <wm-gridcolumn name="gridcolumn16" padding="0px unset unset unset" columnwidth="6"> 
+                                            <wm-composite name="composite6_1" padding="0px unset unset unset"> 
+                                                <wm-label name="label9_1" textalign="center" caption="Choose Colour 1 :" class="col-md-3 control-label"></wm-label> 
+                                                <wm-container name="container10" class="col-md-7"> 
+                                                    <wm-radioset name="radioCompareClr1" on-change="radioCompareClr1Change($event, $scope, newVal, oldVal)" datafield="All Fields" selectedvalue="Choose Colour on Screen" dataset="Choose Colour on Screen, Input L.A.B values,Pantone C,Pantone TPX,Pantone TCX" height="auto"></wm-radioset> 
+                                                </wm-container> 
+                                            </wm-composite> 
+                                        </wm-gridcolumn> 
+                                        <wm-gridcolumn name="gridcolumn17" padding="unset 10px unset 5px" columnwidth="6"> 
+                                            <wm-container name="container11" padding="unset unset 5px unset" show="bind:Widgets.radioCompareClr1.displayValue === &quot;Choose Colour on Screen&quot;?true:false"> 
+                                                <wm-label name="label10_1" fontweight="bold" caption="Choose a Colour :" padding="unset 0.5em unset unset"></wm-label> 
+                                                <wm-colorpicker name="colorpickerClr1" show="true"></wm-colorpicker> 
+                                            </wm-container> 
+                                            <wm-container name="container12" show="bind:Widgets.radioCompareClr1.displayValue === &quot;Pantone C&quot; || Widgets.radioCompareClr1.displayValue === &quot;Pantone TPX&quot; || Widgets.radioCompareClr1.displayValue === &quot;Pantone TCX&quot; ? true  : false"> 
+                                                <wm-label name="label11_1" fontweight="bold" caption="bind:Widgets.radioCompareClr1.displayValue === &quot;Pantone C&quot; || Widgets.radioCompareClr1.displayValue === &quot;Pantone TPX&quot; || Widgets.radioCompareClr1.displayValue === &quot;Pantone TCX&quot; ?(&quot;Enter &quot;+Widgets.radioCompareClr1.displayValue+&quot; : &quot;):&quot;&quot;" padding="unset 0.5em unset 0em"></wm-label> 
+                                                <wm-search on-change="searchPantoneClr1Change($event, $scope, newVal, oldVal)" name="searchPantoneClr1" displaylabel="clrcode" dataset="bind:Variables.svProcRf020pk0GetClrOptCompareClr1.dataSet.poutLov" show="bind:Widgets.radioCompareClr1.displayValue === &quot;Pantone C&quot; || Widgets.radioCompareClr1.displayValue === &quot;Pantone TPX&quot; || Widgets.radioCompareClr1.displayValue === &quot;Pantone TCX&quot; ? true  : false" datafield="All Fields" placeholder="Search Pantone" type="autocomplete"></wm-search> 
+                                            </wm-container> 
+                                            <wm-container name="container13_1" show="bind:Widgets.radioCompareClr1.displayValue === &quot;Input L.A.B values&quot;?true:false" padding="5px unset unset unset"> 
+                                                <wm-composite name="composite7_1"> 
+                                                    <wm-label name="label12_1" textalign="center" caption="L :" class="col-md-3 control-label"></wm-label> 
+                                                    <wm-container name="container14_1" class="col-md-9"> 
+                                                        <wm-text on-change="txtLabL1Change($event, $scope, newVal, oldVal)" name="txtLabL1" placeholder="0.00 to 100.00" type="number"></wm-text> 
+                                                    </wm-container> 
+                                                </wm-composite> 
+                                                <wm-composite name="composite8_1"> 
+                                                    <wm-label name="label13_1" caption="A :" textalign="center" class="col-md-3 control-label"></wm-label> 
+                                                    <wm-container name="container15_1" class="col-md-9"> 
+                                                        <wm-text on-change="txtLabA1Change($event, $scope, newVal, oldVal)" name="txtLabA1" placeholder="-128.00 to 128.00" type="number"></wm-text> 
+                                                    </wm-container> 
+                                                </wm-composite> 
+                                                <wm-composite name="composite9"> 
+                                                    <wm-label name="label14_1" caption="B :" textalign="center" class="col-md-3 control-label"></wm-label> 
+                                                    <wm-container name="container16" class="col-md-9"> 
+                                                        <wm-text on-change="txtLabB1Change($event, $scope, newVal, oldVal)" name="txtLabB1" type="number" placeholder="-128.00 to 128.00"></wm-text> 
+                                                    </wm-container> 
+                                                </wm-composite> 
+                                            </wm-container> 
+                                        </wm-gridcolumn> 
+                                    </wm-gridrow> 
+                                </wm-layoutgrid> 
+                            </wm-gridcolumn> 
+                            <wm-gridcolumn name="gridcolumn19" columnwidth="2"></wm-gridcolumn> 
+                            <wm-gridcolumn name="gridcolumn12" columnwidth="5"> 
+                                <wm-layoutgrid name="layoutgrid6"> 
+                                    <wm-gridrow name="gridrow8_1" padding="unset 0px unset unset"> 
+                                        <wm-gridcolumn name="gridcolumn16_1" padding="0px unset unset unset" columnwidth="6"> 
+                                            <wm-composite name="composite10" padding="0px unset unset unset"> 
+                                                <wm-label name="label16" textalign="center" caption="Choose Colour 2 :" class="col-md-3 control-label"></wm-label> 
+                                                <wm-container name="container18" class="col-md-7"> 
+                                                    <wm-radioset name="radioCompareClr2" on-change="radioCompareClr2Change($event, $scope, newVal, oldVal)" datafield="All Fields" selectedvalue="Choose Colour on Screen" dataset="Choose Colour on Screen, Input L.A.B values,Pantone C,Pantone TPX,Pantone TCX" height="auto"></wm-radioset> 
+                                                </wm-container> 
+                                            </wm-composite> 
+                                        </wm-gridcolumn> 
+                                        <wm-gridcolumn name="gridcolumn17_1" padding="unset 10px unset 5px" columnwidth="6"> 
+                                            <wm-container name="container19" padding="unset unset 5px unset" show="bind:Widgets.radioCompareClr2.displayValue === &quot;Choose Colour on Screen&quot;?true:false"> 
+                                                <wm-label name="label17" fontweight="bold" caption="Choose a Colour :" padding="unset 0.5em unset unset"></wm-label> 
+                                                <wm-colorpicker name="colorpickerClr2" show="true"></wm-colorpicker> 
+                                            </wm-container> 
+                                            <wm-container name="container20" show="bind:Widgets.radioCompareClr2.displayValue === &quot;Pantone C&quot; || Widgets.radioCompareClr2.displayValue === &quot;Pantone TPX&quot; || Widgets.radioCompareClr2.displayValue === &quot;Pantone TCX&quot; ? true  : false"> 
+                                                <wm-label name="label18" fontweight="bold" caption="bind:Widgets.radioCompareClr1.displayValue === &quot;Pantone C&quot; || Widgets.radioCompareClr1.displayValue === &quot;Pantone TPX&quot; || Widgets.radioCompareClr1.displayValue === &quot;Pantone TCX&quot; ?(&quot;Enter &quot;+Widgets.radioCompareClr1.displayValue+&quot; : &quot;):&quot;&quot;" padding="unset 0.5em unset 0em"></wm-label> 
+                                                <wm-search displaylabel="clrcode" dataset="bind:Variables.svProcRf020pk0GetClrOptClr2.dataSet.poutLov" name="searchPantoneClr2" show="bind:Widgets.radioCompareClr2.displayValue === &quot;Pantone C&quot; || Widgets.radioCompareClr2.displayValue === &quot;Pantone TPX&quot; || Widgets.radioCompareClr2.displayValue === &quot;Pantone TCX&quot; ? true  : false" on-change="searchPantoneClr2Change($event, $scope, newVal, oldVal)" datafield="All Fields" placeholder="Search Pantone" type="autocomplete"></wm-search> 
+                                            </wm-container> 
+                                            <wm-container name="container21" show="bind:Widgets.radioCompareClr2.displayValue === &quot;Input L.A.B values&quot;?true:false" padding="5px unset unset unset"> 
+                                                <wm-composite name="composite11"> 
+                                                    <wm-label name="label19" textalign="center" caption="L :" class="col-md-3 control-label"></wm-label> 
+                                                    <wm-container name="container22" class="col-md-9"> 
+                                                        <wm-text on-change="txtLabL2Change($event, $scope, newVal, oldVal)" name="txtLabL2" placeholder="0.00 to 100.00" type="number"></wm-text> 
+                                                    </wm-container> 
+                                                </wm-composite> 
+                                                <wm-composite name="composite12"> 
+                                                    <wm-label name="label20" caption="A :" textalign="center" class="col-md-3 control-label"></wm-label> 
+                                                    <wm-container name="container23" class="col-md-9"> 
+                                                        <wm-text on-change="txtLabA2Change($event, $scope, newVal, oldVal)" name="txtLabA2" placeholder="-128.00 to 128.00" type="number"></wm-text> 
+                                                    </wm-container> 
+                                                </wm-composite> 
+                                                <wm-composite name="composite13"> 
+                                                    <wm-label name="label21" caption="B :" textalign="center" class="col-md-3 control-label"></wm-label> 
+                                                    <wm-container name="container24" class="col-md-9"> 
+                                                        <wm-text on-change="txtLabB2Change($event, $scope, newVal, oldVal)" name="txtLabB2" type="number" placeholder="-128.00 to 128.00"></wm-text> 
+                                                    </wm-container> 
+                                                </wm-composite> 
+                                            </wm-container> 
+                                        </wm-gridcolumn> 
+                                    </wm-gridrow> 
+                                </wm-layoutgrid> 
+                            </wm-gridcolumn> 
+                        </wm-gridrow> 
+                        <wm-gridrow name="gridrow7"> 
+                            <wm-gridcolumn name="gridcolumn13" columnwidth="4"></wm-gridcolumn> 
+                            <wm-gridcolumn horizontalalign="center" name="gridcolumn18" columnwidth="4"> 
+                                <wm-button on-click="btnCompareClick($event, $scope)" name="btnCompare" class="btn-default btn-primary" caption="Compare Colours" type="button" margin="unset 0.5em"></wm-button> 
+                            </wm-gridcolumn> 
+                            <wm-gridcolumn name="gridcolumn14" columnwidth="4"></wm-gridcolumn> 
+                        </wm-gridrow> 
+                    </wm-layoutgrid> 
+                </wm-panel> 
+                <wm-table class="panel-primary" navigation="None" dataset="bind:Variables.svgetCompareColours.dataSet" title="" name="getCompareColoursTable1"> 
+                    <wm-table-column-group caption="Colour 1" name="group"> 
+                        <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" textalignment="center" caption="L" binding="labl1"></wm-table-column> 
+                        <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" textalignment="center" caption="A" binding="laba1"></wm-table-column> 
+                        <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" textalignment="center" caption="B" binding="labb1"></wm-table-column> 
+                        <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" textalignment="center" caption="Colour" binding="hexcolor1"> 
+                            <wm-label caption="------------" class="" data-ng-class="" color="{{row.hexcolor1}}" backgroundcolor="{{row. hexcolor1}}"></wm-label> 
+                        </wm-table-column> 
+                    </wm-table-column-group> 
+                    <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" textalignment="center" caption="Tolerance Delta E" binding="deltae"></wm-table-column> 
+                    <wm-table-column-group caption="Colour 2" name="group1"> 
+                        <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" textalignment="center" caption="Colour" binding="hexcolor2"> 
+                            <wm-label caption="------------" class="" data-ng-class="" color="{{row.hexcolor2}}" backgroundcolor="{{row.hexcolor2}}"></wm-label> 
+                        </wm-table-column> 
+                        <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" textalignment="center" caption="L" binding="labl2"></wm-table-column> 
+                        <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" textalignment="center" caption="A" binding="laba2"></wm-table-column> 
+                        <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" textalignment="center" caption="B" binding="labb2"></wm-table-column> 
+                    </wm-table-column-group> 
+                </wm-table> 
+            </wm-tabpane> 
+            <wm-tabpane accessroles="COLOURLIB_ADDPANTONE" title="Add Pantone" name="tabpane3"> 
+                <wm-panel class="panel-primary" name="panel3" iconclass="" autoclose="outsideClick" title="Enter Pantone Details"> 
+                    <wm-layoutgrid name="layoutgrid8"> 
+                        <wm-gridrow padding="unset 0px unset unset" name="gridrow11_1"> 
+                            <wm-gridcolumn name="gridcolumn26_1" columnwidth="4"></wm-gridcolumn> 
+                            <wm-gridcolumn name="gridcolumn27_1" columnwidth="4"> 
+                                <wm-composite name="composite17"> 
+                                    <wm-label textalign="left" caption="Pantone Category :" name="label24_1" class="col-md-3 control-label"></wm-label> 
+                                    <wm-container name="container28" class="col-md-9"> 
+                                        <wm-select class="input-lg" displayfield="itemdes" dataset="bind:Variables.statPantoneCat.dataSet" datafield="itemcod" name="sltPantoneCat"></wm-select> 
+                                    </wm-container> 
+                                </wm-composite> 
+                                <wm-composite name="composite18"> 
+                                    <wm-label caption="Pantone Code :" name="label25" class="col-md-3 control-label"></wm-label> 
+                                    <wm-container name="container29" class="col-md-9"> 
+                                        <wm-text on-change="txtInsertPantoneChange($event, $scope, newVal, oldVal)" placeholder="bind:(Widgets.sltPantoneCat.datavalue === &quot;PANTONETPX&quot; || Widgets.sltPantoneCat.datavalue === &quot;PANTONETCX&quot;)?&quot;Enter Pantone code in this format XX-XXXX&quot;:(Widgets.sltPantoneCat.datavalue === &quot;PANTONEC&quot;)?&quot;Enter Pantone code in this format XXX or XXXX&quot;:&quot;Enter Pantone Code&quot;" name="txtInsertPantone"></wm-text> 
+                                    </wm-container> 
+                                </wm-composite> 
+                            </wm-gridcolumn> 
+                            <wm-gridcolumn name="gridcolumn28_1" columnwidth="4"></wm-gridcolumn> 
+                        </wm-gridrow> 
+                        <wm-gridrow padding="unset 0px unset unset" name="gridrow11"> 
+                            <wm-gridcolumn name="gridcolumn26" columnwidth="4"></wm-gridcolumn> 
+                            <wm-gridcolumn name="gridcolumn30" columnwidth="4"> 
+                                <wm-container name="container24_1" show="true" padding="5px unset unset unset"> 
+                                    <wm-composite name="composite14"> 
+                                        <wm-label name="label22" textalign="left" caption="Enter  L value :" class="col-md-3 control-label"></wm-label> 
+                                        <wm-container name="container25" class="col-md-9"> 
+                                            <wm-text name="txtInsertL" on-change="txtLabL1Change($event, $scope, newVal, oldVal)" placeholder="0.00 to 100.00" type="number"></wm-text> 
+                                        </wm-container> 
+                                    </wm-composite> 
+                                    <wm-composite name="composite15"> 
+                                        <wm-label name="label23" caption="Enter A value :" textalign="left" class="col-md-3 control-label"></wm-label> 
+                                        <wm-container name="container26" class="col-md-9"> 
+                                            <wm-text name="txtInsertA" on-change="txtLabA1Change($event, $scope, newVal, oldVal)" placeholder="-128.00 to 128.00" type="number"></wm-text> 
+                                        </wm-container> 
+                                    </wm-composite> 
+                                    <wm-composite name="composite16"> 
+                                        <wm-label name="label24" caption="Enter B value :" textalign="left" class="col-md-3 control-label"></wm-label> 
+                                        <wm-container name="container27" class="col-md-9"> 
+                                            <wm-text name="txtInsertB" on-change="txtLabB1Change($event, $scope, newVal, oldVal)" type="number" placeholder="-128.00 to 128.00"></wm-text> 
+                                        </wm-container> 
+                                    </wm-composite> 
+                                </wm-container> 
+                            </wm-gridcolumn> 
+                            <wm-gridcolumn name="gridcolumn27" columnwidth="4"></wm-gridcolumn> 
+                        </wm-gridrow> 
+                        <wm-gridrow padding="unset 0px unset unset" name="gridrow12"> 
+                            <wm-gridcolumn name="gridcolumn28" columnwidth="4"></wm-gridcolumn> 
+                            <wm-gridcolumn padding="unset unset 5px unset" horizontalalign="center" name="gridcolumn31" columnwidth="4"> 
+                                <wm-button on-click="btnCheckDetailsClick($event, $scope)" name="btnCheckDetails" class="btn-default btn-info" caption="Check Pantone Details" type="button" margin="unset 0.5em"></wm-button> 
+                                <wm-button on-click="btnResetClick($event, $scope)" name="btnReset" class="btn-default" caption="Reset" type="button" margin="unset 0.5em"></wm-button> 
+                            </wm-gridcolumn> 
+                            <wm-gridcolumn name="gridcolumn29" columnwidth="4"></wm-gridcolumn> 
+                        </wm-gridrow> 
+                        <wm-gridrow padding="unset 0px unset unset" name="gridrow12_1"> 
+                            <wm-gridcolumn name="gridcolumn29_1" columnwidth="4"></wm-gridcolumn> 
+                            <wm-gridcolumn name="gridcolumn30_1" columnwidth="4"> 
+                                <wm-table show="bind:Variables.svgetAddPantone.dataSet.length>0?true:false" class="panel-primary" navigation="None" dataset="bind:Variables.svgetAddPantone.dataSet" title="Pantone Details" name="getAddPantoneTable1"> 
+                                    <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="Pantone" binding="pantone"></wm-table-column> 
+                                    <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="L" binding="labl"></wm-table-column> 
+                                    <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="A" binding="laba"></wm-table-column> 
+                                    <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="B" binding="labb"></wm-table-column> 
+                                    <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="R" binding="rgbr"></wm-table-column> 
+                                    <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="G" binding="rgbg"></wm-table-column> 
+                                    <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="B" binding="rgbb"></wm-table-column> 
+                                    <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="Colour" binding="colour"> 
+                                        <wm-label caption="------------" class="" data-ng-class="" color="{{row.colour}}" backgroundcolor="{{row.colour}}"></wm-label> 
+                                    </wm-table-column> 
+                                </wm-table> 
+                            </wm-gridcolumn> 
+                            <wm-gridcolumn name="gridcolumn31_1" columnwidth="4"></wm-gridcolumn> 
+                        </wm-gridrow> 
+                        <wm-gridrow padding="unset 0px unset unset" name="gridrow13"> 
+                            <wm-gridcolumn name="gridcolumn32" columnwidth="4"></wm-gridcolumn> 
+                            <wm-gridcolumn horizontalalign="right" name="gridcolumn33" columnwidth="4"> 
+                                <wm-button accessroles="COLOURLIB_ADDPANTONE" show="bind:Widgets.getAddPantoneTable1.show" on-click="btnAddPantoneClick($event, $scope)" name="btnAddPantone" class="btn-default btn-primary" caption="Add Pantone" type="button" margin="unset 0.5em"></wm-button> 
+                            </wm-gridcolumn> 
+                            <wm-gridcolumn name="gridcolumn34" columnwidth="4"></wm-gridcolumn> 
+                        </wm-gridrow> 
+                    </wm-layoutgrid> 
+                </wm-panel> 
+            </wm-tabpane> 
+        </wm-tabs> 
+    </wm-content> 
+    <wm-footer name="footer1" content="footer"></wm-footer> 
+</wm-page>

@@ -1,0 +1,22 @@
+{
+  "serverUrl" : "https://devapps.cmt.mu:7443/cas",
+  "loginUrl" : "https://devapps.cmt.mu:7443/cas/login",
+  "validationUrl" : "https://devapps.cmt.mu:7443/cas",
+  "logoutUrl" : "https://devapps.cmt.mu:7443/cas/logout",
+  "serviceParameter" : "service",
+  "artifactParameter" : "ticket",
+  "roleMappingEnabled" : true,
+  "roleMappingConfig" : {
+    "modelName" : "pfsdb",
+    "entityName" : "VRft90201",
+    "tableName" : "V_RFT9020_1",
+    "usernameField" : "userid",
+    "usernameColumn" : "USERID",
+    "useRolesQuery" : true,
+    "roleField" : "approle",
+    "roleColumn" : "APPROLE",
+    "queryType" : "NATIVE_SQL",
+    "roleQuery" : "SELECT APPROLE FROM V_RFT9020_1 WHERE USERID = UPPER(:LOGGED_IN_USERNAME) and appid ='TT1000WB'"
+  },
+  "attributes" : [ ]
+}

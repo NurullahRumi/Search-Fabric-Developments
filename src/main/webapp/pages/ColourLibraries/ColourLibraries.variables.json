@@ -1,0 +1,224 @@
+{
+  "statPantoneCat" : {
+    "_id" : "wm-statPantoneCat-wm.Variable-1539936120818",
+    "name" : "statPantoneCat",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "itemdes" : "Pantone  C",
+      "itemcod" : "PANTONEC"
+    }, {
+      "itemdes" : "Pantone TPX",
+      "itemcod" : "PANTONETPX"
+    }, {
+      "itemdes" : "Pantone TCX",
+      "itemcod" : "PANTONETCX"
+    } ],
+    "type" : "string",
+    "isList" : true,
+    "saveInPhonegap" : false
+  },
+  "statPrgname" : {
+    "_id" : "wm-statPrgname-wm.Variable-1540373583329",
+    "name" : "statPrgname",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "dataValue",
+      "value" : "Colour Libraries",
+      "type" : "string"
+    } ],
+    "dataSet" : {
+      "dataValue" : "Colour Libraries"
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "statSearchOption" : {
+    "_id" : "wm-statSearchOption-wm.Variable-1539328862607",
+    "name" : "statSearchOption",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : "LAB"
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "svgetAddPantone" : {
+    "_id" : "wm-svgetAddPantone-wm.ServiceVariable-1540016994557",
+    "name" : "svgetAddPantone",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "mu.pfs.tt1000wb.fabricstockservice.FabricStockService.AddPantone",
+    "service" : "FabricStockService",
+    "operation" : "getAddPantone",
+    "operationId" : "FabricStockController_getAddPantone",
+    "operationType" : "get",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "onSuccess" : "svgetAddPantoneonSuccess($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "FabricStock"
+  },
+  "svgetColourLibraries" : {
+    "_id" : "wm-svgetColourLibraries-wm.ServiceVariable-1539669958975",
+    "name" : "svgetColourLibraries",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "mu.pfs.tt1000wb.fabricstockservice.FabricStockService.ColourLibraries",
+    "service" : "FabricStockService",
+    "operation" : "getColourLibraries",
+    "operationId" : "FabricStockController_getColourLibraries",
+    "operationType" : "get",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "onSuccess" : "svgetColourLibrariesonSuccess($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "FabricStock"
+  },
+  "svgetCompareColours" : {
+    "_id" : "wm-svgetCompareColours-wm.ServiceVariable-1539766153889",
+    "name" : "svgetCompareColours",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "pLabL1",
+      "type" : "number"
+    }, {
+      "target" : "pLabA1",
+      "type" : "number"
+    }, {
+      "target" : "pLabB1",
+      "type" : "number"
+    }, {
+      "target" : "pLabL2",
+      "type" : "number"
+    }, {
+      "target" : "pLabA2",
+      "type" : "number"
+    }, {
+      "target" : "pLabB2",
+      "type" : "number"
+    }, {
+      "target" : "hexcolor1",
+      "value" : "bind:Widgets.colorpickerClr1.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "hexcolor2",
+      "value" : "bind:Widgets.colorpickerClr2.datavalue",
+      "type" : "string"
+    } ],
+    "type" : "mu.pfs.tt1000wb.fabricstockservice.FabricStockService.CompareColours",
+    "service" : "FabricStockService",
+    "operation" : "getCompareColours",
+    "operationId" : "FabricStockController_getCompareColours",
+    "operationType" : "get",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "FabricStock"
+  },
+  "svProcRf020pk0GetClrOpt" : {
+    "_id" : "wm-svProcRf020pk0GetClrOpt-wm.ServiceVariable-1539333817803",
+    "name" : "svProcRf020pk0GetClrOpt",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "p_clroption",
+      "value" : "bind:Widgets.radiosetClrFilterOpt.displayValue === \"Pantone C\"?\"PANTONEC\":Widgets.radiosetClrFilterOpt.displayValue === \"Pantone TPX\"?\"PANTONETPX\":Widgets.radiosetClrFilterOpt.displayValue === \"Pantone TCX\"?\"PANTONETCX\":\"\"",
+      "type" : "string"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcRf020pk0getClrOptResponse",
+    "service" : "pfsdb",
+    "operation" : "executeProcRf020pk0GetClrOpt",
+    "operationId" : "ProcedureExecutionController_executeProcRf020pk0GetClrOpt",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svProcRf020pk0GetClrOptClr2" : {
+    "_id" : "wm-svProcRf020pk0GetClrOptClr2-wm.ServiceVariable-1539862478704",
+    "name" : "svProcRf020pk0GetClrOptClr2",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "p_clroption",
+      "value" : "bind:Widgets.radioCompareClr2.displayValue === \"Pantone C\"?\"PANTONEC\":Widgets.radioCompareClr2.displayValue === \"Pantone TPX\"?\"PANTONETPX\":Widgets.radioCompareClr2.displayValue === \"Pantone TCX\"?\"PANTONETCX\":\"\"",
+      "type" : "string"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcRf020pk0getClrOptResponse",
+    "service" : "pfsdb",
+    "operation" : "executeProcRf020pk0GetClrOpt",
+    "operationId" : "ProcedureExecutionController_executeProcRf020pk0GetClrOpt",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svProcRf020pk0GetClrOptCompareClr1" : {
+    "_id" : "wm-svProcRf020pk0GetClrOptCompareClr1-wm.ServiceVariable-1539849622341",
+    "name" : "svProcRf020pk0GetClrOptCompareClr1",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "p_clroption",
+      "value" : "bind:Widgets.radioCompareClr1.displayValue === \"Pantone C\"?\"PANTONEC\":Widgets.radioCompareClr1.displayValue === \"Pantone TPX\"?\"PANTONETPX\":Widgets.radioCompareClr1.displayValue === \"Pantone TCX\"?\"PANTONETCX\":\"\"",
+      "type" : "string"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcRf020pk0getClrOptResponse",
+    "service" : "pfsdb",
+    "operation" : "executeProcRf020pk0GetClrOpt",
+    "operationId" : "ProcedureExecutionController_executeProcRf020pk0GetClrOpt",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  }
+}

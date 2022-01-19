@@ -1,0 +1,10 @@
+<wm-partial name="partial1" data-ng-controller="partCCFMatchDetailsPageController"> 
+    <wm-table gridclass="table-bordered table-hover" show="bind:Variables.svProcKn1620pk0CcfmQryGetMatchDet.dataSet.poutMatchDet.length === 0 ? false:true" spacing="condensed" name="table1" navigation="None" dataset="bind:Variables.svProcKn1620pk0CcfmQryGetMatchDet.dataSet.poutMatchDet" title=""> 
+        <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" col-ng-class="{'red-d1':row.mintfabcertno === row.ccffilter}" width="75px" caption="CCF" binding="mintfabcertno"></wm-table-column> 
+        <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" width="75px" caption="Order" binding="mccfOrdnum"></wm-table-column> 
+        <wm-table-column readonly="false" show="true" type="byte" edit-widget-type="number" width="40px" caption="Fab Seq" binding="mccfFabseq"></wm-table-column> 
+        <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="Fab Details" binding="mccfFabdet"></wm-table-column> 
+        <wm-table-column readonly="false" show="false" type="string" edit-widget-type="text" caption="Ccfmatchcat" binding="ccfmatchcat"></wm-table-column> 
+        <wm-table-column readonly="undefined" show="false" type="string" caption="Ccffilter" binding="ccffilter"></wm-table-column> 
+    </wm-table> 
+</wm-partial>

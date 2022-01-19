@@ -1,0 +1,45 @@
+{
+  "statPageHeader" : {
+    "_id" : "wm-statPageHeader-wm.Variable-1491379012610",
+    "name" : "statPageHeader",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "dataValue",
+      "value" : "bind:Variables.statPrgid.dataSet.dataValue + \" - \" + Variables.statPrgname.dataSet.dataValue + \" - \" + Variables.loggedInUser.dataSet.name",
+      "type" : "string"
+    } ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "statPrgid" : {
+    "_id" : "wm-statPrgid-wm.Variable-1491378812606",
+    "name" : "statPrgid",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : "TT130WM0"
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "statPrgname" : {
+    "_id" : "wm-statPrgname-wm.Variable-1491378846612",
+    "name" : "statPrgname",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : "FABRIC SEARCH"
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  }
+}

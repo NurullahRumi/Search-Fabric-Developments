@@ -1,0 +1,16 @@
+<wm-partial data-ng-controller="footerPageController" name="footer" type="footer"> 
+    <wm-layoutgrid show="true" name="footerlayout"> 
+        <wm-gridrow padding="25px unset unset unset" name="footerrow"> 
+            <wm-gridcolumn name="footerleft" verticalalign="bottom"></wm-gridcolumn> 
+            <wm-gridcolumn horizontalalign="right" verticalalign="bottom" name="footerright"> 
+                <wm-label on-click="Widgets.dialogCopyright.open()" fontstyle="italic" caption="" textalign="right" name="copyright"></wm-label> 
+            </wm-gridcolumn> 
+        </wm-gridrow> 
+        <wm-view show="false" name="view2" class="dialog-view"> 
+            <wm-dialog on-opened="dialogCopyrightOpened($event, $scope)" name="dialogCopyright" dialogtype="design-dialog" modal="true" title="Copyright Compagnie Mauricienne de Textile Ltée" iconclass="wi wi-copyright"> 
+                <wm-label fontstyle="italic" name="lblCopyright" padding="unset 0.5em"></wm-label> 
+                <wm-dialogactions name="dialogactions1"></wm-dialogactions> 
+            </wm-dialog> 
+        </wm-view> 
+    </wm-layoutgrid> 
+</wm-partial>

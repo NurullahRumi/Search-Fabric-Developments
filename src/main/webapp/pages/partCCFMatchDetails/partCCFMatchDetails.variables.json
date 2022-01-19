@@ -1,0 +1,36 @@
+{
+  "svProcKn1620pk0CcfmQryGetMatchDet" : {
+    "_id" : "wm-svProcKn1620pk0CcfmQryGetMatchDet-wm.ServiceVariable-1536652553229",
+    "name" : "svProcKn1620pk0CcfmQryGetMatchDet",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "p_sintfabcertno",
+      "value" : "bind:pageParams.p_sintfabcertno",
+      "type" : "string"
+    }, {
+      "target" : "p_dintfabcertno",
+      "value" : "bind:pageParams.p_dintfabcertno",
+      "type" : "string"
+    }, {
+      "target" : "p_ccffilter",
+      "value" : "bind:pageParams.m_filterOp",
+      "type" : "string"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcKn1620pk0ccfmQryGetMatchDetResponse",
+    "service" : "pfsdb",
+    "operation" : "executeProcKn1620pk0CcfmQryGetMatchDet",
+    "operationId" : "ProcedureExecutionController_executeProcKn1620pk0CcfmQryGetMatchDet",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  }
+}

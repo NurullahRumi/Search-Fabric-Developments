@@ -1,0 +1,51 @@
+[ {
+  "urlPattern" : "/pages/ColourLibraries/**",
+  "permission" : "Role",
+  "roles" : [ "COLOURLIB_QRYCLRS" ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/DyedYarnStock/**",
+  "permission" : "Role",
+  "roles" : [ "YRNDYE_QRYSTOCK" ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/FabricDevSearch/**",
+  "permission" : "Role",
+  "roles" : [ "FABSEARCH_VIEWPAGE" ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/Login/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/Main/**",
+  "permission" : "Authenticated",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/ProvFabCCF/**",
+  "permission" : "Role",
+  "roles" : [ "PROVCCF_QRYMATCH" ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/TestPage/**",
+  "permission" : "Authenticated",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/**",
+  "permission" : "Authenticated",
+  "roles" : null,
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/services/pfsdb/procedureExecutor/procedure/execute/getDccode",
+  "permission" : "Authenticated",
+  "roles" : [ ],
+  "httpMethod" : "GET"
+}, {
+  "urlPattern" : "/services/pfsdb/procedureExecutor/**",
+  "permission" : "Authenticated",
+  "roles" : [ ],
+  "httpMethod" : null
+} ]

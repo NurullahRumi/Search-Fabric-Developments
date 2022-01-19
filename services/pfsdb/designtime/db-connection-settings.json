@@ -1,0 +1,43 @@
+{
+  "username" : "u_wm_dev",
+  "password" : "7b6a43524a32200e6e7f73214216286025",
+  "url" : "jdbc:oracle:thin:@//cmtdevdb.cmt.mu:1521/dev",
+  "driverClass" : "oracle.jdbc.driver.OracleDriver",
+  "dialect" : "com.wavemaker.runtime.data.dialect.OracleDialect",
+  "serviceId" : "pfsdb",
+  "packageName" : "com.mu.cmt.pfs.pfsdb",
+  "dbType" : "Oracle",
+  "host" : "cmtdevdb.cmt.mu",
+  "dbName" : "dev",
+  "port" : "1521",
+  "schemaName" : "SW",
+  "tableFilter" : [ {
+    "table" : "ORT120",
+    "schema" : "SW"
+  }, {
+    "table" : "TTT1010",
+    "schema" : "SW"
+  }, {
+    "table" : "TTT1030",
+    "schema" : "SW"
+  }, {
+    "table" : "V_RFT9020_1",
+    "schema" : "SW"
+  } ],
+  "schemaFilter" : [ "SW" ],
+  "impersonateUser" : false,
+  "activeDirectoryDomain" : null,
+  "hbm2ddl" : "none",
+  "maxPageSize" : 100,
+  "minPoolSize" : 2,
+  "maxPoolSize" : 4,
+  "transactionTimeout" : 30,
+  "dataSourceType" : "WM_MANAGED_DATASOURCE",
+  "jndiName" : "",
+  "reloadInfo" : {
+    "reload" : false,
+    "reason" : null,
+    "message" : null
+  },
+  "readOnly" : true
+}

@@ -1,0 +1,483 @@
+{
+  "statDisplayOrders" : {
+    "_id" : "wm-statDisplayOrders-wm.Variable-1518171940250",
+    "name" : "statDisplayOrders",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "orders" : "",
+      "fabseq" : ""
+    } ],
+    "type" : "string",
+    "isList" : true,
+    "saveInPhonegap" : false
+  },
+  "statFabseq" : {
+    "_id" : "wm-statFabseq-wm.Variable-1516080783608",
+    "name" : "statFabseq",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : 0
+    },
+    "type" : "number",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "statOrdFabList" : {
+    "_id" : "wm-statOrdFabList-wm.Variable-1518601073609",
+    "name" : "statOrdFabList",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "statOrdnum" : {
+    "_id" : "wm-statOrdnum-wm.Variable-1516080769549",
+    "name" : "statOrdnum",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "statPrgid" : {
+    "_id" : "wm-statPrgid-wm.Variable-1515994391987",
+    "name" : "statPrgid",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "dataValue",
+      "value" : "TT1000W02",
+      "type" : "string"
+    } ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "statPrgName" : {
+    "_id" : "wm-statPrgname-wm.Variable-1516108657173",
+    "name" : "statPrgName",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : "Certified Fabrics"
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "svGetFabtyp" : {
+    "_id" : "wm-svGetFabtyp-wm.ServiceVariable-1516340704467",
+    "name" : "svGetFabtyp",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.query.QryGetFabtypResponse",
+    "service" : "pfsdb",
+    "operation" : "executeQryGetFabtyp",
+    "operationId" : "QueryExecutionController_executeQryGetFabtyp",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 150,
+    "startUpdate" : true,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "svProcKn1610pk0_excccfAssociateOrder" : {
+    "_id" : "wm-svProcKn1610pk0_excccfAssociateOrder-wm.ServiceVariable-1518160910791",
+    "name" : "svProcKn1610pk0_excccfAssociateOrder",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "pPrgid",
+      "value" : "bind:Variables.statPrgid.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "pUsrid",
+      "value" : "bind:Variables.statAppUsrid.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "pOrdnum",
+      "value" : "bind:Widgets.form3.formWidgets.pOrdnum.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "pFabseq",
+      "value" : "bind:Widgets.form3.formWidgets.pFabseq.datavalue",
+      "type" : "integer"
+    }, {
+      "target" : "pCCFno",
+      "value" : "bind:Widgets.form3.formWidgets.pCCFno.datavalue",
+      "type" : "string"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcKn1610pk0ExcccfAssociateOrderResponse",
+    "service" : "pfsdb",
+    "operation" : "executeProcKn1610pk0_excccfAssociateOrder",
+    "operationId" : "ProcedureExecutionController_executeProcKn1610pk0_excccfAssociateOrder",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "svProcKn1610pk0_excccfAssociateOrderonSuccess($event, $scope)",
+    "onError" : "svProcKn1610pk0_excccfAssociateOrderonError($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svProcKn1610pk0_excccfGetCCFFabDiff" : {
+    "_id" : "wm-svProcKn1610pk0_excccfGetCCFFabDiff-wm.ServiceVariable-1521108318734",
+    "name" : "svProcKn1610pk0_excccfGetCCFFabDiff",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "pIntfabcertno2",
+      "value" : "bind:Widgets.txtCCF.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "pOrdnum",
+      "value" : "bind:Widgets.txtOrdnumCmp.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "pFabseq",
+      "value" : "bind:Widgets.txtFabSeqCmp.datavalue",
+      "type" : "integer"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcKn1610pk0ExcccfGetCcffabDiffResponse",
+    "service" : "pfsdb",
+    "operation" : "executeProcKn1610pk0_excccfGetCCFFabDiff",
+    "operationId" : "ProcedureExecutionController_executeProcKn1610pk0_excccfGetCCFFabDiff",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onError" : "svProcKn1610pk0_excccfGetCCFFabDiffonError($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svProcKn1610pk0_excccfGetCCFList" : {
+    "_id" : "wm-svProcKn1610pk0_excccfGetCCFList-wm.ServiceVariable-1515823498406",
+    "name" : "svProcKn1610pk0_excccfGetCCFList",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "p_prgid",
+      "value" : "bind:Variables.statPrgid.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "p_usrid",
+      "value" : "bind:Variables.statAppUsrid.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "p_intfabcertno",
+      "value" : "bind:Widgets.formCCFfilter.formWidgets.p_intfabcertno.datavalue.toUpperCase()",
+      "type" : "string"
+    }, {
+      "target" : "p_fabcertsts",
+      "value" : "bind:Widgets.formCCFfilter.formWidgets.p_fabcertsts.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "p_stsfromdat",
+      "value" : "bind:Widgets.formCCFfilter.formWidgets.p_stsfromdat.timestamp",
+      "type" : "string"
+    }, {
+      "target" : "p_ststodat",
+      "value" : "bind:Widgets.formCCFfilter.formWidgets.p_ststodat.timestamp",
+      "type" : "string"
+    }, {
+      "target" : "p_fabtyp",
+      "value" : "bind:Widgets.formCCFfilter.formWidgets.p_fabtyp.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "p_mchgau",
+      "value" : "bind:Widgets.formCCFfilter.formWidgets.p_mchgau.datavalue",
+      "type" : "integer"
+    }, {
+      "target" : "p_fabwgt",
+      "value" : "bind:Widgets.formCCFfilter.formWidgets.p_fabwgt.datavalue",
+      "type" : "integer"
+    }, {
+      "target" : "p_fabcps",
+      "value" : "bind:Widgets.formCCFfilter.formWidgets.p_fabcps.datavalue.toUpperCase()",
+      "type" : "string"
+    }, {
+      "target" : "p_fabdevno",
+      "value" : "bind:Widgets.formCCFfilter.formWidgets.p_fabdevno.datavalue.toUpperCase()",
+      "type" : "string"
+    }, {
+      "target" : "p_fabdevno_reqdatfrom",
+      "value" : "bind:Widgets.formCCFfilter.formWidgets.p_fabdevno_reqdatfrom.timestamp",
+      "type" : "string"
+    }, {
+      "target" : "p_fabdevno_reqdatto",
+      "value" : "bind:Widgets.formCCFfilter.formWidgets.p_fabdevno_reqdatto.timestamp",
+      "type" : "string"
+    }, {
+      "target" : "pordnum",
+      "value" : "bind:Widgets.formCCFfilter.formWidgets.pordnum.datavalue.toUpperCase()",
+      "type" : "string"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcKn1610pk0ExcccfGetCcflistResponse",
+    "service" : "pfsdb",
+    "operation" : "executeProcKn1610pk0_excccfGetCCFList",
+    "operationId" : "ProcedureExecutionController_executeProcKn1610pk0_excccfGetCCFList",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onError" : "svProcKn1610pk0_excccfGetCCFListonError($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svProcKn1610pk0_excccfGetFablibKds" : {
+    "_id" : "wm-svProcKn1610pk0_excccfGetFablibKds-wm.ServiceVariable-1521110957029",
+    "name" : "svProcKn1610pk0_excccfGetFablibKds",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "pOrdnum",
+      "value" : "bind:Widgets.txtOrdnumCmp.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "pFabseq",
+      "value" : "bind:Widgets.txtFabSeqCmp.datavalue",
+      "type" : "integer"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcKn1610pk0ExcccfGetFablibKdsResponse",
+    "service" : "pfsdb",
+    "operation" : "executeProcKn1610pk0_excccfGetFablibKds",
+    "operationId" : "ProcedureExecutionController_executeProcKn1610pk0_excccfGetFablibKds",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onError" : "Javascript",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svProckn1610pk0_excccfGetOrderSts" : {
+    "_id" : "wm-svProckn1610pk0_excccfGetOrderSts-wm.ServiceVariable-1515994114505",
+    "name" : "svProckn1610pk0_excccfGetOrderSts",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "p_prgid",
+      "value" : "bind:Variables.statPrgid.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "p_ordnum",
+      "value" : "bind:Widgets.txtOrdnum.datavalue.toUpperCase()",
+      "type" : "string"
+    }, {
+      "target" : "p_fabseq",
+      "value" : "bind:Widgets.txtFabseq.datavalue",
+      "type" : "integer"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcKn1610pk0ExcccfGetOrderStsResponse",
+    "service" : "pfsdb",
+    "operation" : "executeProcKn1610pk0_excccfGetOrderSts",
+    "operationId" : "ProcedureExecutionController_executeProcKn1610pk0_excccfGetOrderSts",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "svProckn1610pk0_excccfGetOrderStsonSuccess($event, $scope)",
+    "onError" : "svProckn1610pk0_excccfGetOrderStsonError($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svProcKn1610pk0_excccfGetRelatedMatrix" : {
+    "_id" : "wm-svProcKn1610pk0_excccfGetRelatedMatrix-wm.ServiceVariable-1518162620282",
+    "name" : "svProcKn1610pk0_excccfGetRelatedMatrix",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "pPrgid",
+      "value" : "bind:Variables.statPrgid.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "pUsrid",
+      "value" : "bind:Variables.statAppUsrid.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "pOrdnum",
+      "value" : "bind:Widgets.formRelatedMatrix.formWidgets.pOrdnum.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "pFabseq",
+      "value" : "bind:Widgets.formRelatedMatrix.formWidgets.pFabseq.datavalue",
+      "type" : "integer"
+    }, {
+      "target" : "pRelDateFrom",
+      "value" : "bind:Widgets.formRelatedMatrix.formWidgets.pRelDateFrom.timestamp",
+      "type" : "string"
+    }, {
+      "target" : "pRelDateTo",
+      "value" : "bind:Widgets.formRelatedMatrix.formWidgets.pRelDateTo.timestamp",
+      "type" : "string"
+    }, {
+      "target" : "pIntFabcertno",
+      "value" : "bind:Widgets.formRelatedMatrix.formWidgets.pIntFabcertno.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "pTemplateseq",
+      "value" : "bind:Widgets.formRelatedMatrix.formWidgets.pTemplateseq.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "pFilterOpt",
+      "value" : "bind:Widgets.formRelatedMatrix.formWidgets.pradiosetOptFilter.datavalue",
+      "type" : "string"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcKn1610pk0ExcccfGetRelatedMatrixResponse",
+    "service" : "pfsdb",
+    "operation" : "executeProcKn1610pk0_excccfGetRelatedMatrix",
+    "operationId" : "ProcedureExecutionController_executeProcKn1610pk0_excccfGetRelatedMatrix",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "svProcKn1610pk0_excccfGetRelatedMatrixonSuccess($event, $scope)",
+    "onError" : "svProcKn1610pk0_excccfGetRelatedMatrixonError($event, $scope)",
+    "onBeforeDatasetReady" : "svProcKn1610pk0_excccfGetRelatedMatrixonBeforeDatasetReady($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svProcKn1610pk0_excccfProcExcpCertifyFab" : {
+    "_id" : "wm-svProcKn1610pk0_excccfProcExcpCertifyFab-wm.ServiceVariable-1516078032208",
+    "name" : "svProcKn1610pk0_excccfProcExcpCertifyFab",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcKn1610pk0ExcccfProcExcpCertifyFabResponse",
+    "service" : "pfsdb",
+    "operation" : "executeProcKn1610pk0_excccfProcExcpCertifyFab",
+    "operationId" : "ProcedureExecutionController_executeProcKn1610pk0_excccfProcExcpCertifyFab",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "svProcKn1610pk0_excccfProcExcpCertifyFabonSuccess($event, $scope)",
+    "onError" : "Javascript",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svProcKn1610pk0_exccfUpdRelMatrix" : {
+    "_id" : "wm-svProcKn1610pk0_exccfUpdRelMatrix-wm.ServiceVariable-1518603105175",
+    "name" : "svProcKn1610pk0_exccfUpdRelMatrix",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcKn1610pk0ExccfUpdRelMatrixResponse",
+    "service" : "pfsdb",
+    "operation" : "executeProcKn1610pk0_exccfUpdRelMatrix",
+    "operationId" : "ProcedureExecutionController_executeProcKn1610pk0_exccfUpdRelMatrix",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "svProcKn1610pk0_exccfUpdRelMatrixonSuccess($event, $scope)",
+    "onError" : "svProcKn1610pk0_exccfUpdRelMatrixonError($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svProcKn1610pk0_updccfUpdRem" : {
+    "_id" : "wm-svProcKn1610pk0_updccfUpdRem-wm.ServiceVariable-1537267120920",
+    "name" : "svProcKn1610pk0_updccfUpdRem",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "p_fabdevno",
+      "value" : "bind:Widgets.gridCCFResultList.selecteditem.fabdevno",
+      "type" : "string"
+    }, {
+      "target" : "p_fabitemseq",
+      "value" : "bind:Widgets.gridCCFResultList.selecteditem.fabitemseq",
+      "type" : "integer"
+    }, {
+      "target" : "p_ccfremarks",
+      "value" : "bind:Widgets.txtCCFRemarks.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "p_prgid",
+      "value" : "bind:Variables.statPrgid.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "p_usrid",
+      "value" : "bind:Variables.statAppUsrid.dataSet.dataValue",
+      "type" : "string"
+    } ],
+    "service" : "pfsdb",
+    "operation" : "executeProcKn1610pk0_updccfUpdRem",
+    "operationId" : "ProcedureExecutionController_executeProcKn1610pk0_updccfUpdRem",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "svProcKn1610pk0_updccfUpdRemonSuccess($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  }
+}

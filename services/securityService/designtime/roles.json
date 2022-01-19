@@ -1,0 +1,79 @@
+[ {
+  "name" : "admin",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "Main"
+  }
+}, {
+  "name" : "user",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "Main"
+  }
+}, {
+  "name" : "FABSEARCH_VIEWPAGE",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "FabricDevSearch"
+  }
+}, {
+  "name" : "FABDEV_UPD_FABASSESS",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "FabricDevSearch"
+  }
+}, {
+  "name" : "FABCERT_QUERY",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "Main"
+  }
+}, {
+  "name" : "FABCERT_UPDEXC",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "Main"
+  }
+}, {
+  "name" : "FABSTOCK_SWATCHREQUEST",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "Main"
+  }
+}, {
+  "name" : "YRNDYE_QRYSTOCK",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "DyedYarnStock"
+  }
+}, {
+  "name" : "PROVCCF_QRYMATCH",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "Main"
+  }
+}, {
+  "name" : "PROVCCF_INSMATCH",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "Main"
+  }
+}, {
+  "name" : "FABCERT_UPDREM",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "Main"
+  }
+}, {
+  "name" : "COLOURLIB_QRYCLRS",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "Main"
+  }
+}, {
+  "name" : "COLOURLIB_ADDPANTONE",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "Main"
+  }
+} ]

@@ -1,0 +1,21 @@
+<wm-partial name="partial1" data-ng-controller="partYrnDetailsPageController"> 
+    <wm-layoutgrid name="layoutgrid1"> 
+        <wm-gridrow padding="unset 0px unset unset" name="gridrow2"> 
+            <wm-gridcolumn name="gridcolumn3" columnwidth="12"> 
+                <wm-table spacing="condensed" name="gridYrnDetails" navigation="None" dataset="bind:Variables.svQryYarnDetails.dataSet" title=""> 
+                    <wm-table-column readonly="false" show="true" edit-widget-type="number" width="15px" type="byte" caption="Seq" binding="seqnum"></wm-table-column> 
+                    <wm-table-column readonly="false" show="true" edit-widget-type="text" width="60px" type="string" caption="Count" binding="yrncnt"></wm-table-column> 
+                    <wm-table-column readonly="false" show="true" edit-widget-type="text" width="80px" type="string" caption="Origin" binding="yrnori"></wm-table-column> 
+                    <wm-table-column readonly="false" show="true" edit-widget-type="text" width="100px" type="string" caption="Cps" binding="yrncps"></wm-table-column> 
+                    <wm-table-column readonly="false" show="true" edit-widget-type="text" width="30px" type="string" caption="Clr" binding="yrnclr"></wm-table-column> 
+                    <wm-table-column readonly="false" show="true" edit-widget-type="text" width="100px" type="string" caption="Lot" binding="yrnlot"></wm-table-column> 
+                    <wm-table-column readonly="false" show="true" edit-widget-type="number" width="50px" type="integer" caption="%" binding="yrnfrac"></wm-table-column> 
+                    <wm-table-column readonly="false" show="true" edit-widget-type="text" width="70px" type="string" caption="Quality" binding="yrnqlty"></wm-table-column> 
+                    <wm-table-column readonly="false" show="true" edit-widget-type="text" width="70px" type="string" caption="Sub QltyA" binding="yrnsubqltya"></wm-table-column> 
+                    <wm-table-column readonly="false" show="true" edit-widget-type="text" width="70px" type="string" caption="Sub QltyB" binding="yrnsubqltyb"></wm-table-column> 
+                    <wm-table-column readonly="false" show="true" edit-widget-type="text" width="80px" type="string" caption="FFCode" binding="yrnff"></wm-table-column> 
+                </wm-table> 
+            </wm-gridcolumn> 
+        </wm-gridrow> 
+    </wm-layoutgrid> 
+</wm-partial>

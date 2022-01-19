@@ -1,0 +1,136 @@
+{
+  "statCCfFilterOpt" : {
+    "_id" : "wm-statCCfFilterOpt-wm.Variable-1536212782936",
+    "name" : "statCCfFilterOpt",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "displayvalue" : "Source",
+      "datavalue" : "SRC"
+    }, {
+      "displayvalue" : "Match Destination",
+      "datavalue" : "MATCH"
+    } ],
+    "type" : "string",
+    "isList" : true,
+    "saveInPhonegap" : false
+  },
+  "statMatchCatFilter" : {
+    "_id" : "wm-statMatchCatFilter-wm.Variable-1536390411860",
+    "name" : "statMatchCatFilter",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "display" : "Any",
+      "datavalue" : "%"
+    }, {
+      "display" : "Exact",
+      "datavalue" : "EXACT"
+    }, {
+      "display" : "Similar",
+      "datavalue" : "APPROX"
+    } ],
+    "type" : "string",
+    "isList" : true,
+    "saveInPhonegap" : false
+  },
+  "statMatchCatIns" : {
+    "_id" : "wm-statMatchCatIns-wm.Variable-1536391568524",
+    "name" : "statMatchCatIns",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "display" : "Exact",
+      "datavalue" : "EXACT"
+    }, {
+      "display" : "Similar",
+      "datavalue" : "APPROX"
+    } ],
+    "type" : "string",
+    "isList" : true,
+    "saveInPhonegap" : false
+  },
+  "statPrgid" : {
+    "_id" : "wm-statPrgid-wm.Variable-1536214486214",
+    "name" : "statPrgid",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "dataValue",
+      "value" : "TT1000W04",
+      "type" : "string"
+    } ],
+    "dataSet" : {
+      "dataValue" : "TT1000W04"
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "statPrgName" : {
+    "_id" : "wm-statPrgName-wm.Variable-1536387186381",
+    "name" : "statPrgName",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ {
+      "target" : "dataValue",
+      "value" : "Provisional Fabric Match",
+      "type" : "string"
+    } ],
+    "dataSet" : {
+      "dataValue" : "Provisional Fabric Match"
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "svProcKn1620pk0_ccfmatchAddCCF" : {
+    "_id" : "wm-svProcKn1620pk0_ccfmatchAddCCF-wm.ServiceVariable-1536219695615",
+    "name" : "svProcKn1620pk0_ccfmatchAddCCF",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "service" : "pfsdb",
+    "operation" : "executeProcKn1620pk0_ccfmatchAddCCF",
+    "operationId" : "ProcedureExecutionController_executeProcKn1620pk0_ccfmatchAddCCF",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "svProcKn1620pk0_ccfmatchAddCCFonSuccess($event, $scope)",
+    "onError" : "Javascript",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
+  "svProcKn1620pk0_ccfmqryQryCCF" : {
+    "_id" : "wm-svProcKn1620pk0_ccfmqryQryCCF-wm.ServiceVariable-1536212368095",
+    "name" : "svProcKn1620pk0_ccfmqryQryCCF",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcKn1620pk0CcfmqryQryCcfResponse",
+    "service" : "pfsdb",
+    "operation" : "executeProcKn1620pk0_ccfmqryQryCCF",
+    "operationId" : "ProcedureExecutionController_executeProcKn1620pk0_ccfmqryQryCCF",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onSuccess" : "svProcKn1620pk0_ccfmqryQryCCFonSuccess($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  }
+}

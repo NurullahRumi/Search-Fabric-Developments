@@ -1,0 +1,122 @@
+<wm-partial name="partial1" data-ng-controller="PartRequestSwatchPageController"> 
+    <wm-layoutgrid name="layoutgrid1"> 
+        <wm-gridrow padding="unset 0px unset unset" name="gridrow7"> 
+            <wm-gridcolumn name="gridcolumn19" columnwidth="1"></wm-gridcolumn> 
+            <wm-gridcolumn name="gridcolumn20_1" columnwidth="10"> 
+                <wm-label caption="bind:&quot;Request Swatch for Orders :  &quot;+ pageParams.pDisplayOrder" show="bind:pageParams.pDisplayOrder === null || pageParams.pDisplayOrder === undefined || pageParams.pDisplayOrder=== &quot;&quot;?false:true" borderwidth="1px" bordercolor="#20486d" borderstyle="solid" backgroundcolor="#ffffff" name="label7" padding="unset 0.5em"></wm-label> 
+            </wm-gridcolumn> 
+            <wm-gridcolumn name="gridcolumn21_1" columnwidth="1"></wm-gridcolumn> 
+        </wm-gridrow> 
+        <wm-gridrow padding="unset 0px unset unset" name="gridrow9"> 
+            <wm-gridcolumn name="gridcolumn25" columnwidth="1"></wm-gridcolumn> 
+            <wm-gridcolumn name="gridcolumn26" columnwidth="5"> 
+                <wm-composite show="bind:pageParams.pDisplayOrder === null || pageParams.pDisplayOrder === undefined || pageParams.pDisplayOrder=== &quot;&quot;?true:false" name="composite5"> 
+                    <wm-label caption="Order :" name="label6" class="col-md-3 control-label"></wm-label> 
+                    <wm-container name="container5" class="col-md-9"> 
+                        <wm-text placeholder="Ordnum" name="txtRSOrdnum"></wm-text> 
+                    </wm-container> 
+                </wm-composite> 
+                <wm-composite name="composite6" show="bind:pageParams.pDisplayOrder === null || pageParams.pDisplayOrder === undefined || pageParams.pDisplayOrder=== &quot;&quot;?true:false"> 
+                    <wm-label name="label8" caption="Fabseq :" class="col-md-3 control-label"></wm-label> 
+                    <wm-container name="container6" class="col-md-9"> 
+                        <wm-text placeholder="Fabseq" name="txtRSFabseq"></wm-text> 
+                    </wm-container> 
+                </wm-composite> 
+                <wm-composite name="composite7" show="bind:pageParams.pDisplayOrder === null || pageParams.pDisplayOrder === undefined || pageParams.pDisplayOrder=== &quot;&quot;?true:false"> 
+                    <wm-label name="label9" caption="Clrseq :" class="col-md-3 control-label"></wm-label> 
+                    <wm-container name="container7" class="col-md-9"> 
+                        <wm-text placeholder="ClrSeq" name="txtRSClrseq"></wm-text> 
+                    </wm-container> 
+                </wm-composite> 
+            </wm-gridcolumn> 
+            <wm-gridcolumn name="gridcolumn27" columnwidth="2"></wm-gridcolumn> 
+            <wm-gridcolumn name="gridcolumn29" columnwidth="4"></wm-gridcolumn> 
+        </wm-gridrow> 
+        <wm-gridrow padding="unset 0px unset unset" name="gridrow10"> 
+            <wm-gridcolumn name="gridcolumn30" columnwidth="1"></wm-gridcolumn> 
+            <wm-gridcolumn name="gridcolumn31" columnwidth="5"> 
+                <wm-composite class="col-md-4" name="composite8" show="bind:!(pageParams.pStrCode === null || pageParams.pStrCode === undefined || pageParams.pStrCode === &quot;&quot;)?true:false"> 
+                    <wm-label name="label10" caption="Store Code  :" class="col-md-5 control-label"></wm-label> 
+                    <wm-container name="container8" class="col-md-6"> 
+                        <wm-select name="sltstrcod" displayfield="itemcod" datafield="All Fields" dataset="bind:Variables.svQryStrCodLcn.dataSet"></wm-select> 
+                    </wm-container> 
+                </wm-composite> 
+                <wm-composite name="composite9" class="col-md-4" show="bind:!(pageParams.pStrCode === null || pageParams.pStrCode === undefined || pageParams.pStrCode === &quot;&quot;)?true:false"> 
+                    <wm-label name="label11" caption="Location  :" class="col-md-5 control-label"></wm-label> 
+                    <wm-container name="container9" class="col-md-6"> 
+                        <wm-text datavalue="bind:Widgets.sltstrcod.datavalue.itemdes" readonly="true" name="txtRSStrLcnCod" placeholder="Lcncod"></wm-text> 
+                    </wm-container> 
+                </wm-composite> 
+            </wm-gridcolumn> 
+            <wm-gridcolumn name="gridcolumn32" columnwidth="2"></wm-gridcolumn> 
+            <wm-gridcolumn name="gridcolumn34" columnwidth="4"></wm-gridcolumn> 
+        </wm-gridrow> 
+        <wm-gridrow padding="unset 0px unset unset" name="gridrow8"> 
+            <wm-gridcolumn name="gridcolumn22_1" columnwidth="1"></wm-gridcolumn> 
+            <wm-gridcolumn name="gridcolumn23_1" columnwidth="9"></wm-gridcolumn> 
+            <wm-gridcolumn name="gridcolumn24" columnwidth="2"></wm-gridcolumn> 
+        </wm-gridrow> 
+        <wm-gridrow padding="unset 0px unset unset" name="gridrow6"> 
+            <wm-gridcolumn name="gridcolumn16" columnwidth="1"></wm-gridcolumn> 
+            <wm-gridcolumn name="gridcolumn17_1" columnwidth="9"></wm-gridcolumn> 
+            <wm-gridcolumn name="gridcolumn18_1" columnwidth="2"></wm-gridcolumn> 
+        </wm-gridrow> 
+        <wm-gridrow padding="unset 0px unset unset" name="gridrow1"> 
+            <wm-gridcolumn name="gridcolumn22" columnwidth="1"></wm-gridcolumn> 
+            <wm-gridcolumn name="gridcolumn3_1" columnwidth="5"> 
+                <wm-composite name="composite1"> 
+                    <wm-label caption="Team" name="label1" class="col-md-3 control-label"></wm-label> 
+                    <wm-container name="container1" class="col-md-9"> 
+                        <wm-select height="100%" orderby="itemdes:asc,itemdes2:asc" displayexpression="bind:($[itemdes2]==null?'':$[itemdes2]) + ' - ' + $[itemdes]" displayfield="itemdes" datafield="itemcod" dataset="bind:Variables.svGetTeamList.dataSet" name="selectTeam"></wm-select> 
+                    </wm-container> 
+                </wm-composite> 
+            </wm-gridcolumn> 
+            <wm-gridcolumn name="gridcolumn4" columnwidth="6"></wm-gridcolumn> 
+        </wm-gridrow> 
+        <wm-gridrow padding="unset 0px unset unset" name="gridrow2"> 
+            <wm-gridcolumn name="gridcolumn21" columnwidth="1"></wm-gridcolumn> 
+            <wm-gridcolumn name="gridcolumn5" columnwidth="5"> 
+                <wm-composite name="composite2"> 
+                    <wm-label caption="Swatch Request" name="label2" class="col-md-3 control-label"></wm-label> 
+                    <wm-container name="container2" class="col-md-9"> 
+                        <wm-select height="100%" displayfield="itemdes" datafield="itemcod" dataset="bind:Variables.svGetPurpose.dataSet" name="sltPurpose"></wm-select> 
+                    </wm-container> 
+                </wm-composite> 
+            </wm-gridcolumn> 
+            <wm-gridcolumn name="gridcolumn6" columnwidth="6"></wm-gridcolumn> 
+        </wm-gridrow> 
+        <wm-gridrow padding="unset 0px unset unset" name="gridrow3"> 
+            <wm-gridcolumn name="gridcolumn20" columnwidth="1"></wm-gridcolumn> 
+            <wm-gridcolumn name="gridcolumn8" columnwidth="5"> 
+                <wm-composite name="composite3"> 
+                    <wm-label caption="Format" name="label3" class="col-md-3 control-label"></wm-label> 
+                    <wm-container name="container3" class="col-md-9"> 
+                        <wm-select height="100%" displayfield="description" datafield="All Fields" dataset="bind:Variables.svSwatchFormat.dataSet" name="selectFormat"></wm-select> 
+                    </wm-container> 
+                </wm-composite> 
+            </wm-gridcolumn> 
+            <wm-gridcolumn name="gridcolumn9" columnwidth="6"></wm-gridcolumn> 
+        </wm-gridrow> 
+        <wm-gridrow padding="unset 0px unset unset" name="gridrow4"> 
+            <wm-gridcolumn name="gridcolumn18" columnwidth="1"></wm-gridcolumn> 
+            <wm-gridcolumn name="gridcolumn11" columnwidth="5"> 
+                <wm-composite name="composite4"> 
+                    <wm-label caption="Quantity" name="label4" class="col-md-3 control-label"></wm-label> 
+                    <wm-container name="container4" class="col-md-4"> 
+                        <wm-text updateon="default" placeholder="Enter Quantity" type="number" name="txtQuantitySwatch"></wm-text> 
+                    </wm-container> 
+                    <wm-label show="bind:Variables.statUom.dataSet.dataValue === null || Variables.statUom.dataSet.dataValue === undefined || Variables.statUom.dataSet.dataValue === &quot;&quot; ? false:true" margin="unset unset unset 10px" backgroundcolor="#ffffff" borderwidth="1px" borderstyle="solid" bordercolor="#4b7a9b" caption="bind:Variables.statUom.dataSet.dataValue" name="lblUom" padding="unset 0.5em"></wm-label> 
+                </wm-composite> 
+            </wm-gridcolumn> 
+            <wm-gridcolumn name="gridcolumn12" columnwidth="6"></wm-gridcolumn> 
+        </wm-gridrow> 
+        <wm-gridrow padding="unset 0px 10px unset" name="gridrow5"> 
+            <wm-gridcolumn name="gridcolumn23" columnwidth="1"></wm-gridcolumn> 
+            <wm-gridcolumn horizontalalign="right" name="gridcolumn15" columnwidth="7"> 
+                <wm-button accessroles="FABSTOCK_SWATCHREQUEST" show="bind:Widgets.selectTeam.datavalue === null || Widgets.selectTeam.datavalue === undefined || Widgets.selectFormat.datavalue === null || Widgets.selectFormat.datavalue === undefined || Widgets.sltPurpose.datavalue === undefined || Widgets.sltPurpose.datavalue === null || Widgets.txtQuantitySwatch.datavalue === null || Widgets.txtQuantitySwatch.datavalue === undefined ? false:true" on-click="btnReqSwatchClick($event, $scope)" name="btnReqSwatch" class="btn-default btn-primary" caption="Request Swatch" type="button" margin="unset 0.5em"></wm-button> 
+                <wm-button on-click="btnCancelClick($event, $scope)" name="btnCancel" class="btn-default btn-warning" caption="Cancel" type="button" margin="unset 0.5em"></wm-button> 
+            </wm-gridcolumn> 
+            <wm-gridcolumn name="gridcolumn17" columnwidth="4"></wm-gridcolumn> 
+        </wm-gridrow> 
+    </wm-layoutgrid> 
+</wm-partial>

@@ -1,0 +1,398 @@
+<wm-page data-ng-controller="CertifiedFabricsPageController" pagetitle="Certified Fabrics" name="page1"> 
+    <wm-header content="header" name="header1"> 
+        <wm-param name="pTitle" value="bind:Variables.statPrgName.dataSet.dataValue" type="string"></wm-param> 
+    </wm-header> 
+    <wm-top-nav content="topnav" name="top_nav1"></wm-top-nav> 
+    <wm-content name="content1"> 
+        <wm-page-content columnwidth="12" name="page_content1"> 
+            <wm-tabs height="100%" name="tabs1"> 
+                <wm-tabpane accessroles="FABCERT_QUERY" name="tabpane1" title="Certified Fabrics"> 
+                    <wm-layoutgrid name="layoutgrid1"> 
+                        <wm-gridrow padding="unset 0px unset unset" name="gridrow1"> 
+                            <wm-gridcolumn name="gridcolumn1" columnwidth="12"> 
+                                <wm-panel class="panel-primary" name="panelCCFlist" iconclass="" autoclose="outsideClick" title="Certificate List Filter"> 
+                                    <wm-layoutgrid name="layoutgrid2"> 
+                                        <wm-gridrow padding="unset 0px unset unset" name="gridrow4"> 
+                                            <wm-gridcolumn name="gridcolumn5" columnwidth="12"> 
+                                                <wm-form postmessage="" messagelayout="Toaster" name="formCCFfilter" captionalign="left" dataset="bind:Variables.svProcKn1610pk0_excccfGetCCFList.dataSet" method="get" errormessage="Error" captionposition="top" title="" enctype="application/x-www-form-urlencoded"> 
+                                                    <wm-layoutgrid name="layoutgrid3" columns="3"> 
+                                                        <wm-gridrow name="gridrow5"> 
+                                                            <wm-gridcolumn name="gridcolumn9" columnwidth="2"> 
+                                                                <wm-form-field placeholder="%" inputtype="text" readonly="false" displayname="Certificate No" key="p_intfabcertno" type="string" show="true" widget="text" name="p_intfabcertno"></wm-form-field> 
+                                                            </wm-gridcolumn> 
+                                                            <wm-gridcolumn name="gridcolumn10" columnwidth="2"> 
+                                                                <wm-form-field defaultvalue="%" dataset="%,TCF,CCF" placeholder="" readonly="false" displayname="Certificate Status" key="p_fabcertsts" type="string" show="true" widget="select" name="p_fabcertsts"></wm-form-field> 
+                                                            </wm-gridcolumn> 
+                                                            <wm-gridcolumn name="gridcolumn11" columnwidth="2"> 
+                                                                <wm-form-field placeholder="Select date" readonly="false" displayname="Status Updated From" key="p_stsfromdat" type="string" show="true" widget="date" datepattern="dd-MMM-yyyy" outputformat="yyyy-MM-dd" name="p_stsfromdat"></wm-form-field> 
+                                                            </wm-gridcolumn> 
+                                                            <wm-gridcolumn columnwidth="2" name="gridcolumn26"> 
+                                                                <wm-form-field placeholder="Select date" readonly="false" displayname="Status Updated To" key="p_ststodat" type="string" show="true" widget="date" datepattern="dd-MMM-yyyy" outputformat="yyyy-MM-dd" name="p_ststodat"></wm-form-field> 
+                                                            </wm-gridcolumn> 
+                                                            <wm-gridcolumn columnwidth="2" name="gridcolumn29"> 
+                                                                <wm-form-field displayfield="FABDES" datafield="FABTYP" defaultvalue="%" dataset="bind:Variables.svGetFabtyp.dataSet" placeholder="%" readonly="false" displayname="Fabric Type" key="p_fabtyp" type="string" show="true" widget="select" name="p_fabtyp"></wm-form-field> 
+                                                            </wm-gridcolumn> 
+                                                            <wm-gridcolumn columnwidth="2" name="gridcolumn30"> 
+                                                                <wm-form-field placeholder="Enter value" inputtype="number" readonly="false" displayname="g/m2" key="p_fabwgt" type="integer" show="true" widget="number" name="p_fabwgt"></wm-form-field> 
+                                                            </wm-gridcolumn> 
+                                                        </wm-gridrow> 
+                                                        <wm-gridrow name="gridrow6"> 
+                                                            <wm-gridcolumn name="gridcolumn13" columnwidth="2"> 
+                                                                <wm-form-field placeholder="%" inputtype="text" readonly="false" displayname="Fabric Dev No" key="p_fabdevno" type="string" show="true" widget="text" name="p_fabdevno"></wm-form-field> 
+                                                            </wm-gridcolumn> 
+                                                            <wm-gridcolumn name="gridcolumn12" columnwidth="2"> 
+                                                                <wm-form-field placeholder="Select date" readonly="false" displayname="Fab Dev Released From" key="p_fabdevno_reqdatfrom" type="string" show="true" widget="date" datepattern="dd-MMM-yyyy" outputformat="yyyy-MM-dd" name="p_fabdevno_reqdatfrom"></wm-form-field> 
+                                                            </wm-gridcolumn> 
+                                                            <wm-gridcolumn columnwidth="2" name="gridcolumn31"> 
+                                                                <wm-form-field placeholder="Select date" readonly="false" displayname="Fab Dev Release To" key="p_fabdevno_reqdatto" type="string" show="true" widget="date" datepattern="dd-MMM-yyyy" outputformat="yyyy-MM-dd" name="p_fabdevno_reqdatto"></wm-form-field> 
+                                                            </wm-gridcolumn> 
+                                                            <wm-gridcolumn name="gridcolumn14" columnwidth="2"> 
+                                                                <wm-form-field placeholder="Enter value" inputtype="number" readonly="false" displayname="Mc gg" key="p_mchgau" type="integer" show="true" widget="number" name="p_mchgau"></wm-form-field> 
+                                                            </wm-gridcolumn> 
+                                                            <wm-gridcolumn columnwidth="2" name="gridcolumn27"> 
+                                                                <wm-form-field placeholder="%" inputtype="text" readonly="false" displayname="Fabric Composition" key="p_fabcps" type="string" show="true" widget="text" name="p_fabcps"></wm-form-field> 
+                                                            </wm-gridcolumn> 
+                                                            <wm-gridcolumn columnwidth="2" name="gridcolumn28"> 
+                                                                <wm-form-field inputtype="text" key="pordnum" type="string" displayname="Order" widget="text" show="true" placeholder="%" name="pordnum"></wm-form-field> 
+                                                            </wm-gridcolumn> 
+                                                        </wm-gridrow> 
+                                                        <wm-gridrow name="gridrow1"> 
+                                                            <wm-gridcolumn name="gridcolumn1" columnwidth="2"> 
+                                                                <wm-form-field show="true" widget="text" displayname="Template Seq" type="string" key="p_templateseq" name="p_templateseq"></wm-form-field> 
+                                                            </wm-gridcolumn> 
+                                                        </wm-gridrow> 
+                                                    </wm-layoutgrid> 
+                                                    <wm-buttongroup name="buttongroup1" horizontalalign="right" class="form-action col-md-12"> 
+                                                        <wm-button name="button1" caption="Reset" type="reset" class="btn-default"></wm-button> 
+                                                        <wm-button on-click="btnSearchClick($event, $scope)" name="btnSearch" caption="Filter" type="button" class="btn-primary"></wm-button> 
+                                                    </wm-buttongroup> 
+                                                </wm-form> 
+                                            </wm-gridcolumn> 
+                                        </wm-gridrow> 
+                                    </wm-layoutgrid> 
+                                </wm-panel> 
+                            </wm-gridcolumn> 
+                        </wm-gridrow> 
+                        <wm-gridrow padding="unset 0px unset unset" name="gridrow2"> 
+                            <wm-gridcolumn name="gridcolumn3" columnwidth="12"> 
+                                <wm-table showrecordcount="true" enablecolumnselection="false" gridclass="table-bordered table-striped table-hover" class="panel-primary" pagesize="10" spacing="condensed" name="gridCCFResultList" navigation="Basic" dataset="bind:Variables.svProcKn1610pk0_excccfGetCCFList.dataSet.poutFabCertList" title="Certificate List" gridfirstrowselect="true"> 
+                                    <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="Sts" binding="certsts"></wm-table-column> 
+                                    <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="Certificate No" binding="intfabcertno"></wm-table-column> 
+                                    <wm-table-column-group caption="Fabric Details" name="group"> 
+                                        <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="Order" binding="ordnum"></wm-table-column> 
+                                        <wm-table-column readonly="false" show="true" type="byte" edit-widget-type="number" caption="Fab Seq" binding="fabseq"></wm-table-column> 
+                                        <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="Fab Type" binding="fabtyp"></wm-table-column> 
+                                        <wm-table-column readonly="false" show="true" type="integer" edit-widget-type="number" caption="g/m2" binding="fabwgt"></wm-table-column> 
+                                        <wm-table-column readonly="false" show="true" type="integer" edit-widget-type="number" caption="Mc gg" binding="mchgau"></wm-table-column> 
+                                        <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" width="120px" caption="Fab Composition" binding="fabcps"></wm-table-column> 
+                                        <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="Bd<br>sz" binding="bdsze"></wm-table-column> 
+                                        <wm-table-column readonly="false" show="true" type="integer" edit-widget-type="number" caption="Bsf g/m2" binding="bsffabwgt"></wm-table-column> 
+                                        <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" width="25px" caption="C/S" binding="calstn"></wm-table-column> 
+                                        <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" width="25px" caption="Ez" binding="enzyme"></wm-table-column> 
+                                        <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" width="25px" caption="I<br>N<br>D" binding="fabind"></wm-table-column> 
+                                        <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" width="75px" caption="Heatset<br> Req" binding="heatsetreq"></wm-table-column> 
+                                        <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="Fab<br>Wrong<br>Face" binding="inside"></wm-table-column> 
+                                        <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="Fab<br>Right<br>Face" binding="outside"></wm-table-column> 
+                                        <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" width="25px" caption="S<br>T<br>R" binding="str"></wm-table-column> 
+                                    </wm-table-column-group> 
+                                    <wm-table-column-group caption="Fabric Dev Source" name="group1"> 
+                                        <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="Fab Dev Client" binding="fabdevclicod"></wm-table-column> 
+                                        <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" width="125px" caption="Fab Dev No" binding="fabdevno"></wm-table-column> 
+                                        <wm-table-column readonly="false" show="true" formatpattern="toDate" datepattern="dd-MMM-yyyy HH:mm" type="datetime" edit-widget-type="datetime" caption="Released Date" binding="reldate"></wm-table-column> 
+                                    </wm-table-column-group> 
+                                    <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="Updated By" binding="targfabbasenoQamodid"></wm-table-column> 
+                                    <wm-table-column readonly="false" show="true" formatpattern="toDate" datepattern="dd-MMM-yy HH:mm" type="datetime" edit-widget-type="datetime" width="100px" caption="Updated Date" binding="targfabbasenoQamoddat"></wm-table-column> 
+                                    <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" width="100px" caption="Stripe Id" binding="stripeid"></wm-table-column> 
+                                    <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="Special Finish" binding="teflon"></wm-table-column> 
+                                    <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="CCF Remarks" binding="intfabcertrem"></wm-table-column> 
+                                    <wm-table-column readonly="false" show="false" type="integer" edit-widget-type="number" caption="Fabitemseq" binding="fabitemseq"></wm-table-column> 
+                                    <wm-table-column show="true" searchable="false" sortable="false" readonly="true" type="custom" edit-widget-type="text" width="50px" caption="" binding="rowOperations"></wm-table-column> 
+                                    <wm-table-row-action disabled="false" accessroles="FABCERT_UPDREM" action="Widgets.ccfremarksPop.open()" title="Edit" iconclass="wi wi-pencil" class="btn-primary" show="true" display-name="" key="updaterow"></wm-table-row-action> 
+                                </wm-table> 
+                            </wm-gridcolumn> 
+                        </wm-gridrow> 
+                        <wm-gridrow name="gridrow11"> 
+                            <wm-gridcolumn name="gridcolumn25" columnwidth="4"></wm-gridcolumn> 
+                            <wm-gridcolumn name="gridcolumn29_1" columnwidth="4"></wm-gridcolumn> 
+                            <wm-gridcolumn name="gridcolumn30_1" columnwidth="4"></wm-gridcolumn> 
+                        </wm-gridrow> 
+                    </wm-layoutgrid> 
+                </wm-tabpane> 
+                <wm-tabpane accessroles="FABCERT_UPDEXC" name="tabpane2" title="Exception Certificates"> 
+                    <wm-panel class="panel-primary" name="panel2" iconclass="" autoclose="outsideClick" title="Certificates"> 
+                        <wm-layoutgrid name="layoutgrid4"> 
+                            <wm-gridrow padding="5px 0px unset unset" name="gridrow8"> 
+                                <wm-gridcolumn name="gridcolumn15_1" columnwidth="4"></wm-gridcolumn> 
+                                <wm-gridcolumn horizontalalign="left" name="gridcolumn19" columnwidth="4"> 
+                                    <wm-composite name="composite1"> 
+                                        <wm-label caption="Order Number :" name="lblOrder" class="col-md-3 control-label"></wm-label> 
+                                        <wm-container name="container1" class="col-md-9"> 
+                                            <wm-text on-change="txtOrdnumChange($event, $scope, newVal, oldVal)" height="100%" placeholder="Enter Order" name="txtOrdnum"></wm-text> 
+                                        </wm-container> 
+                                    </wm-composite> 
+                                    <wm-composite name="composite2"> 
+                                        <wm-label name="lblFabSeq" caption="Fabric Seq :" class="col-md-3 control-label"></wm-label> 
+                                        <wm-container name="container2" class="col-md-9"> 
+                                            <wm-text on-change="txtFabseqChange($event, $scope, newVal, oldVal)" datavalue="0" minvalue="0" height="100%" type="number" placeholder="Enter Fab Seq" name="txtFabseq"></wm-text> 
+                                        </wm-container> 
+                                    </wm-composite> 
+                                </wm-gridcolumn> 
+                                <wm-gridcolumn name="gridcolumn16_1" columnwidth="4"></wm-gridcolumn> 
+                            </wm-gridrow> 
+                            <wm-gridrow padding="unset 0px unset unset" name="gridrow9"> 
+                                <wm-gridcolumn name="gridcolumn17_1" columnwidth="4"></wm-gridcolumn> 
+                                <wm-gridcolumn horizontalalign="center" name="gridcolumn20" columnwidth="4"></wm-gridcolumn> 
+                                <wm-gridcolumn name="gridcolumn18" columnwidth="4"></wm-gridcolumn> 
+                            </wm-gridrow> 
+                            <wm-gridrow padding="unset 0px unset unset" name="gridrow9_1"> 
+                                <wm-gridcolumn name="gridcolumn19_1" columnwidth="4"></wm-gridcolumn> 
+                                <wm-gridcolumn horizontalalign="center" name="gridcolumn20_1" columnwidth="4"> 
+                                    <wm-container padding="5px" borderwidth="1px" borderstyle="solid" bordercolor="#4f7588" name="container10"> 
+                                        <wm-composite show="true" name="compositeremarks"> 
+                                            <wm-label fontweight="bold" show="bind:Variables.svProckn1610pk0_excccfGetOrderSts.dataSet.poutDesc === undefined || Variables.svProckn1610pk0_excccfGetOrderSts.dataSet.poutDesc === null?false:true" class="h4" caption="bind:Variables.svProckn1610pk0_excccfGetOrderSts.dataSet.poutDesc + &quot;<br>&quot; + &quot;Order: &quot;+ Variables.statOrdnum.dataSet.dataValue.toUpperCase() + &quot;<br>&quot; +&quot;Fab Seq: &quot;+ Variables.statFabseq.dataSet.dataValue" borderwidth="1px" bordercolor="#7ad0fe" backgroundcolor="#ffffff" textalign="center" name="lblDesc" padding="unset 0.5em"></wm-label> 
+                                            <wm-label padding="unset 5px unset unset" textalign="right" caption="Certificate Remarks :" name="label11_1" class="col-md-4 control-label"></wm-label> 
+                                            <wm-container name="container9" class="col-md-4"> 
+                                                <wm-textarea textalign="left" disabled="bind:Variables.svProckn1610pk0_excccfGetOrderSts.dataSet.ptcfAllowed === &quot;N&quot; &amp;&amp; Variables.svProckn1610pk0_excccfGetOrderSts.dataSet.pccfAllowed === &quot;N&quot; ? true :false" datavalue="bind:Variables.svProckn1610pk0_excccfGetOrderSts.dataSet.pintfabcertrem" placeholder="Enter Remarks :" name="txtCCfRemarks"></wm-textarea> 
+                                            </wm-container> 
+                                        </wm-composite> 
+                                        <wm-button on-click="btnCCFClick($event, $scope)" show="bind:Variables.svProckn1610pk0_excccfGetOrderSts.dataSet.pccfAllowed === &quot;N&quot; || Variables.svProckn1610pk0_excccfGetOrderSts.dataSet.pccfAllowed === null || Variables.svProckn1610pk0_excccfGetOrderSts.dataSet.pccfAllowed === undefined ?false:true" name="btnCCF" class="btn-default btn-primary" caption="Update to CCF" type="button" margin="unset 0.5em"></wm-button> 
+                                        <wm-button on-click="btnTCFClick($event, $scope)" show="bind:Variables.svProckn1610pk0_excccfGetOrderSts.dataSet.ptcfAllowed === &quot;N&quot; || Variables.svProckn1610pk0_excccfGetOrderSts.dataSet.ptcfAllowed === undefined || Variables.svProckn1610pk0_excccfGetOrderSts.dataSet.ptcfAllowed === null ? false:true" name="btnTCF" class="btn-default btn-primary" caption="Update to TCF" type="button" margin="unset 0.5em"></wm-button> 
+                                        <wm-button on-click="btnCanClick($event, $scope)" show="bind:Variables.svProckn1610pk0_excccfGetOrderSts.dataSet.pcancelAllowed === &quot;N&quot;||Variables.svProckn1610pk0_excccfGetOrderSts.dataSet.pcancelAllowed === undefined ||
+Variables.svProckn1610pk0_excccfGetOrderSts.dataSet.pcancelAllowed === null?false:true" name="btnCan" class="btn-primary" caption="Cancel Certificate" type="button" margin="unset 0.5em"></wm-button> 
+                                    </wm-container> 
+                                </wm-gridcolumn> 
+                                <wm-gridcolumn name="gridcolumn21" columnwidth="4"></wm-gridcolumn> 
+                            </wm-gridrow> 
+                            <wm-gridrow padding="unset 0px unset unset" name="gridrow10"> 
+                                <wm-gridcolumn name="gridcolumn22" columnwidth="4"></wm-gridcolumn> 
+                                <wm-gridcolumn padding="5px unset unset unset" horizontalalign="center" name="gridcolumn23" columnwidth="4"> 
+                                    <wm-button show="true" on-click="btnSearchStsClick($event, $scope)" name="btnSearchSts" class="btn-primary" caption="Search" type="button" margin="unset 0.5em"></wm-button> 
+                                    <wm-button show="bind:Widgets.txtOrdnum.datavalue === &quot;&quot; || Widgets.txtOrdnum.datavalue === undefined?false:true" on-click="btnResetClick($event, $scope)" name="btnReset" class="btn-default" caption="Reset" type="button" margin="unset 0.5em"></wm-button> 
+                                </wm-gridcolumn> 
+                                <wm-gridcolumn name="gridcolumn24" columnwidth="4"></wm-gridcolumn> 
+                            </wm-gridrow> 
+                        </wm-layoutgrid> 
+                    </wm-panel> 
+                </wm-tabpane> 
+                <wm-tabpane accessroles="FABCERT_UPDEXC" title="Associate Certificate" name="tabpane3"> 
+                    <wm-layoutgrid name="layoutgrid6"> 
+                        <wm-gridrow padding="unset 0px unset unset" name="gridrow15"> 
+                            <wm-gridcolumn name="gridcolumn43" columnwidth="12"> 
+                                <wm-panel collapsible="false" name="panelIndividualOrder" class="panel-primary" iconclass="" autoclose="outsideClick" title="Individual Order"> 
+                                    <wm-layoutgrid name="layoutgrid5"> 
+                                        <wm-gridrow name="gridrow11_1" padding="5px 0px unset unset"> 
+                                            <wm-gridcolumn name="gridcolumn32" horizontalalign="left" columnwidth="4"></wm-gridcolumn> 
+                                            <wm-gridcolumn name="gridcolumn31_1" columnwidth="4"> 
+                                                <wm-form postmessage="" name="form3" captionalign="left" dataset="bind:Variables.svProcKn1610pk0_excccfAssociateOrder.dataSet" method="get" errormessage="" captionposition="top" title="" enctype="application/x-www-form-urlencoded"> 
+                                                    <wm-layoutgrid name="layoutgrid9_1" columns="1"> 
+                                                        <wm-gridrow name="gridrow20_1"> 
+                                                            <wm-gridcolumn name="gridcolumn52_2" columnwidth="12"> 
+                                                                <wm-form-field placeholder="Enter value" inputtype="text" readonly="false" displayname="Order No :" key="pOrdnum" type="string" show="true" widget="text" name="pOrdnum"></wm-form-field> 
+                                                            </wm-gridcolumn> 
+                                                        </wm-gridrow> 
+                                                        <wm-gridrow name="gridrow21_1"> 
+                                                            <wm-gridcolumn name="gridcolumn53" columnwidth="12"> 
+                                                                <wm-form-field placeholder="Enter value" inputtype="number" readonly="false" displayname="Fabric Sequence :" key="pFabseq" type="integer" show="true" widget="number" name="pFabseq"></wm-form-field> 
+                                                            </wm-gridcolumn> 
+                                                        </wm-gridrow> 
+                                                        <wm-gridrow name="gridrow22"> 
+                                                            <wm-gridcolumn name="gridcolumn54_1" columnwidth="12"> 
+                                                                <wm-form-field placeholder="Enter value" inputtype="text" readonly="false" displayname="CCF No :" key="pCCFno" type="string" show="true" widget="text" name="pCCFno"></wm-form-field> 
+                                                            </wm-gridcolumn> 
+                                                        </wm-gridrow> 
+                                                    </wm-layoutgrid> 
+                                                    <wm-buttongroup name="buttongroup3" horizontalalign="center" class="form-action col-md-12"> 
+                                                        <wm-button on-click="Variables.svProcKn1610pk0_excccfAssociateOrder.invoke()" name="button15" caption="Associate" type="button" class="btn-primary"></wm-button> 
+                                                        <wm-button name="button13_1" caption="Reset" type="reset" class="btn-default"></wm-button> 
+                                                    </wm-buttongroup> 
+                                                </wm-form> 
+                                            </wm-gridcolumn> 
+                                            <wm-gridcolumn name="gridcolumn33" columnwidth="3"></wm-gridcolumn> 
+                                            <wm-gridcolumn name="gridcolumn64_1" columnwidth="1"> 
+                                                <wm-panel on-mouseout="panel5Mouseout($event, $isolateScope)" expanded="false" on-mouseover="panel5Mouseover($event, $isolateScope)" collapsible="true" class="panel-info" name="panel5" iconclass="" autoclose="outsideClick" title="Special Functions"> 
+                                                    <wm-layoutgrid name="layoutgrid11"> 
+                                                        <wm-gridrow padding="unset 0px unset unset" name="gridrow32_1"> 
+                                                            <wm-gridcolumn horizontalalign="center" name="gridcolumn67" columnwidth="12"> 
+                                                                <wm-button name="btnCompare" on-click="Widgets.CompareKdsPop.open()" class="btn-default btn-primary" caption="Compare KDS" type="button" margin="unset 0.5em"></wm-button> 
+                                                            </wm-gridcolumn> 
+                                                        </wm-gridrow> 
+                                                    </wm-layoutgrid> 
+                                                </wm-panel> 
+                                            </wm-gridcolumn> 
+                                        </wm-gridrow> 
+                                        <wm-gridrow name="gridrow14" padding="unset 0px unset unset"> 
+                                            <wm-gridcolumn name="gridcolumn40" columnwidth="4"></wm-gridcolumn> 
+                                            <wm-gridcolumn name="gridcolumn41" horizontalalign="center" columnwidth="4"></wm-gridcolumn> 
+                                            <wm-gridcolumn name="gridcolumn42" columnwidth="4"></wm-gridcolumn> 
+                                        </wm-gridrow> 
+                                    </wm-layoutgrid> 
+                                </wm-panel> 
+                            </wm-gridcolumn> 
+                        </wm-gridrow> 
+                        <wm-gridrow padding="unset 0px unset unset" name="gridrow16"> 
+                            <wm-gridcolumn name="gridcolumn45" columnwidth="12"> 
+                                <wm-panel expanded="true" collapsible="false" name="panelIndOrd" class="panel-primary" iconclass="" autoclose="outsideClick" title="Related Matrix"> 
+                                    <wm-layoutgrid name="layoutgrid9"> 
+                                        <wm-gridrow padding="unset 0px unset unset" name="gridrow20"> 
+                                            <wm-gridcolumn name="gridcolumn57" columnwidth="12"> 
+                                                <wm-form postmessage="" name="formRelatedMatrix" captionalign="center" dataset="bind:Variables.svProcKn1610pk0_excccfGetRelatedMatrix.dataSet" method="get" errormessage="" captionposition="top" title="" enctype="application/x-www-form-urlencoded"> 
+                                                    <wm-layoutgrid name="layoutgrid8" columns="3"> 
+                                                        <wm-gridrow name="gridrow18_1"> 
+                                                            <wm-gridcolumn name="gridcolumn52" columnwidth="2"> 
+                                                                <wm-form-field displayname="Certification Sts" defaultvalue="All" datafield="All Fields" dataset="All,Certified,Uncertified" layout="inline" widget="radioset" type="string" show="true" key="pradiosetOptFilter" name="pradiosetOptFilter"></wm-form-field> 
+                                                            </wm-gridcolumn> 
+                                                            <wm-gridcolumn name="gridcolumn52_1" columnwidth="1"> 
+                                                                <wm-form-field disabled="bind:Widgets.formRelatedMatrix.formWidgets.pradiosetOptFilter.datavalue === &quot;Certified&quot;?false:true" placeholder="Enter value" inputtype="text" defaultvalue="bind:Widgets.formRelatedMatrix.formWidgets.pradiosetOptFilter.datavalue === &quot;Certified&quot;?&quot;%&quot;:null" show="true" widget="text" displayname="CCF No" type="string" key="pIntFabcertno" name="pIntFabcertno"></wm-form-field> 
+                                                            </wm-gridcolumn> 
+                                                            <wm-gridcolumn name="gridcolumn54" columnwidth="2"> 
+                                                                <wm-form-field placeholder="Enter value" inputtype="text" readonly="false" displayname="Order" key="pOrdnum" type="string" show="true" widget="text" name="pOrdnum"></wm-form-field> 
+                                                            </wm-gridcolumn> 
+                                                            <wm-gridcolumn name="gridcolumn55" columnwidth="1"> 
+                                                                <wm-form-field defaultvalue="0" placeholder="Enter value" inputtype="text" readonly="false" displayname="Fab Sequence" key="pFabseq" type="string" show="true" widget="text" name="pFabseq"></wm-form-field> 
+                                                            </wm-gridcolumn> 
+                                                            <wm-gridcolumn name="gridcolumn49" columnwidth="2"> 
+                                                                <wm-form-field placeholder="Enter value" inputtype="text" show="true" widget="text" displayname="Template Seq" type="string" key="pTemplateseq" name="pTemplateseq"></wm-form-field> 
+                                                            </wm-gridcolumn> 
+                                                            <wm-gridcolumn name="gridcolumn50" columnwidth="2"> 
+                                                                <wm-form-field datepattern="dd-MMM-yyyy" placeholder="Select date" readonly="false" displayname="Merch Release Date From" key="pRelDateFrom" type="string" show="true" widget="date" name="pRelDateFrom"></wm-form-field> 
+                                                            </wm-gridcolumn> 
+                                                            <wm-gridcolumn horizontalalign="left" name="gridcolumn51" columnwidth="2"> 
+                                                                <wm-form-field datepattern="dd-MMM-yyyy" defaultvalue="CURRENT_DATE" placeholder="Select date" readonly="false" displayname="Merch Release Date To" key="pRelDateTo" type="string" show="true" widget="date" name="pRelDateTo"></wm-form-field> 
+                                                            </wm-gridcolumn> 
+                                                        </wm-gridrow> 
+                                                    </wm-layoutgrid> 
+                                                    <wm-buttongroup padding="10px 50px 10px unset" name="buttongroup2" horizontalalign="right" class="form-action col-md-12"> 
+                                                        <wm-button name="button11" caption="Reset" type="reset" class="btn-secondary"></wm-button> 
+                                                        <wm-button on-click="Variables.svProcKn1610pk0_excccfGetRelatedMatrix.invoke()" name="button13" caption="Filter" type="button" class="btn-primary"></wm-button> 
+                                                    </wm-buttongroup> 
+                                                </wm-form> 
+                                            </wm-gridcolumn> 
+                                        </wm-gridrow> 
+                                        <wm-gridrow padding="unset 0px unset unset" name="gridrow21"> 
+                                            <wm-gridcolumn padding="unset unset 10px unset" name="gridcolumn59" columnwidth="12"> 
+                                                <wm-icon deferload="false" show="bind:Variables.svProcKn1610pk0_excccfGetRelatedMatrix.dataSet.poutOrderList.length > 298" caption="Showing only 300 rows" iconposition="left" iconclass="fa fa-warning" opacity="1" class="btn-info" name="icon1"></wm-icon> 
+                                                <wm-table showrecordcount="false" enablesort="true" on-deselect="gridRelatedMatrixDeselect($event, $scope, $rowData)" on-select="gridRelatedMatrixSelect($event, $scope, $rowData)" multiselect="true" radioselect="false" name="gridRelatedMatrix" navigation="Basic" dataset="bind:Variables.svProcKn1610pk0_excccfGetRelatedMatrix.dataSet.poutOrderList" title=""> 
+                                                    <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" col-ng-class="{'green-l1':row.intfabcertno != null}" caption="CCF No" binding="intfabcertno"></wm-table-column> 
+                                                    <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="Template Sequence" binding="templateseq"></wm-table-column> 
+                                                    <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="Orders" binding="ordnum"></wm-table-column> 
+                                                    <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="Fabric Sequence" binding="fabseq"></wm-table-column> 
+                                                    <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="Fabric Type" binding="fabtyp"></wm-table-column> 
+                                                    <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" width="60px" caption="G/M2" binding="fabwgt"></wm-table-column> 
+                                                    <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" width="50px" caption="Cal Stn" binding="calstn"></wm-table-column> 
+                                                    <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" width="400px" caption="Yarn Details" binding="yrndet"></wm-table-column> 
+                                                </wm-table> 
+                                            </wm-gridcolumn> 
+                                        </wm-gridrow> 
+                                        <wm-gridrow padding="unset 0px unset unset" name="gridrow19"> 
+                                            <wm-gridcolumn name="gridcolumn49_1" columnwidth="2"> 
+                                                <wm-table class="panel-info" name="grid3" navigation="None" dataset="bind:Variables.statDisplayOrders.dataSet" title="Orders to be Associated"> 
+                                                    <wm-table-column binding="orders" caption="Orders" pcdisplay="true" mobiledisplay="true"></wm-table-column> 
+                                                    <wm-table-column binding="fabseq" caption="Fab Seq" pcdisplay="true" mobiledisplay="true"></wm-table-column> 
+                                                </wm-table> 
+                                            </wm-gridcolumn> 
+                                            <wm-gridcolumn padding="unset unset unset 5px" name="gridcolumn47" columnwidth="3"> 
+                                                <wm-label name="label7" caption="Enter CCF No  :" class="col-md-3 control-label"></wm-label> 
+                                                <wm-container name="container6" class="col-md-5"> 
+                                                    <wm-text name="txtRelMatCCF" minvalue="0" height="100%" type="text" placeholder="Enter Certificate No"></wm-text> 
+                                                </wm-container> 
+                                                <wm-container horizontalalign="center" class="col-md-4" name="container7"> 
+                                                    <wm-button on-click="btnCertifyClick($event, $scope)" name="btnCertify" class="btn-default btn-primary" caption="Associate" type="button" margin="unset 0.5em"></wm-button> 
+                                                </wm-container> 
+                                            </wm-gridcolumn> 
+                                            <wm-gridcolumn name="gridcolumn48" columnwidth="4"></wm-gridcolumn> 
+                                            <wm-gridcolumn horizontalalign="right" name="gridcolumn55_1" columnwidth="3"></wm-gridcolumn> 
+                                        </wm-gridrow> 
+                                    </wm-layoutgrid> 
+                                </wm-panel> 
+                            </wm-gridcolumn> 
+                        </wm-gridrow> 
+                    </wm-layoutgrid> 
+                </wm-tabpane> 
+            </wm-tabs> 
+        </wm-page-content> 
+    </wm-content> 
+    <wm-footer content="footer" name="footer1"></wm-footer> 
+    <wm-view name="view1" class="dialog-view"> 
+        <wm-dialog on-close="CompareKdsPopClose($event, $scope)" showheader="true" closable="true" name="CompareKdsPop" dialogtype="design-dialog" modal="true" title="Comparing KDS" iconclass="wi wi-compare-arrows"> 
+            <wm-layoutgrid class="bordered" name="layoutgrid10"> 
+                <wm-gridrow padding="5px 0px unset unset" name="gridrow24"> 
+                    <wm-gridcolumn padding="unset unset unset 5px" name="gridcolumn64" columnwidth="12"> 
+                        <wm-composite required="false" name="composite3"> 
+                            <wm-label caption="Order :" name="label10" class="col-md-4 control-label"></wm-label> 
+                            <wm-container name="container5" class="col-md-9"> 
+                                <wm-text placeholder="Enter Order" name="txtOrdnumCmp"></wm-text> 
+                            </wm-container> 
+                        </wm-composite> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow26"> 
+                    <wm-gridcolumn padding="unset unset unset 5px" name="gridcolumn65" columnwidth="12"> 
+                        <wm-composite required="false" name="composite4"> 
+                            <wm-label caption="Fabric Sequence :" name="label11" class="col-md-4 control-label"></wm-label> 
+                            <wm-container name="container6_1" class="col-md-9"> 
+                                <wm-text placeholder="Enter Fab Seq" type="number" name="txtFabSeqCmp"></wm-text> 
+                            </wm-container> 
+                        </wm-composite> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow27"> 
+                    <wm-gridcolumn padding="unset unset unset 5px" name="gridcolumn68" columnwidth="12"> 
+                        <wm-composite name="composite5"> 
+                            <wm-radioset on-change="radiosetCmpChange($event, $scope, newVal, oldVal)" selectedvalue="Compare with Fabric Library" dataset="Compare with Fabric Library,Compare with Certified Fabric" name="radiosetCmp" height="auto"></wm-radioset> 
+                        </wm-composite> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow31"> 
+                    <wm-gridcolumn padding="unset unset unset 5px" name="gridcolumn79" columnwidth="12"> 
+                        <wm-composite show="bind:Widgets.radiosetCmp.datavalue === &quot;Compare with Fabric Library&quot;?false:true" name="composite6"> 
+                            <wm-label name="label12" caption="CCF to compare with KDS :" class="col-md-4 control-label"></wm-label> 
+                            <wm-container name="container7_1" class="col-md-9"> 
+                                <wm-text placeholder="Enter CCF No" name="txtCCF"></wm-text> 
+                            </wm-container> 
+                        </wm-composite> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow30"> 
+                    <wm-gridcolumn horizontalalign="center" name="gridcolumn63" columnwidth="12"> 
+                        <wm-label name="label10_1" fontweight="bold" fontunit="em" show="bind:Variables.svProcKn1610pk0_excccfGetFablibKds.dataSet.poutmsg === null || Variables.svProcKn1610pk0_excccfGetFablibKds.dataSet.poutmsg === undefined ? false : Widgets.radiosetCmp.datavalue === &quot;Compare with Certified Fabric&quot;?false :true" caption="bind:Variables.svProcKn1610pk0_excccfGetFablibKds.dataSet.poutmsg" textalign="left" backgroundcolor="#ffffff" borderwidth="1px" borderstyle="solid" bordercolor="#447581" padding="unset 0.5em"></wm-label> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow29"> 
+                    <wm-gridcolumn horizontalalign="center" name="gridcolumn62" columnwidth="12"> 
+                        <wm-label fontweight="bold" fontunit="em" show="bind:Variables.svProcKn1610pk0_excccfGetCCFFabDiff.dataSet.poutmsg === null || Variables.svProcKn1610pk0_excccfGetCCFFabDiff.dataSet.poutmsg === undefined ? false : Widgets.radiosetCmp.datavalue === &quot;Compare with Fabric Library&quot;?false:true" caption="bind:Variables.svProcKn1610pk0_excccfGetCCFFabDiff.dataSet.poutmsg" textalign="left" backgroundcolor="#ffffff" borderwidth="1px" borderstyle="solid" bordercolor="#447581" name="label8" padding="unset 0.5em"></wm-label> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow padding="unset 0px 10px unset" name="gridrow32"> 
+                    <wm-gridcolumn horizontalalign="center" name="gridcolumn82" columnwidth="12"> 
+                        <wm-button on-click="btnCmpFablibClick($event, $scope)" show="true" textalign="center" name="btnCmpFablib" class="btn-default btn-primary" caption="Compare" type="button" margin="unset 0.5em"></wm-button> 
+                        <wm-button on-click="Widgets.CompareKdsPop.close()" name="btnCancel" class="btn-default btn-warning" caption="Cancel" type="button" margin="unset 0.5em"></wm-button> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+            </wm-layoutgrid> 
+        </wm-dialog> 
+    </wm-view> 
+    <wm-view name="view2" class="dialog-view"> 
+        <wm-dialog name="ccfremarksPop" dialogtype="design-dialog" modal="true" title="CFF Remarks" iconclass="fa fa-sticky-note-o"> 
+            <wm-layoutgrid name="layoutgrid12"> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow31_1"> 
+                    <wm-gridcolumn name="gridcolumn65_1" columnwidth="12"> 
+                        <wm-composite name="composite7"> 
+                            <wm-label caption="bind:&quot;Enter Remarks For &quot;+Widgets.gridCCFResultList.selecteditem.intfabcertno+&quot; : &quot;" name="label10_2" class="col-md-5 control-label"></wm-label> 
+                            <wm-container name="container8" class="col-md-7"> 
+                                <wm-textarea datavalue="bind:Widgets.gridCCFResultList.selecteditem.intfabcertrem" placeholder="Place your remarks" name="txtCCFRemarks"></wm-textarea> 
+                            </wm-container> 
+                        </wm-composite> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow32_2"> 
+                    <wm-gridcolumn name="gridcolumn67_1" columnwidth="4"></wm-gridcolumn> 
+                    <wm-gridcolumn name="gridcolumn68_1" columnwidth="4"></wm-gridcolumn> 
+                    <wm-gridcolumn horizontalalign="right" name="gridcolumn70" columnwidth="4"> 
+                        <wm-button on-click="Widgets.ccfremarksPop.close()" name="btnCancelCCF" class="btn-default btn-warning" caption="Cancel" type="button" margin="unset 0.5em"></wm-button> 
+                        <wm-button on-click="Variables.svProcKn1610pk0_updccfUpdRem.invoke()" name="btnSaveCCFRem" class="btn-default btn-primary" caption="Save" type="button" margin="unset 0.5em"></wm-button> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+            </wm-layoutgrid> 
+        </wm-dialog> 
+    </wm-view> 
+</wm-page>

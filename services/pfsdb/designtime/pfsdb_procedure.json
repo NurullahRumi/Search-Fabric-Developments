@@ -1,0 +1,6650 @@
+{
+  "ProcFindMatchYrnStockClr" : {
+    "name" : "ProcFindMatchYrnStockClr",
+    "description" : "ProcFindMatchYrnStockClr",
+    "version" : "V2",
+    "procedureString" : "CALL ym119pk0_ydstk.FindMatchYrnStockClr(:pYrncnt, :pCompo,:pYrnCdes,:pYrnQual,:pYrnYrnQualSubA,:pYrnYrnQualSubB,:pYrnffcod,\n                               :pYrnLabref,:pYrnlot,:pAnyColor, :plabL, :plabA, :plabB, :pToleranceDeltaE, :pYarnStock)",
+    "parameters" : [ {
+      "name" : "pYrncnt",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pCompo",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pYrnCdes",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pYrnQual",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pYrnYrnQualSubA",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pYrnYrnQualSubB",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pYrnffcod",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pYrnLabref",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "EV00108/01",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pYrnlot",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pAnyColor",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "Y",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "plabL",
+      "type" : "double",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "0",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "plabA",
+      "type" : "double",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "0",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "plabB",
+      "type" : "double",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "0",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pToleranceDeltaE",
+      "type" : "double",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "20",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pYarnStock",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcFindMatchYrnStockClrResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "pYarnStock",
+        "fieldName" : "pyarnStock",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcFindMatchYrnStockClrResponsePyarnStock",
+          "list" : true,
+          "properties" : [ {
+            "name" : "YRNCOD",
+            "fieldName" : "yrncod",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "YRNLOT",
+            "fieldName" : "yrnlot",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "CLRREF",
+            "fieldName" : "clrref",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "QTY",
+            "fieldName" : "qty",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "NYRNCNT",
+            "fieldName" : "nyrncnt",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "NFYRNCPS",
+            "fieldName" : "nfyrncps",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "NYRNCLR",
+            "fieldName" : "nyrnclr",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "NYRNCDES",
+            "fieldName" : "nyrncdes",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "NYRNQLTY",
+            "fieldName" : "nyrnqlty",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "NYRNSUBQLTYA",
+            "fieldName" : "nyrnsubqltya",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "NYRNSUBQLTYB",
+            "fieldName" : "nyrnsubqltyb",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "NYRNSUBQLTYC",
+            "fieldName" : "nyrnsubqltyc",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "MAXYRNFFCOD",
+            "fieldName" : "maxyrnffcod",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "WRHNUM",
+            "fieldName" : "wrhnum",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "LAB",
+            "fieldName" : "lab",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "DELTAE",
+            "fieldName" : "deltae",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "PANTONEREF",
+            "fieldName" : "pantoneref",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          } ]
+        }
+      } ]
+    }
+  },
+  "ProcKn1610pk0_excccfAssociateOrder" : {
+    "name" : "ProcKn1610pk0_excccfAssociateOrder",
+    "description" : "Associate Individual Order",
+    "version" : "V2",
+    "procedureString" : "CALL kn1610pk0_excccf.sproc_associate_indorder(:pPrgid,:pUsrid,:pOrdnum,:pFabseq,:pCCFno,:pOutMsg)",
+    "parameters" : [ {
+      "name" : "pPrgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "test",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "test",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pOrdnum",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "test",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pFabseq",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "1",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pCCFno",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "test",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pOutMsg",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcKn1610pk0ExcccfAssociateOrderResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "pOutMsg",
+        "fieldName" : "poutMsg",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "ProcKn1610pk0_excccfGetCCFFabDiff" : {
+    "name" : "ProcKn1610pk0_excccfGetCCFFabDiff",
+    "description" : "Compare difference between kds and certified fabrics",
+    "version" : "V2",
+    "procedureString" : "CALL kn1610pk0_excccf.sproc_get_ccf_copiedfab_diff(:pPrgid,:pUsrid,:pIntfabcertno2,:pOrdnum,:pFabseq,:pOutmsg)",
+    "parameters" : [ {
+      "name" : "pPrgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "TT1000W02",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "D022",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pIntfabcertno2",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "CF1700022",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pOrdnum",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "S1711148",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pFabseq",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "1",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pOutmsg",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcKn1610pk0ExcccfGetCcffabDiffResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "pOutmsg",
+        "fieldName" : "poutmsg",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "ProcKn1610pk0_excccfGetCCFList" : {
+    "name" : "ProcKn1610pk0_excccfGetCCFList",
+    "description" : "Return the ccf list after filter",
+    "version" : "V2",
+    "procedureString" : "CALL kn1610pk0_excccf.proc_get_ccf_list(:p_prgid,:p_usrid,:p_intfabcertno,:p_fabcertsts,:p_stsfromdat,:p_ststodat,        :p_fabtyp,:p_mchgau,:p_fabwgt,:p_fabcps,:p_fabdevno,:p_fabdevno_reqdatfrom,:p_fabdevno_reqdatto,:pordnum,:p_templateseq, :p_outFabCertList)",
+    "parameters" : [ {
+      "name" : "p_prgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "TT1000W02",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_usrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "D022",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_intfabcertno",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_fabcertsts",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "CCF",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_stsfromdat",
+      "type" : "date",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "2017-10-22",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_ststodat",
+      "type" : "date",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "2018-01-13",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_fabtyp",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_mchgau",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "0",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_fabwgt",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "0",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_fabcps",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_fabdevno",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_fabdevno_reqdatfrom",
+      "type" : "date",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "2017-01-01",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_fabdevno_reqdatto",
+      "type" : "date",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "2018-01-17",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pordnum",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_templateseq",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_outFabCertList",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcKn1610pk0ExcccfGetCcflistResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "p_outFabCertList",
+        "fieldName" : "poutFabCertList",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcKn1610pk0ExcccfGetCcflistResponsePoutFabCertList",
+          "list" : true,
+          "properties" : [ {
+            "name" : "FABDEVNO",
+            "fieldName" : "fabdevno",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "ORDNUM",
+            "fieldName" : "ordnum",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "FABSEQ",
+            "fieldName" : "fabseq",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Byte",
+              "list" : false
+            }
+          }, {
+            "name" : "FABTYP",
+            "fieldName" : "fabtyp",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "FABWGT",
+            "fieldName" : "fabwgt",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Short",
+              "list" : false
+            }
+          }, {
+            "name" : "FABIND",
+            "fieldName" : "fabind",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "MCHGAU",
+            "fieldName" : "mchgau",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Short",
+              "list" : false
+            }
+          }, {
+            "name" : "FABCPS",
+            "fieldName" : "fabcps",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "BSFFABWGT",
+            "fieldName" : "bsffabwgt",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Short",
+              "list" : false
+            }
+          }, {
+            "name" : "CALSTN",
+            "fieldName" : "calstn",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "BDSZE",
+            "fieldName" : "bdsze",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "STR",
+            "fieldName" : "str",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "STRIPEID",
+            "fieldName" : "stripeid",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "INSIDE",
+            "fieldName" : "inside",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "OUTSIDE",
+            "fieldName" : "outside",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "ENZYME",
+            "fieldName" : "enzyme",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "TEFLON",
+            "fieldName" : "teflon",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "HEATSETREQ",
+            "fieldName" : "heatsetreq",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "FABDEVCLICOD",
+            "fieldName" : "fabdevclicod",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "RELDATE",
+            "fieldName" : "reldate",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.time.LocalDateTime",
+              "list" : false
+            }
+          }, {
+            "name" : "INTFABCERTNO",
+            "fieldName" : "intfabcertno",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "CERTSTS",
+            "fieldName" : "certsts",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "TARGFABBASENO_QAMODDAT",
+            "fieldName" : "targfabbasenoQamoddat",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.time.LocalDateTime",
+              "list" : false
+            }
+          }, {
+            "name" : "TARGFABBASENO_QAMODID",
+            "fieldName" : "targfabbasenoQamodid",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "INTFABCERTREM",
+            "fieldName" : "intfabcertrem",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "FABITEMSEQ",
+            "fieldName" : "fabitemseq",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Short",
+              "list" : false
+            }
+          } ]
+        }
+      } ]
+    }
+  },
+  "ProcKn1610pk0_excccfGetFablibKds" : {
+    "name" : "ProcKn1610pk0_excccfGetFablibKds",
+    "description" : "Compare kds to fablib",
+    "version" : "V2",
+    "procedureString" : "CALL kn1610pk0_excccf.sproc_get_fablibkds_diff(:pPrgid,:pUsrid,:pOrdnum,:pFabseq,:pOutmsg)",
+    "parameters" : [ {
+      "name" : "pPrgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "TT1000W02",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "D022",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pOrdnum",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "A60128N",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pFabseq",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "1",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pOutmsg",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcKn1610pk0ExcccfGetFablibKdsResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "pOutmsg",
+        "fieldName" : "poutmsg",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "ProcKn1610pk0_excccfGetOrderSts" : {
+    "name" : "ProcKn1610pk0_excccfGetOrderSts",
+    "description" : "Get Status for orders",
+    "version" : "V2",
+    "procedureString" : "CALL kn1610pk0_excccf.proc_get_order_certificate_sts(:p_prgid,upper(:p_usrid), :p_ordnum,:p_fabseq, :p_outDesc,:p_tcf_allowed, :p_ccf_allowed, :p_cancel_allowed,:p_intfabcertrem)",
+    "parameters" : [ {
+      "name" : "p_prgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "TT1000W02",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_usrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "SERVER",
+      "variableName" : "USER_NAME",
+      "testValue" : "D022",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_ordnum",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "SD180004",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_fabseq",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "1",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_outDesc",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "p_tcf_allowed",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "p_ccf_allowed",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "p_cancel_allowed",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "p_intfabcertrem",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcKn1610pk0ExcccfGetOrderStsResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "p_outDesc",
+        "fieldName" : "poutDesc",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "p_tcf_allowed",
+        "fieldName" : "ptcfAllowed",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "p_ccf_allowed",
+        "fieldName" : "pccfAllowed",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "p_cancel_allowed",
+        "fieldName" : "pcancelAllowed",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "p_intfabcertrem",
+        "fieldName" : "pintfabcertrem",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "ProcKn1610pk0_excccfGetRelatedMatrix" : {
+    "name" : "ProcKn1610pk0_excccfGetRelatedMatrix",
+    "description" : "Get Related Matrix",
+    "version" : "V2",
+    "procedureString" : "CALL kn1610pk0_excccf.sproc_getrelated_matrix(:pPrgid,:pUsrid,:pOrdnum,:pFabseq,:pRelDateFrom,:pRelDateTo,:pFilterOpt,:pIntFabcertno ,:pTemplateseq,:pOutOrderList,:pOutMsg)",
+    "parameters" : [ {
+      "name" : "pPrgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "TT1000W01",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "D022",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pOrdnum",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pFabseq",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "0",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pRelDateFrom",
+      "type" : "date",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "2017-01-01",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pRelDateTo",
+      "type" : "date",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "2017-12-31",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pFilterOpt",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "All",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pIntFabcertno",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pTemplateseq",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pOutOrderList",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "pOutMsg",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcKn1610pk0ExcccfGetRelatedMatrixResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "pOutOrderList",
+        "fieldName" : "poutOrderList",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcKn1610pk0ExcccfGetRelatedMatrixResponsePoutOrderList",
+          "list" : true,
+          "properties" : [ {
+            "name" : "TEMPLATESEQ",
+            "fieldName" : "templateseq",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "INTFABCERTNO",
+            "fieldName" : "intfabcertno",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "ORDNUM",
+            "fieldName" : "ordnum",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "FABSEQ",
+            "fieldName" : "fabseq",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Byte",
+              "list" : false
+            }
+          }, {
+            "name" : "FABTYP",
+            "fieldName" : "fabtyp",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "FABWGT",
+            "fieldName" : "fabwgt",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Short",
+              "list" : false
+            }
+          }, {
+            "name" : "CALSTN",
+            "fieldName" : "calstn",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "CERTSTS",
+            "fieldName" : "certsts",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "YRNDET",
+            "fieldName" : "yrndet",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          } ]
+        }
+      }, {
+        "name" : "pOutMsg",
+        "fieldName" : "poutMsg",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "ProcKn1610pk0_excccfProcExcpCertifyFab" : {
+    "name" : "ProcKn1610pk0_excccfProcExcpCertifyFab",
+    "description" : "Update Sts of certify Fab",
+    "version" : "V2",
+    "procedureString" : "CALL  KN1610PK0_EXCCCF.proc_excp_certifyfab(:p_prgid,:p_usrid,:p_ordnum,:p_fabseq,:p_newsts,:p_newremarks,:p_errmsg)",
+    "parameters" : [ {
+      "name" : "p_prgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "TT1000W02",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_usrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "D022",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_ordnum",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "1700002C",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_fabseq",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "2",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_newsts",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "TCF",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_newremarks",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "test3",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_errmsg",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcKn1610pk0ExcccfProcExcpCertifyFabResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "p_errmsg",
+        "fieldName" : "perrmsg",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "ProcKn1610pk0_exccfUpdRelMatrix" : {
+    "name" : "ProcKn1610pk0_exccfUpdRelMatrix",
+    "description" : "ProcKn1610pk0_exccfUpdRelMatrix - update related matrix for a list of orders or only 1 order",
+    "version" : "V2",
+    "procedureString" : "CALL KN1610PK0_EXCCCF.sproc_updRelatedMatrix(:pPrgid,:pUsrid,:pCCFNo,:pOrdFabList,:pOutMsg)",
+    "parameters" : [ {
+      "name" : "pPrgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "TT1000W02",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "D022",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pCCFNo",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "CF1700019",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pOrdFabList",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "17000177A",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pOutMsg",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcKn1610pk0ExccfUpdRelMatrixResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "pOutMsg",
+        "fieldName" : "poutMsg",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "ProcKn1610pk0_updccfUpdRem" : {
+    "name" : "ProcKn1610pk0_updccfUpdRem",
+    "description" : "ProcKn1610pk0_updccfUpdRem",
+    "version" : "V2",
+    "procedureString" : "CALL kn1610pk0_updccf.sproc_updccfremarks(:p_prgid,:p_usrid,:p_fabdevno,:p_fabitemseq,:p_ccfremarks)",
+    "parameters" : [ {
+      "name" : "p_prgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "TT1000W02",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_usrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "D022",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_fabdevno",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FDF180007V01R00",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_fabitemseq",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "1",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_ccfremarks",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "Testing",
+      "required" : false,
+      "parameterType" : "IN"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "java.lang.Void",
+      "returns" : "PRIMITIVE",
+      "responseType" : "SINGLE"
+    }
+  },
+  "ProcKn1620pk0CcfmQryGetMatchDet" : {
+    "name" : "ProcKn1620pk0CcfmQryGetMatchDet",
+    "description" : "Get Match details",
+    "version" : "V2",
+    "procedureString" : "CALL kn1620pk0_ccfmqry.sproc_get_qrymatchdet(:p_sintfabcertno,:p_dintfabcertno,:p_ccffilter,:pOutMatchDet)",
+    "parameters" : [ {
+      "name" : "p_sintfabcertno",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "CF1704764",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_dintfabcertno",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "CF1700022",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_ccffilter",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "CF1700019",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pOutMatchDet",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcKn1620pk0ccfmQryGetMatchDetResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "pOutMatchDet",
+        "fieldName" : "poutMatchDet",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcKn1620pk0ccfmQryGetMatchDetResponsePoutMatchDet",
+          "list" : true,
+          "properties" : [ {
+            "name" : "MINTFABCERTNO",
+            "fieldName" : "mintfabcertno",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "MCCF_ORDNUM",
+            "fieldName" : "mccfOrdnum",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "MCCF_FABSEQ",
+            "fieldName" : "mccfFabseq",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Byte",
+              "list" : false
+            }
+          }, {
+            "name" : "MCCF_FABDET",
+            "fieldName" : "mccfFabdet",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "CCFMATCHCAT",
+            "fieldName" : "ccfmatchcat",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "CCFFILTER",
+            "fieldName" : "ccffilter",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          } ]
+        }
+      } ]
+    }
+  },
+  "ProcKn1620pk0_ccfmatchAddCCF" : {
+    "name" : "ProcKn1620pk0_ccfmatchAddCCF",
+    "description" : "ProcKn1620pk0_ccfmatchAddCCF",
+    "version" : "V2",
+    "procedureString" : "CALL kn1620pk0_ccfmatch.sproc_add_ccfmatch (:p_prgid,:p_usrid,:p_sintfabcertno,:p_mintfabcertno,:p_dintfabcertno,:p_matchcat)",
+    "parameters" : [ {
+      "name" : "p_prgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "TT1000W04",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_usrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "D022",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_sintfabcertno",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "CF1700017",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_mintfabcertno",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "CF1700019",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_dintfabcertno",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "CF1700019",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_matchcat",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "EXACT",
+      "required" : false,
+      "parameterType" : "IN"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "java.lang.Void",
+      "returns" : "PRIMITIVE",
+      "responseType" : "SINGLE"
+    }
+  },
+  "ProcKn1620pk0_ccfmqryQryCCF" : {
+    "name" : "ProcKn1620pk0_ccfmqryQryCCF",
+    "description" : "ProcKn1620pk0_ccfmqryQryCCF",
+    "version" : "V2",
+    "procedureString" : "CALL kn1620pk0_ccfmqry.sproc_query_ccfmatch (:p_prgid,:p_usrid,:p_qrytype,:p_sintfabcertno,:p_sordnum,:p_sfabseq,:p_mintfabcertno,:p_mordnum, :p_mfabseq,:p_matchcat,:p_out_ccflist)",
+    "parameters" : [ {
+      "name" : "p_prgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "TT1000W04",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_usrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "D022",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_qrytype",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "MATCH",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_sintfabcertno",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_sordnum",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "test",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_sfabseq",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "0",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_mintfabcertno",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "CF1700019",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_mordnum",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "test",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_mfabseq",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "0",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_matchcat",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_out_ccflist",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcKn1620pk0CcfmqryQryCcfResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "p_out_ccflist",
+        "fieldName" : "poutCcflist",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcKn1620pk0CcfmqryQryCcfResponsePoutCcflist",
+          "list" : true,
+          "properties" : [ {
+            "name" : "SINTFABCERTNO",
+            "fieldName" : "sintfabcertno",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "SCCF_ORDNUM",
+            "fieldName" : "sccfOrdnum",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "SCCF_FABSEQ",
+            "fieldName" : "sccfFabseq",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Byte",
+              "list" : false
+            }
+          }, {
+            "name" : "SCCF_FABDET",
+            "fieldName" : "sccfFabdet",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "DINTFABCERTNO",
+            "fieldName" : "dintfabcertno",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "DCCF_ORDNUM",
+            "fieldName" : "dccfOrdnum",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "DCCF_FABSEQ",
+            "fieldName" : "dccfFabseq",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Byte",
+              "list" : false
+            }
+          }, {
+            "name" : "DCCF_FABDET",
+            "fieldName" : "dccfFabdet",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "CCFFILTER",
+            "fieldName" : "ccffilter",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          } ]
+        }
+      } ]
+    }
+  },
+  "ProcRf020pk0GetClrOpt" : {
+    "name" : "ProcRf020pk0GetClrOpt",
+    "description" : "ProcRf020pk0GetClrOpt",
+    "version" : "V2",
+    "procedureString" : "CALL rf020pk0.sproc_get_coloroption(:p_clroption,:p_filter,:p_out_lov)",
+    "parameters" : [ {
+      "name" : "p_clroption",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "PANTONETPX",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_filter",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "15-01",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_out_lov",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcRf020pk0getClrOptResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "p_out_lov",
+        "fieldName" : "poutLov",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcRf020pk0getClrOptResponsePoutLov",
+          "list" : true,
+          "properties" : [ {
+            "name" : "CLRCODE",
+            "fieldName" : "clrcode",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "RGBR",
+            "fieldName" : "rgbr",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Short",
+              "list" : false
+            }
+          }, {
+            "name" : "RGBG",
+            "fieldName" : "rgbg",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Short",
+              "list" : false
+            }
+          }, {
+            "name" : "RGBB",
+            "fieldName" : "rgbb",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Short",
+              "list" : false
+            }
+          }, {
+            "name" : "LABL",
+            "fieldName" : "labl",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Float",
+              "list" : false
+            }
+          }, {
+            "name" : "LABA",
+            "fieldName" : "laba",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Float",
+              "list" : false
+            }
+          }, {
+            "name" : "LABB",
+            "fieldName" : "labb",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Float",
+              "list" : false
+            }
+          } ]
+        }
+      } ]
+    }
+  },
+  "ProcRf020pk0_QryClrsCompareDeltaE" : {
+    "name" : "ProcRf020pk0_QryClrsCompareDeltaE",
+    "description" : "ProcRf020pk0_QryClrsCompareDeltaE",
+    "version" : "V2",
+    "procedureString" : "CALL rf020pk0_qryclrs.sproc_compare_deltaE(:pLabL1,:pLabA1,:pLabB1,:pLabL2,:plabA2,:pLabB2,:pDeltae)",
+    "parameters" : [ {
+      "name" : "pLabL1",
+      "type" : "double",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "65.63",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pLabA1",
+      "type" : "double",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "7.68",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pLabB1",
+      "type" : "double",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "26.42",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pLabL2",
+      "type" : "double",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "53.52",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "plabA2",
+      "type" : "double",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "42.83",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pLabB2",
+      "type" : "double",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "34.6",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pDeltae",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcRf020pk0QryClrsCompareDeltaEResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "pDeltae",
+        "fieldName" : "pdeltae",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcRf020pk0QryClrsCompareDeltaEResponsePdeltae",
+          "list" : true,
+          "properties" : [ {
+            "name" : "DELTAE",
+            "fieldName" : "deltae",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "LABL1",
+            "fieldName" : "labl1",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "LABA1",
+            "fieldName" : "laba1",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "LABB1",
+            "fieldName" : "labb1",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "LAB1",
+            "fieldName" : "lab1",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "LABL2",
+            "fieldName" : "labl2",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "LABA2",
+            "fieldName" : "laba2",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "LABB2",
+            "fieldName" : "labb2",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "LAB2",
+            "fieldName" : "lab2",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          } ]
+        }
+      } ]
+    }
+  },
+  "ProcRf020pk0_UpdClrsAddPantone" : {
+    "name" : "ProcRf020pk0_UpdClrsAddPantone",
+    "description" : "ProcRf020pk0_UpdClrsAddPantone",
+    "version" : "V2",
+    "procedureString" : "CALL rf020pk0_updclrs.sproc_insertPantone(:p_prgid,:p_userid,:p_pantone,:p_pantoneCat,:p_labL,:p_labA,:p_labB,:p_rgbR,:p_rgbG,:p_rgbB,:p_hexval,:p_option,:p_outDetails)",
+    "parameters" : [ {
+      "name" : "p_prgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "TT1000W05",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_userid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "D022",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_pantone",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "test",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_pantoneCat",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "PANTONETPX",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_labL",
+      "type" : "double",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "16.20",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_labA",
+      "type" : "double",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "9.1",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_labB",
+      "type" : "double",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "-10.02",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_rgbR",
+      "type" : "double",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "96",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_rgbG",
+      "type" : "double",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "74",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_rgbB",
+      "type" : "double",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "75",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_hexval",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "#B2edk",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_option",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "CHECK",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_outDetails",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcRf020pk0UpdClrsAddPantoneResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "p_outDetails",
+        "fieldName" : "poutDetails",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcRf020pk0UpdClrsAddPantoneResponsePoutDetails",
+          "list" : true,
+          "properties" : [ {
+            "name" : "PANTONE",
+            "fieldName" : "pantone",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "LABL",
+            "fieldName" : "labl",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "LABA",
+            "fieldName" : "laba",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "LABB",
+            "fieldName" : "labb",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "RGBR",
+            "fieldName" : "rgbr",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "RGBG",
+            "fieldName" : "rgbg",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "RGBB",
+            "fieldName" : "rgbb",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "COLOUR",
+            "fieldName" : "colour",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          } ]
+        }
+      } ]
+    }
+  },
+  "ProcRf020pk0_qryclrsGetColours" : {
+    "name" : "ProcRf020pk0_qryclrsGetColours",
+    "description" : "ProcRf020pk0_qryclrsGetColours",
+    "version" : "V2",
+    "procedureString" : "CALL rf020pk0_qryclrs.sproc_get_colors(:p_labL,:p_labA,:p_labB,:p_ToleranceDeltaE,:p_search_opt,:p_labref,:p_value,:p_out_lov)",
+    "parameters" : [ {
+      "name" : "p_labL",
+      "type" : "double",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "62.22",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_labA",
+      "type" : "double",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "15.41",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_labB",
+      "type" : "double",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "45.52",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_ToleranceDeltaE",
+      "type" : "double",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "1",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_search_opt",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "LAB",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_labref",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "1RMR02876J",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_value",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "WITHOUTLABREF",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_out_lov",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcRf020pk0QryclrsGetColoursResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "p_out_lov",
+        "fieldName" : "poutLov",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcRf020pk0QryclrsGetColoursResponsePoutLov",
+          "list" : true,
+          "properties" : [ {
+            "name" : "LABL",
+            "fieldName" : "labl",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "LABA",
+            "fieldName" : "laba",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "LABB",
+            "fieldName" : "labb",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "DELTAE",
+            "fieldName" : "deltae",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "CLRREF",
+            "fieldName" : "clrref",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "CLRCODE",
+            "fieldName" : "clrcode",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "HEXVAL",
+            "fieldName" : "hexval",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "RGBR",
+            "fieldName" : "rgbr",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Short",
+              "list" : false
+            }
+          }, {
+            "name" : "RGBG",
+            "fieldName" : "rgbg",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Short",
+              "list" : false
+            }
+          }, {
+            "name" : "RGBB",
+            "fieldName" : "rgbb",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Short",
+              "list" : false
+            }
+          } ]
+        }
+      } ]
+    }
+  },
+  "ProcRf2000pk0_OrlovGetCliGrp" : {
+    "name" : "ProcRf2000pk0_OrlovGetCliGrp",
+    "description" : "ProcRf2000pk0_OrlovGetCliGrp",
+    "version" : "V2",
+    "procedureString" : "CALL rf2000pk0_orlov.sproc_get_rft100_cligrp(:p_Usrid,:p_Prgid,:p_OutCligrpLOV)",
+    "parameters" : [ {
+      "name" : "p_Usrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "D022",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_Prgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "TT1000W01",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_OutCligrpLOV",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcRf2000pk0OrlovGetCliGrpResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "p_OutCligrpLOV",
+        "fieldName" : "poutCligrpLov",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcRf2000pk0OrlovGetCliGrpResponsePoutCligrpLov",
+          "list" : true,
+          "properties" : [ {
+            "name" : "CLIGRP",
+            "fieldName" : "cligrp",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          } ]
+        }
+      } ]
+    }
+  },
+  "ProcSr741pk0RequestSwatch" : {
+    "name" : "ProcSr741pk0RequestSwatch",
+    "description" : "Request multiple swatch",
+    "version" : "V2",
+    "procedureString" : "CALL sr741pk0.sproc_request_swatches(:P_Sorders,:P_Team,:P_Usrid,:P_Fabformat,:P_Purpose ,:P_Quantity,:P_Uom,:p_lcnstrcod,:p_out_message,:p_out_fabrequestno )",
+    "parameters" : [ {
+      "name" : "P_Sorders",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "10,1,1",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "P_Team",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "A",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "P_Usrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "d022",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "P_Fabformat",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "A",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "P_Purpose",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "F",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "P_Quantity",
+      "type" : "double",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "0.8",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "P_Uom",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "M",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_lcnstrcod",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "LTK,LTK12",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_out_message",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "p_out_fabrequestno",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcSr741pk0requestSwatchResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "p_out_message",
+        "fieldName" : "poutMessage",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "p_out_fabrequestno",
+        "fieldName" : "poutFabrequestno",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "ProcSr741pk0SprocGetFabImages" : {
+    "name" : "ProcSr741pk0SprocGetFabImages",
+    "description" : "ProcSr741pk0SprocGetFabImages",
+    "version" : "V2",
+    "procedureString" : "CALL sr741pk0.sproc_get_fabimages(:p_ordnum,:p_fabseq, :p_fabimage)",
+    "parameters" : [ {
+      "name" : "p_ordnum",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "S150",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_fabseq",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "1",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_fabimage",
+      "type" : "blob",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcSr741pk0sprocGetFabImagesResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "p_fabimage",
+        "fieldName" : "pfabimage",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "byte[]",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "ProcTT130pk0_fabdevlibGetOrderDetails" : {
+    "name" : "ProcTT130pk0_fabdevlibGetOrderDetails",
+    "description" : "Get Order Details",
+    "version" : "V2",
+    "procedureString" : "call tt130pk0_fabdevlib.sproc_get_faborder_det(:p_ordnum, :p_fabseq,:p_intfabcertno, :p_out_fabdet, :p_out_yarndet)",
+    "parameters" : [ {
+      "name" : "p_ordnum",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "1700177A",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_fabseq",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "1",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_intfabcertno",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "test",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_out_fabdet",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "",
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "p_out_yarndet",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "",
+      "required" : true,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcTt130pk0FabdevlibGetOrderDetailsResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "p_out_fabdet",
+        "fieldName" : "poutFabdet",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcTt130pk0FabdevlibGetOrderDetailsResponsePoutFabdet",
+          "list" : true,
+          "properties" : [ {
+            "name" : "ORDNUM",
+            "fieldName" : "ordnum",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "FABSEQ",
+            "fieldName" : "fabseq",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Byte",
+              "list" : false
+            }
+          }, {
+            "name" : "FABDES",
+            "fieldName" : "fabdes",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "FABWGT",
+            "fieldName" : "fabwgt",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Short",
+              "list" : false
+            }
+          }, {
+            "name" : "BSFFABWGT",
+            "fieldName" : "bsffabwgt",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Short",
+              "list" : false
+            }
+          }, {
+            "name" : "KMCHTYP",
+            "fieldName" : "kmchtyp",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "MCHGAU",
+            "fieldName" : "mchgau",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Short",
+              "list" : false
+            }
+          }, {
+            "name" : "INSIDE",
+            "fieldName" : "inside",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "INSIDEDES",
+            "fieldName" : "insidedes",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "OUTSIDE",
+            "fieldName" : "outside",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "OUTSIDEDES",
+            "fieldName" : "outsidedes",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "SPFINISH",
+            "fieldName" : "spfinish",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "SPFINISHDES",
+            "fieldName" : "spfinishdes",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "SPFINISHDES2",
+            "fieldName" : "spfinishdes2",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "ENZYME",
+            "fieldName" : "enzyme",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "ENZYMEDES",
+            "fieldName" : "enzymedes",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "BDSZE",
+            "fieldName" : "bdsze",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "STR",
+            "fieldName" : "str",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "STRDES",
+            "fieldName" : "strdes",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "STRIPEID",
+            "fieldName" : "stripeid",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "FABCPS_BSF",
+            "fieldName" : "fabcpsBsf",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "FABCPS",
+            "fieldName" : "fabcps",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "THERMOBD_IND",
+            "fieldName" : "thermobdInd",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "LDECOROUTE",
+            "fieldName" : "ldecoroute",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "SDECOROUTE",
+            "fieldName" : "sdecoroute",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "DCCODE",
+            "fieldName" : "dccode",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "DCCODELDESC",
+            "fieldName" : "dccodeldesc",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "DCCODELABEL",
+            "fieldName" : "dccodelabel",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "FABDCODELIST",
+            "fieldName" : "fabdcodelist",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "KNSHADETYPDES",
+            "fieldName" : "knshadetypdes",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "KNSHADETYP",
+            "fieldName" : "knshadetyp",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "CPSTYPA",
+            "fieldName" : "cpstypa",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "CPSTYPADES",
+            "fieldName" : "cpstypades",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "CPSTYPAFROM",
+            "fieldName" : "cpstypafrom",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigInteger",
+              "list" : false
+            }
+          }, {
+            "name" : "CPSTYPB",
+            "fieldName" : "cpstypb",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "CPSTYPBDES",
+            "fieldName" : "cpstypbdes",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "CPSTYPBFROM",
+            "fieldName" : "cpstypbfrom",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigInteger",
+              "list" : false
+            }
+          }, {
+            "name" : "CPSTYPC",
+            "fieldName" : "cpstypc",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "CPSTYPCDES",
+            "fieldName" : "cpstypcdes",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "CPSTYPCFROM",
+            "fieldName" : "cpstypcfrom",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigInteger",
+              "list" : false
+            }
+          } ]
+        }
+      }, {
+        "name" : "p_out_yarndet",
+        "fieldName" : "poutYarndet",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcTt130pk0FabdevlibGetOrderDetailsResponsePoutYarndet",
+          "list" : true,
+          "properties" : [ {
+            "name" : "INIYRNSEQ",
+            "fieldName" : "iniyrnseq",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Byte",
+              "list" : false
+            }
+          }, {
+            "name" : "YRNCNT",
+            "fieldName" : "yrncnt",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "YRNCPS",
+            "fieldName" : "yrncps",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "YRNCLR",
+            "fieldName" : "yrnclr",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "YRNCDES",
+            "fieldName" : "yrncdes",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "CLRREF",
+            "fieldName" : "clrref",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "YRNQLTY",
+            "fieldName" : "yrnqlty",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "YRNSUBQLTYA",
+            "fieldName" : "yrnsubqltya",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "YRNSUBQLTYADESC",
+            "fieldName" : "yrnsubqltyadesc",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "YRNSUBQLTYB",
+            "fieldName" : "yrnsubqltyb",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "YRNSUBQLTYBDESC",
+            "fieldName" : "yrnsubqltybdesc",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "YRNFFCOD",
+            "fieldName" : "yrnffcod",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          } ]
+        }
+      } ]
+    }
+  },
+  "ProcTt130pk0_fabdevlibGetFabFilterOpt" : {
+    "name" : "ProcTt130pk0_fabdevlibGetFabFilterOpt",
+    "description" : "Get itemdes and itemcode for filter option",
+    "version" : "V2",
+    "procedureString" : "CALL tt130pk0_fabdevlib.sproc_get_fabfilteroption(:pOutFabFilterLov)",
+    "parameters" : [ {
+      "name" : "pOutFabFilterLov",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcTt130pk0FabdevlibGetFabFilterOptResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "pOutFabFilterLov",
+        "fieldName" : "poutFabFilterLov",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcTt130pk0FabdevlibGetFabFilterOptResponsePoutFabFilterLov",
+          "list" : true,
+          "properties" : [ {
+            "name" : "ITEMCOD",
+            "fieldName" : "itemcod",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "ITEMDES",
+            "fieldName" : "itemdes",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          } ]
+        }
+      } ]
+    }
+  },
+  "ProcTt130pk0_fabdevlibGetYrnCps" : {
+    "name" : "ProcTt130pk0_fabdevlibGetYrnCps",
+    "description" : "Get Yarn Composition List",
+    "version" : "V2",
+    "procedureString" : "CALL TT130PK0_FABDEVLIB.sproc_get_yrncps(:pOutYrnCps)",
+    "parameters" : [ {
+      "name" : "pOutYrnCps",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcTt130pk0FabdevlibGetYrnCpsResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "pOutYrnCps",
+        "fieldName" : "poutYrnCps",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.ProcTt130pk0FabdevlibGetYrnCpsResponsePoutYrnCps",
+          "list" : true,
+          "properties" : [ {
+            "name" : "FCPSDES",
+            "fieldName" : "fcpsdes",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "DESCRIPTION",
+            "fieldName" : "description",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          } ]
+        }
+      } ]
+    }
+  },
+  "SprocMatchFabricClr" : {
+    "name" : "SprocMatchFabricClr",
+    "description" : "sr741pk0.SprocMatchFabricClr",
+    "version" : "V2",
+    "procedureString" : "CALL sr741pk0.SprocMatchFabricClr(:pStore, :pOrdnum, \n:pClicod, :pFabtyp, :pFabsubcat, :pSkuno, :pFabwgtFrom, :pFabwgtTo,:pBsffabwgtfrom,:pBsffabwgtto,:pFabwid, :pInside, :pOutside,\n:pCalstn, :pClrref, :pStr, :pStripeId, :pTheme, :pEnzyme, :pTeflon ,:pLdecoroute, :pFabdcodelist,:pDccode,\n:pMchgaufrom, :pMchgauto,:pYrncnt,:pYrncps,:pYrnclr,:pOriclr,:pYrnqlty,:pYrnsubqltya,:pYrnsubqltyb ,:pYrnffcod,:pYrnClrref,\n:pcpsField,:pcpstypA, :pcpstypAFrom, :pcpstypATo,\n:pcpstypB, :pcpstypBFrom, :pcpstypBTo,:pcpstypC, :pcpstypCFrom, :pcpstypCTo,:pSearchColour, :plabL, :plabA, :plabB, :pToleranceDeltaE, :pUser, :pFabrics,:pIntfabcertno, :pCCFMatchcat , :pWarehouse, :pPatternCode)",
+    "parameters" : [ {
+      "name" : "pStore",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "MRUSSDF",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pOrdnum",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pClicod",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pFabtyp",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pFabsubcat",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pSkuno",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pFabwgtFrom",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "0",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pFabwgtTo",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "0",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pBsffabwgtfrom",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "0",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pBsffabwgtto",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "0",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pFabwid",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "0",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pInside",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pOutside",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pCalstn",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pClrref",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pStr",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pStripeId",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pTheme",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pEnzyme",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pTeflon",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pLdecoroute",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pFabdcodelist",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pDccode",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pMchgaufrom",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "0",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pMchgauto",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "0",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pYrncnt",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pYrncps",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pYrnclr",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pOriclr",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pYrnqlty",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pYrnsubqltya",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pYrnsubqltyb",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pYrnffcod",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pYrnClrref",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pcpsField",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pcpstypA",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "x",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pcpstypAFrom",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "0",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pcpstypATo",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "0",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pcpstypB",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "x",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pcpstypBFrom",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "1",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pcpstypBTo",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "1",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pcpstypC",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "x",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pcpstypCFrom",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "1",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pcpstypCTo",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "0",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pSearchColour",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "Y",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "plabL",
+      "type" : "double",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "0",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "plabA",
+      "type" : "double",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "0",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "plabB",
+      "type" : "double",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "0",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pToleranceDeltaE",
+      "type" : "double",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "1000",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pUser",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pFabrics",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : true,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "pIntfabcertno",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pCCFMatchcat",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pWarehouse",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pPatternCode",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.SprocMatchFabricClrResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "pFabrics",
+        "fieldName" : "pfabrics",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.SprocMatchFabricClrResponsePfabrics",
+          "list" : true,
+          "properties" : [ {
+            "name" : "ORDNUM",
+            "fieldName" : "ordnum",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "CLICOD",
+            "fieldName" : "clicod",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "FABTYP",
+            "fieldName" : "fabtyp",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "FABWGT",
+            "fieldName" : "fabwgt",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Short",
+              "list" : false
+            }
+          }, {
+            "name" : "FABWID",
+            "fieldName" : "fabwid",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigInteger",
+              "list" : false
+            }
+          }, {
+            "name" : "CLRDES",
+            "fieldName" : "clrdes",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "LAB",
+            "fieldName" : "lab",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "DELTAE",
+            "fieldName" : "deltae",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "MCHGAU",
+            "fieldName" : "mchgau",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigInteger",
+              "list" : false
+            }
+          }, {
+            "name" : "CLRREF",
+            "fieldName" : "clrref",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "STRIPEID",
+            "fieldName" : "stripeid",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "FABDCODELIST",
+            "fieldName" : "fabdcodelist",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "INSIDE",
+            "fieldName" : "inside",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "OUTSIDE",
+            "fieldName" : "outside",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "SPFINISH",
+            "fieldName" : "spfinish",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "ENZYMEWASH",
+            "fieldName" : "enzymewash",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "SKUNO",
+            "fieldName" : "skuno",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "CALSTN",
+            "fieldName" : "calstn",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "SDECOROUTE",
+            "fieldName" : "sdecoroute",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "LDECOROUTE",
+            "fieldName" : "ldecoroute",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "YRNID",
+            "fieldName" : "yrnid",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigInteger",
+              "list" : false
+            }
+          }, {
+            "name" : "FABIMAGEREF",
+            "fieldName" : "fabimageref",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "STOCK",
+            "fieldName" : "stock",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "STORELOC",
+            "fieldName" : "storeloc",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "STRCOD",
+            "fieldName" : "strcod",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "FABCOMPO",
+            "fieldName" : "fabcompo",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "FABSEQ",
+            "fieldName" : "fabseq",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Byte",
+              "list" : false
+            }
+          }, {
+            "name" : "CLRSEQ",
+            "fieldName" : "clrseq",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Byte",
+              "list" : false
+            }
+          }, {
+            "name" : "CCFDET",
+            "fieldName" : "ccfdet",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "SIMILARCCFDET",
+            "fieldName" : "similarccfdet",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "STOCKSRC",
+            "fieldName" : "stocksrc",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          } ]
+        }
+      } ]
+    }
+  },
+  "getDccode" : {
+    "name" : "getDccode",
+    "description" : "get list of Dccodes",
+    "version" : "V1",
+    "procedureString" : "call tt130pk0_fabdevlib.sproc_get_dccode(:p_out_lov_dccode)",
+    "parameters" : [ {
+      "name" : "p_out_lov_dccode",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "",
+      "required" : false,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetDccodeResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "p_out_lov_dccode",
+        "fieldName" : "poutLovDccode",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetDccodeResponsePoutLovDccode",
+          "list" : true,
+          "properties" : [ {
+            "name" : "DCCODE",
+            "fieldName" : "dccode",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "LDESC",
+            "fieldName" : "ldesc",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "LABEL",
+            "fieldName" : "label",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          } ]
+        }
+      } ]
+    }
+  },
+  "getEnzyme" : {
+    "name" : "getEnzyme",
+    "description" : "get list of enzymes",
+    "version" : "V1",
+    "procedureString" : "call tt130pk0_fabdevlib.sproc_get_enzyme(:p_out_lov_enzyme)",
+    "parameters" : [ {
+      "name" : "p_out_lov_enzyme",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "",
+      "required" : false,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetEnzymeResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "p_out_lov_enzyme",
+        "fieldName" : "poutLovEnzyme",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetEnzymeResponsePoutLovEnzyme",
+          "list" : true,
+          "properties" : [ {
+            "name" : "ITEMCOD",
+            "fieldName" : "itemcod",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "ITEMDES",
+            "fieldName" : "itemdes",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          } ]
+        }
+      } ]
+    }
+  },
+  "getFabdevreqdet" : {
+    "name" : "getFabdevreqdet",
+    "description" : "getFabdevreqdet",
+    "version" : "V1",
+    "procedureString" : "call tt130pk0_fabdevlib.sproc_get_fabdev_requestdet(:p_fabdevno, :p_out_fabdet, :p_out_yarndet)",
+    "parameters" : [ {
+      "name" : "p_fabdevno",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FDF160081V01R00",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_out_fabdet",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "",
+      "required" : false,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "p_out_yarndet",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "",
+      "required" : false,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetFabdevreqdetResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "p_out_fabdet",
+        "fieldName" : "poutFabdet",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetFabdevreqdetResponsePoutFabdet",
+          "list" : true,
+          "properties" : [ {
+            "name" : "FABDEVNO",
+            "fieldName" : "fabdevno",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "INIFABTYP",
+            "fieldName" : "inifabtyp",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "FABDES",
+            "fieldName" : "fabdes",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "FABWGT",
+            "fieldName" : "fabwgt",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Short",
+              "list" : false
+            }
+          }, {
+            "name" : "BSFFABWGT",
+            "fieldName" : "bsffabwgt",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Short",
+              "list" : false
+            }
+          }, {
+            "name" : "KMCHTYP",
+            "fieldName" : "kmchtyp",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "MCHGAU",
+            "fieldName" : "mchgau",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Short",
+              "list" : false
+            }
+          }, {
+            "name" : "INSIDE",
+            "fieldName" : "inside",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "INSIDEDES",
+            "fieldName" : "insidedes",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "OUTSIDE",
+            "fieldName" : "outside",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "OUTSIDEDES",
+            "fieldName" : "outsidedes",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "SPFINISH",
+            "fieldName" : "spfinish",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "SPFINISHDES",
+            "fieldName" : "spfinishdes",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "SPFINISHDES2",
+            "fieldName" : "spfinishdes2",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "ENZYME",
+            "fieldName" : "enzyme",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "ENZYMEDES",
+            "fieldName" : "enzymedes",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "BDSZE",
+            "fieldName" : "bdsze",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "STR",
+            "fieldName" : "str",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "STRDES",
+            "fieldName" : "strdes",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "STRIPEID",
+            "fieldName" : "stripeid",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "FABCPS_BSF",
+            "fieldName" : "fabcpsBsf",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "FABCPS",
+            "fieldName" : "fabcps",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "THERMOBD_IND",
+            "fieldName" : "thermobdInd",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "LDECOROUTE",
+            "fieldName" : "ldecoroute",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "SDECOROUTE",
+            "fieldName" : "sdecoroute",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "DCCODE",
+            "fieldName" : "dccode",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "DCCODELDESC",
+            "fieldName" : "dccodeldesc",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "DCCODELABEL",
+            "fieldName" : "dccodelabel",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "FABDCODELIST",
+            "fieldName" : "fabdcodelist",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "KNSHADETYPDES",
+            "fieldName" : "knshadetypdes",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "KNSHADETYP",
+            "fieldName" : "knshadetyp",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          } ]
+        }
+      }, {
+        "name" : "p_out_yarndet",
+        "fieldName" : "poutYarndet",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetFabdevreqdetResponsePoutYarndet",
+          "list" : true,
+          "properties" : [ {
+            "name" : "INIYRNSEQ",
+            "fieldName" : "iniyrnseq",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.Byte",
+              "list" : false
+            }
+          }, {
+            "name" : "YRNCNT",
+            "fieldName" : "yrncnt",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "YRNCPS",
+            "fieldName" : "yrncps",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "YRNCLR",
+            "fieldName" : "yrnclr",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "YRNCDES_LOV",
+            "fieldName" : "yrncdesLov",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "YRNCDES",
+            "fieldName" : "yrncdes",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "CLRREF",
+            "fieldName" : "clrref",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "YRNQLTY",
+            "fieldName" : "yrnqlty",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "YRNSUBQLTYA",
+            "fieldName" : "yrnsubqltya",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "YRNSUBQLTYADESC",
+            "fieldName" : "yrnsubqltyadesc",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "YRNSUBQLTYB",
+            "fieldName" : "yrnsubqltyb",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "YRNSUBQLTYBDESC",
+            "fieldName" : "yrnsubqltybdesc",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "YRNFFCOD",
+            "fieldName" : "yrnffcod",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          } ]
+        }
+      } ]
+    }
+  },
+  "getFabtyp" : {
+    "name" : "getFabtyp",
+    "description" : "get list of fab types",
+    "version" : "V1",
+    "procedureString" : "call tt130pk0_fabdevlib.sproc_get_fabtyp(:p_out_lov_fabtyp)",
+    "parameters" : [ {
+      "name" : "p_out_lov_fabtyp",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "",
+      "required" : false,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetFabtypResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "p_out_lov_fabtyp",
+        "fieldName" : "poutLovFabtyp",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetFabtypResponsePoutLovFabtyp",
+          "list" : true,
+          "properties" : [ {
+            "name" : "FABTYP",
+            "fieldName" : "fabtyp",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "FABDES",
+            "fieldName" : "fabdes",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          } ]
+        }
+      } ]
+    }
+  },
+  "getInside" : {
+    "name" : "getInside",
+    "description" : "get list of inside",
+    "version" : "V1",
+    "procedureString" : "call tt130pk0_fabdevlib.sproc_get_inside(:p_out_lov_inside)",
+    "parameters" : [ {
+      "name" : "p_out_lov_inside",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "",
+      "required" : false,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetInsideResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "p_out_lov_inside",
+        "fieldName" : "poutLovInside",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetInsideResponsePoutLovInside",
+          "list" : true,
+          "properties" : [ {
+            "name" : "ITEMCOD",
+            "fieldName" : "itemcod",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "ITEMDES",
+            "fieldName" : "itemdes",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          } ]
+        }
+      } ]
+    }
+  },
+  "getLdecoroute" : {
+    "name" : "getLdecoroute",
+    "description" : "get list of LDecoRoute",
+    "version" : "V1",
+    "procedureString" : "call tt130pk0_fabdevlib.sproc_get_ldecoroute(:p_out_lov_ldecoroute)",
+    "parameters" : [ {
+      "name" : "p_out_lov_ldecoroute",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "",
+      "required" : false,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetLdecorouteResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "p_out_lov_ldecoroute",
+        "fieldName" : "poutLovLdecoroute",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetLdecorouteResponsePoutLovLdecoroute",
+          "list" : true,
+          "properties" : [ {
+            "name" : "LDECOROUTE",
+            "fieldName" : "ldecoroute",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          } ]
+        }
+      } ]
+    }
+  },
+  "getMatchingFabs" : {
+    "name" : "getMatchingFabs",
+    "description" : "get matching fabs",
+    "version" : "V1",
+    "procedureString" : "call tt110pk0_qrylib.FindMatchIniFabAssess(:pUsrid,:pPrgid,:pFabFilterOption, :pFabtyp, :pInside, :pOutside, :pEnzyme,:pSpfinish, :pStr, :pStripeid, :pDccode,:pLDecoroute,:pYarnList,\n    :pYrncnt, :pYrncps, :pYrnclr, :pOriclr, :pYrnqlty, :pYrnsubqltya, :pYrnsubqltyb, :pYrnffcod, :pYrnClrref,\n    :pFabwgtfrom, :pFabwgtto,:pBsffabwgtfrom, :pBsffabwgtto,:pMchgaufrom, :pMchgauto, \n    :pcpsField,\n    :pcpstypA, :pcpstypAFrom, :pcpstypATo,\n    :pcpstypB, :pcpstypBFrom, :pcpstypBTo,\n    :pcpstypC, :pcpstypCFrom, :pcpstypCTo,\n    :pFabrics,:p_out_errmsg, :p_fabdevno,\n    :pOrdnum,:pfabsubcatdes,:pSkuno,\n    :pFabdcodelist,:pCalstn,:pIntfabcertno,:pOrderwithHanger,:pCligrp,:pTemplateSeq)",
+    "parameters" : [ {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "D022",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pPrgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "TT1000W01",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pFabFilterOption",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FABLIB",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pFabtyp",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pInside",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pOutside",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pEnzyme",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pSpfinish",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pStr",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pStripeid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pDccode",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pLDecoroute",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pYarnList",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pYrncnt",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pYrncps",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pYrnclr",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pOriclr",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pYrnqlty",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pYrnsubqltya",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pYrnsubqltyb",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pYrnffcod",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pYrnClrref",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pFabwgtfrom",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "1",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pFabwgtto",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "500",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pBsffabwgtfrom",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "1",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pBsffabwgtto",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "500",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pMchgaufrom",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "0",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pMchgauto",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "100",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pcpsField",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "CLIENT",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pcpstypA",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "CO",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pcpstypAFrom",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "1",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pcpstypATo",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "10",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pcpstypB",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "CV",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pcpstypBFrom",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "1",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pcpstypBTo",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "10",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pcpstypC",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "MET",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pcpstypCFrom",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "1",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pcpstypCTo",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "10",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pFabrics",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "",
+      "required" : false,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "p_out_errmsg",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "",
+      "required" : false,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "p_fabdevno",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "FDF160081V01R00",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pOrdnum",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pfabsubcatdes",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pSkuno",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pFabdcodelist",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pCalstn",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pIntfabcertno",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pOrderwithHanger",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "N",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pCligrp",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pTemplateSeq",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "%",
+      "required" : false,
+      "parameterType" : "IN"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetMatchingFabsResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "pFabrics",
+        "fieldName" : "pfabrics",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetMatchingFabsResponsePfabrics",
+          "list" : true,
+          "properties" : [ {
+            "name" : "SORTSEQ",
+            "fieldName" : "sortseq",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigDecimal",
+              "list" : false
+            }
+          }, {
+            "name" : "FABDEVNO",
+            "fieldName" : "fabdevno",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "INIFABDETAILS",
+            "fieldName" : "inifabdetails",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "DOCID",
+            "fieldName" : "docid",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "ORDNUM",
+            "fieldName" : "ordnum",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "FABSEQ",
+            "fieldName" : "fabseq",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.math.BigDecimal",
+              "list" : false
+            }
+          }, {
+            "name" : "FABBASENO",
+            "fieldName" : "fabbaseno",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "TABSRC",
+            "fieldName" : "tabsrc",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "TABSOURCEDET",
+            "fieldName" : "tabsourcedet",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "PICURL",
+            "fieldName" : "picurl",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          } ]
+        }
+      }, {
+        "name" : "p_out_errmsg",
+        "fieldName" : "poutErrmsg",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "getOutside" : {
+    "name" : "getOutside",
+    "description" : "get list of outside",
+    "version" : "V1",
+    "procedureString" : "call tt130pk0_fabdevlib.sproc_get_outside(:p_out_lov_outside)",
+    "parameters" : [ {
+      "name" : "p_out_lov_outside",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "",
+      "required" : false,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetOutsideResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "p_out_lov_outside",
+        "fieldName" : "poutLovOutside",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetOutsideResponsePoutLovOutside",
+          "list" : true,
+          "properties" : [ {
+            "name" : "ITEMCOD",
+            "fieldName" : "itemcod",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "ITEMDES",
+            "fieldName" : "itemdes",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          } ]
+        }
+      } ]
+    }
+  },
+  "getProcTT130PK0_FABDEVLIB_Clicod" : {
+    "name" : "getProcTT130PK0_FABDEVLIB_Clicod",
+    "description" : "List of client",
+    "version" : "V2",
+    "procedureString" : "CALL TT130PK0_FABDEVLIB.sproc_Clicod( upper(:pUsrid), :pPrgid, :poutClient)",
+    "parameters" : [ {
+      "name" : "pUsrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "SERVER",
+      "variableName" : "USER_NAME",
+      "testValue" : "D00026",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pPrgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "T",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "poutClient",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : null,
+      "required" : false,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetProcTt130pk0FabdevlibClicodResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "poutClient",
+        "fieldName" : "poutClient",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetProcTt130pk0FabdevlibClicodResponsePoutClient",
+          "list" : true,
+          "properties" : [ {
+            "name" : "CLICOD",
+            "fieldName" : "clicod",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "CLINAM",
+            "fieldName" : "clinam",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          } ]
+        }
+      } ]
+    }
+  },
+  "getSpFinish" : {
+    "name" : "getSpFinish",
+    "description" : "get list of SP Finish",
+    "version" : "V1",
+    "procedureString" : "call tt130pk0_fabdevlib.sproc_get_spfinish(:p_out_lov_spfinish)",
+    "parameters" : [ {
+      "name" : "p_out_lov_spfinish",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "",
+      "required" : false,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetSpFinishResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "p_out_lov_spfinish",
+        "fieldName" : "poutLovSpfinish",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetSpFinishResponsePoutLovSpfinish",
+          "list" : true,
+          "properties" : [ {
+            "name" : "ITEMCOD",
+            "fieldName" : "itemcod",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "ITEMDES",
+            "fieldName" : "itemdes",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "ITEMDES2",
+            "fieldName" : "itemdes2",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          } ]
+        }
+      } ]
+    }
+  },
+  "getStr" : {
+    "name" : "getStr",
+    "description" : "get list of Str",
+    "version" : "V1",
+    "procedureString" : "call tt130pk0_fabdevlib.sproc_get_str(:p_out_lov_str)",
+    "parameters" : [ {
+      "name" : "p_out_lov_str",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "",
+      "required" : false,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetStrResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "p_out_lov_str",
+        "fieldName" : "poutLovStr",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetStrResponsePoutLovStr",
+          "list" : true,
+          "properties" : [ {
+            "name" : "ITEMCOD",
+            "fieldName" : "itemcod",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "ITEMDES",
+            "fieldName" : "itemdes",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          } ]
+        }
+      } ]
+    }
+  },
+  "getYrncdes" : {
+    "name" : "getYrncdes",
+    "description" : "get list of yrn colourdes",
+    "version" : "V1",
+    "procedureString" : "call tt130pk0_fabdevlib.sproc_get_yrncdes(:p_yrnclr,:p_yrncnt,:p_out_lov_yrncdes)",
+    "parameters" : [ {
+      "name" : "p_yrnclr",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "GN",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_yrncnt",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "22/2 NE",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_out_lov_yrncdes",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "",
+      "required" : false,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetYrncdesResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "p_out_lov_yrncdes",
+        "fieldName" : "poutLovYrncdes",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetYrncdesResponsePoutLovYrncdes",
+          "list" : true,
+          "properties" : [ {
+            "name" : "YRNSHADE",
+            "fieldName" : "yrnshade",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          } ]
+        }
+      } ]
+    }
+  },
+  "getYrnclr" : {
+    "name" : "getYrnclr",
+    "description" : "get list of Yarn colours",
+    "version" : "V1",
+    "procedureString" : "call tt130pk0_fabdevlib.sproc_get_yrnclr(:p_out_lov_yrnclr)",
+    "parameters" : [ {
+      "name" : "p_out_lov_yrnclr",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "",
+      "required" : false,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetYrnclrResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "p_out_lov_yrnclr",
+        "fieldName" : "poutLovYrnclr",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetYrnclrResponsePoutLovYrnclr",
+          "list" : true,
+          "properties" : [ {
+            "name" : "NYRNCLR",
+            "fieldName" : "nyrnclr",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "NYRNCDES",
+            "fieldName" : "nyrncdes",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "YRNCDES_LOV",
+            "fieldName" : "yrncdesLov",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          } ]
+        }
+      } ]
+    }
+  },
+  "getYrncnt" : {
+    "name" : "getYrncnt",
+    "description" : "get list of yarn counts",
+    "version" : "V1",
+    "procedureString" : "call tt130pk0_fabdevlib.sproc_get_yrncount(:p_out_lov_yrncnt)",
+    "parameters" : [ {
+      "name" : "p_out_lov_yrncnt",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "",
+      "required" : false,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetYrncntResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "p_out_lov_yrncnt",
+        "fieldName" : "poutLovYrncnt",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetYrncntResponsePoutLovYrncnt",
+          "list" : true,
+          "properties" : [ {
+            "name" : "YRNCNT",
+            "fieldName" : "yrncnt",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "YRNCNTDES",
+            "fieldName" : "yrncntdes",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          } ]
+        }
+      } ]
+    }
+  },
+  "getYrncpstyp" : {
+    "name" : "getYrncpstyp",
+    "description" : "get list of yarn cps type",
+    "version" : "V1",
+    "procedureString" : "call tt130pk0_fabdevlib.sproc_getncpstyp(:p_out_lov_ncpstyp)",
+    "parameters" : [ {
+      "name" : "p_out_lov_ncpstyp",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "",
+      "required" : false,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetYrncpstypResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "p_out_lov_ncpstyp",
+        "fieldName" : "poutLovNcpstyp",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetYrncpstypResponsePoutLovNcpstyp",
+          "list" : true,
+          "properties" : [ {
+            "name" : "NCPSTYP",
+            "fieldName" : "ncpstyp",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "NCPSTYPDES",
+            "fieldName" : "ncpstypdes",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          } ]
+        }
+      } ]
+    }
+  },
+  "getYrnffcod" : {
+    "name" : "getYrnffcod",
+    "description" : "get FFcode",
+    "version" : "V1",
+    "procedureString" : "call tt130pk0_fabdevlib.sproc_get_yrnffcode(:p_out_lov_yrnffcod)",
+    "parameters" : [ {
+      "name" : "p_out_lov_yrnffcod",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "",
+      "required" : false,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetYrnffcodResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "p_out_lov_yrnffcod",
+        "fieldName" : "poutLovYrnffcod",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetYrnffcodResponsePoutLovYrnffcod",
+          "list" : true,
+          "properties" : [ {
+            "name" : "YRNFFCOD",
+            "fieldName" : "yrnffcod",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "YRNFFDESC",
+            "fieldName" : "yrnffdesc",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          } ]
+        }
+      } ]
+    }
+  },
+  "getYrnqlty" : {
+    "name" : "getYrnqlty",
+    "description" : "get yarn quality",
+    "version" : "V1",
+    "procedureString" : "call tt130pk0_fabdevlib.sproc_get_yrnqlty(:p_out_lov_yrnqlty)",
+    "parameters" : [ {
+      "name" : "p_out_lov_yrnqlty",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "",
+      "required" : false,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetYrnqltyResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "p_out_lov_yrnqlty",
+        "fieldName" : "poutLovYrnqlty",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetYrnqltyResponsePoutLovYrnqlty",
+          "list" : true,
+          "properties" : [ {
+            "name" : "NYRNQLTY",
+            "fieldName" : "nyrnqlty",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "NYRNQLTYDES",
+            "fieldName" : "nyrnqltydes",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          } ]
+        }
+      } ]
+    }
+  },
+  "getYrnsubqltya" : {
+    "name" : "getYrnsubqltya",
+    "description" : "get yarn sub qlty A",
+    "version" : "V1",
+    "procedureString" : "call tt130pk0_fabdevlib.sproc_get_yrnsubqlty(:p_yrnqlty,'A', :p_out_lov_yrnsubqlty)",
+    "parameters" : [ {
+      "name" : "p_yrnqlty",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "FIL",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_out_lov_yrnsubqlty",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "",
+      "required" : false,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetYrnsubqltyaResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "p_out_lov_yrnsubqlty",
+        "fieldName" : "poutLovYrnsubqlty",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetYrnsubqltyaResponsePoutLovYrnsubqlty",
+          "list" : true,
+          "properties" : [ {
+            "name" : "SUBQLTYCOD",
+            "fieldName" : "subqltycod",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "SUBQLTYDES",
+            "fieldName" : "subqltydes",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "LABEL",
+            "fieldName" : "label",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          } ]
+        }
+      } ]
+    }
+  },
+  "getYrnsubqltyb" : {
+    "name" : "getYrnsubqltyb",
+    "description" : "get sub qlty B",
+    "version" : "V1",
+    "procedureString" : "call tt130pk0_fabdevlib.sproc_get_yrnsubqlty(:p_yrnqlty,'B', :p_out_lov_yrnsubqlty)",
+    "parameters" : [ {
+      "name" : "p_yrnqlty",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "FIL",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_out_lov_yrnsubqlty",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "",
+      "required" : false,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetYrnsubqltybResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "p_out_lov_yrnsubqlty",
+        "fieldName" : "poutLovYrnsubqlty",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetYrnsubqltybResponsePoutLovYrnsubqlty",
+          "list" : true,
+          "properties" : [ {
+            "name" : "SUBQLTYCOD",
+            "fieldName" : "subqltycod",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "SUBQLTYDES",
+            "fieldName" : "subqltydes",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "LABEL",
+            "fieldName" : "label",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          } ]
+        }
+      } ]
+    }
+  },
+  "getYrnsubqltyc" : {
+    "name" : "getYrnsubqltyc",
+    "description" : "sub qlty C",
+    "version" : "V1",
+    "procedureString" : "call tt130pk0_fabdevlib.sproc_get_yrnsubqlty(:p_yrnqlty,'C', :p_out_lov_yrnsubqlty)",
+    "parameters" : [ {
+      "name" : "p_yrnqlty",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "FIL",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_out_lov_yrnsubqlty",
+      "type" : "cursor",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "",
+      "required" : false,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetYrnsubqltycResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "p_out_lov_yrnsubqlty",
+        "fieldName" : "poutLovYrnsubqlty",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "CUSTOM",
+          "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.GetYrnsubqltycResponsePoutLovYrnsubqlty",
+          "list" : true,
+          "properties" : [ {
+            "name" : "SUBQLTYCOD",
+            "fieldName" : "subqltycod",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          }, {
+            "name" : "SUBQLTYDES",
+            "fieldName" : "subqltydes",
+            "optional" : false,
+            "fieldType" : {
+              "type" : "PRIMITIVE",
+              "typeRef" : "java.lang.String",
+              "list" : false
+            }
+          } ]
+        }
+      } ]
+    }
+  },
+  "updFabdevno" : {
+    "name" : "updFabdevno",
+    "description" : "update matching fab dev",
+    "version" : "V1",
+    "procedureString" : "call tt130pk0_fabdevlib.sproc_upd_fabassessment(:p_fabAssessno , :p_fabdevno, :p_ordnum, :p_fabseq, :p_fabbaseno,:p_fabsearchsrc,:p_prgid,:p_usrid, :p_out_successmsg, :p_out_errmsg)",
+    "parameters" : [ {
+      "name" : "p_fabAssessno",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "FDF160081V01R00",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_fabdevno",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "xx",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_ordnum",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "yy",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_fabseq",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "0",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_fabbaseno",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "zz",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_fabsearchsrc",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "ss",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_prgid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "TT44",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_usrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "D004",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "p_out_successmsg",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "",
+      "required" : false,
+      "parameterType" : "OUT"
+    }, {
+      "name" : "p_out_errmsg",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : null,
+      "testValue" : "",
+      "required" : false,
+      "parameterType" : "OUT"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.UpdFabdevnoResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "SINGLE",
+      "properties" : [ {
+        "name" : "p_out_successmsg",
+        "fieldName" : "poutSuccessmsg",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "p_out_errmsg",
+        "fieldName" : "poutErrmsg",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "updateTT130PK0_FABDEVLIB_request_FabSrcMail" : {
+    "name" : "updateTT130PK0_FABDEVLIB_request_FabSrcMail",
+    "description" : "Send a mail containing the filters",
+    "version" : "V2",
+    "procedureString" : "CALL  TT130PK0_FABDEVLIB.sproc_request_FabSrchMail( upper(:p_usrid), :pStrFrmWM, :pYarnFilter, :pRemakrs, :pClient)",
+    "parameters" : [ {
+      "name" : "p_usrid",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "SERVER",
+      "variableName" : "USER_NAME",
+      "testValue" : "D00026",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pStrFrmWM",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "Filter Option*Fabric Lib;Fabric Category*CCF,TCF;With Base Hanger*Y;Choose Cligrp:*ACANTHE;G/M2*From undefined To 500;Search Fab composition*Before Sp Finish;Bamboo*From 3 To 4;",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pYarnFilter",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : ".47/1 NE* *FN* * * * *FF00005* ; * *GN*(16S+200D)RW PET/50F24DDB* * * *FF00005*",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pRemakrs",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "Remarks*Test",
+      "required" : false,
+      "parameterType" : "IN"
+    }, {
+      "name" : "pClient",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "TOPMAN",
+      "required" : false,
+      "parameterType" : "IN"
+    } ],
+    "request" : {
+      "wrapped" : true,
+      "typeRef" : "com.mu.cmt.pfs.pfsdb.models.procedure.UpdateTt130pk0FabdevlibRequestFabSrcMailRequest",
+      "method" : "PUT"
+    },
+    "response" : {
+      "typeRef" : "java.lang.Void",
+      "returns" : "PRIMITIVE",
+      "responseType" : "SINGLE"
+    }
+  }
+}

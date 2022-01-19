@@ -1,0 +1,11 @@
+<wm-partial data-ng-controller="headerPageController" name="header" type="header"> 
+    <wm-layoutgrid name="headerlayout"> 
+        <wm-gridrow name="headerrow"> 
+            <wm-gridcolumn name="headerleft" verticalalign="middle" columnwidth="7"> 
+                <wm-picture padding="1px unset" width="50" margin="3px 5px unset 5px" picturesource="resources/images/logos/CMTLogo_dark_Grey.png" name="AppLogo"></wm-picture> 
+                <wm-label margin="5px unset" caption="bind:((pageParams.pTitle == ''|| pageParams.pTitle == null)? 'PROGRAM NAME': pageParams.pTitle) + &quot; - &quot; + Variables.loggedInUser.dataSet.name.toUpperCase()" class="application-name" name="AppName" fontsize="18"></wm-label> 
+            </wm-gridcolumn> 
+            <wm-gridcolumn padding="1em 1em unset unset" name="headerright" horizontalalign="right" verticalalign="middle" columnwidth="5"></wm-gridcolumn> 
+        </wm-gridrow> 
+    </wm-layoutgrid> 
+</wm-partial>

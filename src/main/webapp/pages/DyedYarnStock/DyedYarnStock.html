@@ -1,0 +1,190 @@
+<wm-page name="page1" data-ng-controller="DyedYarnStockPageController" pagetitle="Dyed Yarn Stock">
+    <wm-header name="header1" content="header">
+        <wm-param name="pTitle" value="bind:Variables.statPrgName.dataSet.dataValue" type="string"></wm-param>
+    </wm-header>
+    <wm-top-nav name="top_nav1" content="topnav"></wm-top-nav>
+    <wm-content name="content1">
+        <wm-page-content name="page_content1" columnwidth="12">
+            <wm-layoutgrid name="layoutgrid1">
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow1">
+                    <wm-gridcolumn name="gridcolumn1" columnwidth="12">
+                        <wm-panel collapsible="true" name="panelYDStk" show="true" class="panel-primary" iconclass="" autoclose="outsideClick" title="Search Yarn Stock">
+                            <wm-layoutgrid name="layoutgrid2">
+                                <wm-gridrow name="gridrow3" padding="unset 0px unset unset">
+                                    <wm-gridcolumn name="gridcolumn7" columnwidth="7">
+                                        <wm-container name="container3" show="true">
+                                            <wm-layoutgrid name="layoutgrid3">
+                                                <wm-gridrow name="gridrow4" padding="unset 0px unset unset">
+                                                    <wm-gridcolumn padding="0px unset unset unset" name="gridcolumn8" columnwidth="6">
+                                                        <wm-composite padding="0px unset unset unset" name="composite2">
+                                                            <wm-label textalign="center" name="label3" caption="Options" class="col-md-3 control-label"></wm-label>
+                                                            <wm-container name="container4" class="col-md-7">
+                                                                <wm-radioset name="radiosetClrFilterOpt" on-change="radiosetClrFilterOptChange($event, $scope, newVal, oldVal)" datafield="All Fields" selectedvalue="Choose Colour on Screen" dataset="Choose Colour on Screen, Input L.A.B values,Pantone C,Pantone TPX,Pantone TCX,Lab Reference,Any Color"
+                                                                    height="auto"></wm-radioset>
+                                                            </wm-container>
+                                                        </wm-composite>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn name="gridcolumn9" padding="unset 10px unset 5px" columnwidth="6">
+                                                        <wm-container name="container5" padding="unset unset 5px unset" show="bind:Widgets.radiosetClrFilterOpt.displayValue === &quot;Choose Colour on Screen&quot;?true:false">
+                                                            <wm-label fontweight="bold" caption="Choose a Colour :" name="label15" padding="unset 0.5em unset unset"></wm-label>
+                                                            <wm-colorpicker name="colorpickerDyeYrn" show="true"></wm-colorpicker>
+                                                        </wm-container>
+                                                        <wm-container show="bind:Widgets.radiosetClrFilterOpt.displayValue === &quot;Pantone C&quot; || Widgets.radiosetClrFilterOpt.displayValue === &quot;Pantone TPX&quot; || Widgets.radiosetClrFilterOpt.displayValue === &quot;Pantone TCX&quot; ? true  : false"
+                                                            name="container20">
+                                                            <wm-label fontweight="bold" caption="bind:Widgets.radiosetClrFilterOpt.displayValue === &quot;Pantone C&quot; || Widgets.radiosetClrFilterOpt.displayValue === &quot;Pantone TPX&quot; || Widgets.radiosetClrFilterOpt.displayValue === &quot;Pantone TCX&quot; ?(&quot;Enter &quot;+Widgets.radiosetClrFilterOpt.displayValue+&quot; : &quot;):&quot;&quot;"
+                                                                name="label16_1" padding="unset 0.5em unset 0em"></wm-label>
+                                                            <wm-search name="searchPantone" show="bind:Widgets.radiosetClrFilterOpt.displayValue === &quot;Pantone C&quot; || Widgets.radiosetClrFilterOpt.displayValue === &quot;Pantone TPX&quot; || Widgets.radiosetClrFilterOpt.displayValue === &quot;Pantone TCX&quot; ? true  : false"
+                                                                on-change="searchPantoneChange($event, $scope, newVal, oldVal)" datafield="All Fields" displaylabel="clrcode" dataset="bind:Variables.svProcRf020pk0GetClrOpt.dataSet.poutLov" placeholder="Search Pantone"
+                                                                type="autocomplete"></wm-search>
+                                                        </wm-container>
+                                                        <wm-container name="container6" show="bind:Widgets.radiosetClrFilterOpt.displayValue === &quot;Input L.A.B values&quot;?true:false" padding="5px unset unset unset">
+                                                            <wm-composite name="composite3">
+                                                                <wm-label name="label4" textalign="center" caption="L :" class="col-md-3 control-label"></wm-label>
+                                                                <wm-container name="container7" class="col-md-9">
+                                                                    <wm-text name="txtLclrvalue" maxvalue="100.00" minvalue="0.00" placeholder="0.00 to 100.00" type="number"></wm-text>
+                                                                </wm-container>
+                                                            </wm-composite>
+                                                            <wm-composite name="composite4">
+                                                                <wm-label name="label5" caption="A :" textalign="center" class="col-md-3 control-label"></wm-label>
+                                                                <wm-container name="container8" class="col-md-9">
+                                                                    <wm-text name="txtAclrvalue" maxvalue="128.00" minvalue="-128.00" placeholder="-128.00 to 128.00" type="number"></wm-text>
+                                                                </wm-container>
+                                                            </wm-composite>
+                                                            <wm-composite name="composite5">
+                                                                <wm-label name="label6" caption="B :" textalign="center" class="col-md-3 control-label"></wm-label>
+                                                                <wm-container name="container9" class="col-md-9">
+                                                                    <wm-text name="txtBclrvalue" maxvalue="128.00" minvalue="-128.00" type="number" placeholder="-128.00 to 128.00"></wm-text>
+                                                                </wm-container>
+                                                            </wm-composite>
+                                                        </wm-container>
+                                                        <wm-container name="containerLabref" show="bind:Widgets.radiosetClrFilterOpt.displayValue === &quot;Lab Reference&quot;?true:false">
+                                                            <wm-label name="label17" fontweight="bold" caption="Enter  Lab Ref :" padding="unset 0.5em unset unset"></wm-label>
+                                                            <wm-text name="txtLabref" placeholder="Type Lab Reference"></wm-text>
+                                                        </wm-container>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                            </wm-layoutgrid>
+                                        </wm-container>
+                                    </wm-gridcolumn>
+                                    <wm-gridcolumn name="gridcolumn10" columnwidth="3">
+                                        <wm-container name="container10" show="bind:Widgets.radiosetClrFilterOpt.displayValue === &quot;Lab Reference&quot; || Widgets.radiosetClrFilterOpt.displayValue === &quot;Any Color&quot; ?false:true">
+                                            <wm-label name="label7" fontweight="bold" class="col-md-6" padding="unset 0.5em unset unset" caption="Tolerance Delta E"></wm-label>
+                                            <wm-container name="container11" class="col-md-6">
+                                                <wm-text maxvalue="20" on-blur="txtToleranceBlur($event, $scope)" name="txtTolerance" readonly="false" placeholder="Type a number" type="number" minvalue="1"></wm-text>
+                                            </wm-container>
+                                        </wm-container>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                                <wm-gridrow padding="unset 0px unset unset" name="gridrow5">
+                                    <wm-gridcolumn name="gridcolumn11" columnwidth="12">
+                                        <wm-layoutgrid name="layoutgrid4">
+                                            <wm-gridrow name="gridrow6" padding="unset 0px unset unset">
+                                                <wm-gridcolumn name="gridcolumn13" padding="unset 5px" columnwidth="1">
+                                                    <wm-container name="container11_1">
+                                                        <wm-label name="label7_1" width="100" caption="Yarn Count" class="control-label"></wm-label>
+                                                        <wm-search name="searchYrncnt" on-blur="searchYrncntBlur($event, $scope)" width="100%" limit="25" datafield="All Fields" displaylabel="YRNCNTDES" dataset="bind:Variables.svGetYrncnt.dataSet[$i].p_out_lov_yrncnt"
+                                                            placeholder="Search Yrn Count" type="autocomplete"></wm-search>
+                                                    </wm-container>
+                                                </wm-gridcolumn>
+                                                <wm-gridcolumn name="gridcolumn14" padding="unset 5px" columnwidth="1">
+                                                    <wm-container name="container12">
+                                                        <wm-label name="label8" caption="Yarn Composition" class="control-label"></wm-label>
+                                                        <wm-search searchkey="fcpsdes" name="searchYrncps" on-blur="searchYrncpsBlur($event, $scope)" width="100%" limit="25" datafield="fcpsdes" displaylabel="fcpsdes" dataset="bind:Variables.svProcTt130pk0_fabdevlibGetYrnCps.dataSet.poutYrnCps"
+                                                            placeholder="Search Yrn Composition" type="autocomplete"></wm-search>
+                                                    </wm-container>
+                                                </wm-gridcolumn>
+                                                <wm-gridcolumn name="gridcolumn16" padding="unset 5px unset unset" columnwidth="2">
+                                                    <wm-container name="container14" horizontalalign="left">
+                                                        <wm-label name="label10" caption="Colour Desc" class="control-label"></wm-label>
+                                                        <wm-search name="searchYrnClrDesc" on-blur="searchYrnClrDescBlur($event, $scope)" placeholder="Search Clr Desc" limit="25" orderby="YRNSHADE:desc" displaylabel="YRNSHADE" dataset="bind:Variables.svGetYrncdes.dataSet[$i].p_out_lov_yrncdes"
+                                                            datafield="YRNSHADE" type="autocomplete"></wm-search>
+                                                    </wm-container>
+                                                </wm-gridcolumn>
+                                                <wm-gridcolumn name="gridcolumn17" padding="unset 5px unset unset" columnwidth="1">
+                                                    <wm-container name="container15">
+                                                        <wm-label name="label11" width="100" caption="Yarn Quality" class="control-label"></wm-label>
+                                                        <wm-search name="searchYrnQual" on-blur="searchYrnQualBlur($event, $scope)" on-select="searchYrnQualSelect($event, $scope, selectedValue)" limit="25" placeholder="Search Yarn quality"
+                                                            datafield="NYRNQLTY" displaylabel="NYRNQLTY" dataset="bind:Variables.svGetYrnqlty.dataSet[$i].p_out_lov_yrnqlty" type="autocomplete"></wm-search>
+                                                    </wm-container>
+                                                </wm-gridcolumn>
+                                                <wm-gridcolumn name="gridcolumn18" padding="unset 5px unset unset" columnwidth="2">
+                                                    <wm-container name="container16">
+                                                        <wm-container name="container17">
+                                                            <wm-label name="label12" class="control-label" caption="Sub Quality A" padding="unset 0.5em"></wm-label>
+                                                            <wm-search name="searchYrnSubQualA" on-blur="searchYrnSubQualABlur($event, $scope)" limit="25" placeholder="Search sub qual A" displaylabel="LABEL" dataset="bind:Variables.svGetYrnsubqltya.dataSet[$i].p_out_lov_yrnsubqlty"
+                                                                datafield="All Fields" type="autocomplete"></wm-search>
+                                                        </wm-container>
+                                                        <wm-label name="label13" class="control-label" caption="Sub Quality B" padding="unset 0.5em"></wm-label>
+                                                        <wm-search name="searchYrnSubQualB" on-blur="searchYrnSubQualBBlur($event, $scope)" limit="25" placeholder="Search sub qual B" displaylabel="LABEL" dataset="bind:Variables.svGetYrnsubqltyb.dataSet[$i].p_out_lov_yrnsubqlty"
+                                                            datafield="All Fields" type="autocomplete"></wm-search>
+                                                    </wm-container>
+                                                </wm-gridcolumn>
+                                                <wm-gridcolumn name="gridcolumn19" padding="unset 5px unset unset" columnwidth="2">
+                                                    <wm-container name="container18">
+                                                        <wm-label name="label14" width="100" caption="FF Code" class="control-label"></wm-label>
+                                                        <wm-search name="searchYrnffcod" on-blur="searchYrnffcodBlur($event, $scope)" imagewidth="16px" height="100%" limit="25" placeholder="Search FFcode" datafield="YRNFFCOD" displaylabel="YRNFFDESC"
+                                                            dataset="bind:Variables.svGetYrnffcod.dataSet[$i].p_out_lov_yrnffcod" type="autocomplete"></wm-search>
+                                                    </wm-container>
+                                                </wm-gridcolumn>
+                                                <wm-gridcolumn name="gridcolumn21" horizontalalign="left" columnwidth="1">
+                                                    <wm-container name="container21" show="true">
+                                                        <wm-label name="label16" caption="Yarn Lot" class="control-label"></wm-label>
+                                                        <wm-text name="txtYrnLot" placeholder="Type Yarn Lot"></wm-text>
+                                                    </wm-container>
+                                                </wm-gridcolumn>
+                                                <wm-gridcolumn name="gridcolumn15" padding="unset 5px unset unset" horizontalalign="center" columnwidth="1">
+                                                    <wm-container show="true" name="container13" horizontalalign="left">
+                                                        <wm-label name="label9" caption="Yarn Colour" class="control-label"></wm-label>
+                                                        <wm-search name="searchYrnClr" readonly="false" on-blur="searchYrnClrBlur($event, $scope)" placeholder="Search Yrn Cllr" limit="25" on-change="searchYrnclrChange($event, $scope, newVal, oldVal)"
+                                                            datafield="All Fields" displaylabel="NYRNCLR" dataset="bind:Variables.svGetYrnclr.dataSet[$i].p_out_lov_yrnclr" type="autocomplete" on-select="searchYrnClrSelect($event, $scope, selectedValue)"></wm-search>
+                                                    </wm-container>
+                                                </wm-gridcolumn>
+                                                <wm-gridcolumn name="gridcolumn21_1" columnwidth="1"></wm-gridcolumn>
+                                            </wm-gridrow>
+                                            <wm-gridrow name="gridrow7" padding="unset 0px unset unset">
+                                                <wm-gridcolumn horizontalalign="left" name="gridcolumn23" columnwidth="1">
+                                                    <wm-button on-click="btnQryYrnStkClick($event, $scope)" name="btnQryYrnStk" class="btn-default" caption="Query Dyed Yarn Stock" type="button" margin="unset 0.5em"></wm-button>
+                                                </wm-gridcolumn>
+                                                <wm-gridcolumn horizontalalign="left" name="gridcolumn24" columnwidth="1">
+                                                    <wm-button on-click="btnClearClick($event, $scope)" name="btnClear" class="btn-default" caption="Clear All" type="button" margin="unset 0.5em"></wm-button>
+                                                </wm-gridcolumn>
+                                                <wm-gridcolumn name="gridcolumn22" padding="5px unset unset unset" columnwidth="10"></wm-gridcolumn>
+                                            </wm-gridrow>
+                                        </wm-layoutgrid>
+                                    </wm-gridcolumn>
+                                </wm-gridrow>
+                            </wm-layoutgrid>
+                        </wm-panel>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow2">
+                    <wm-gridcolumn name="gridcolumn3" columnwidth="12">
+                        <wm-table pagesize="15" navigation="Basic" dataset="bind:Variables.svYarnDyeStock.dataSet" title="" name="getYarnDyeStockTable1">
+                            <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="Warehouse" binding="wrhnum"></wm-table-column>
+                            <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="Yarn Cod" binding="yrncod"></wm-table-column>
+                            <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="Yarn Lot" binding="yrnlot"></wm-table-column>
+                            <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="Yarn Count" binding="nyrncnt"></wm-table-column>
+                            <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="Yarn Compo" binding="nfyrncps"></wm-table-column>
+                            <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="Yrn Clr" binding="nyrnclr"></wm-table-column>
+                            <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="Color Desc" binding="nyrncdes"></wm-table-column>
+                            <wm-table-column readonly="false" show="true" searchable="false" type="string" edit-widget-type="text" width="100px" caption="Lab Ref" binding="customField">
+                                <wm-label caption="{{row.clrref}}" class="" data-ng-class=""></wm-label><br>
+                                <wm-label caption="------------" class="" data-ng-class="" color="{{row.hexcolor}}" backgroundcolor="{{row.hexcolor}}"></wm-label>
+                            </wm-table-column>
+                            <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="Yarn Qual" binding="nyrnqlty"></wm-table-column>
+                            <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="Yarn Sub Qual A" binding="nyrnsubqltya"></wm-table-column>
+                            <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="Yarn Sub Qual B" binding="nyrnsubqltyb"></wm-table-column>
+                            <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="Yarn FF Code" binding="maxyrnffcod"></wm-table-column>
+                            <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" textalignment="right" width="70px" caption="Qty" binding="qty"></wm-table-column>
+                            <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" width="150px" caption="L.A.B" binding="labvalue"></wm-table-column>
+                            <wm-table-column readonly="false" show="true" type="long" edit-widget-type="number" width="70px" caption="DeltaE" binding="deltae"></wm-table-column>
+                            <wm-table-column readonly="false" show="false" type="string" edit-widget-type="text" caption="Nyrnsubqltyc" binding="nyrnsubqltyc"></wm-table-column>
+                            <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="Pantone" binding="pantoneref"></wm-table-column>
+                        </wm-table>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer name="footer1" content="footer"></wm-footer>
+</wm-page>

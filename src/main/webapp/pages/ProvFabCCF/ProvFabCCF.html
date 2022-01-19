@@ -1,0 +1,165 @@
+<wm-page name="page1" data-ng-controller="ProvFabCCFPageController" pagetitle="Prov Fab Ccf"> 
+    <wm-header name="header1" content="header"> 
+        <wm-param name="pTitle" value="bind:Variables.statPrgName.dataSet.dataValue" type="string"></wm-param> 
+    </wm-header> 
+    <wm-top-nav name="top_nav1" content="topnav"></wm-top-nav> 
+    <wm-content name="content1"> 
+        <wm-page-content name="page_content1" columnwidth="12"> 
+            <wm-layoutgrid name="layoutgrid2"> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow3"> 
+                    <wm-gridcolumn name="gridcolumn11" columnwidth="6"> 
+                        <wm-panel collapsible="true" class="panel-primary" name="panel1" iconclass="" autoclose="outsideClick" title="Search CCF"> 
+                            <wm-layoutgrid name="layoutgrid3"> 
+                                <wm-gridrow padding="unset 0px unset unset" name="gridrow5"> 
+                                    <wm-gridcolumn name="gridcolumn15" columnwidth="4"> 
+                                        <wm-composite name="composite1"> 
+                                            <wm-label padding="0px unset unset unset" caption="Choose Search Option :" name="label2" class="col-md-5 control-label"></wm-label> 
+                                            <wm-container name="container1" class="col-md-7"> 
+                                                <wm-radioset displayfield="displayvalue" margin="0px unset unset 5px" datafield="datavalue" selectedvalue="SRC" dataset="bind:Variables.statCCfFilterOpt.dataSet" name="radioSearchOption" height="auto"></wm-radioset> 
+                                            </wm-container> 
+                                        </wm-composite> 
+                                    </wm-gridcolumn> 
+                                    <wm-gridcolumn name="gridcolumn16" columnwidth="6"> 
+                                        <wm-container show="bind:Widgets.radioSearchOption.datavalue === &quot;SRC&quot;?true:false" name="containerSourceDetails"> 
+                                            <wm-composite name="composite3"> 
+                                                <wm-label caption="Src  CCF :" name="label4" class="col-md-3 control-label"></wm-label> 
+                                                <wm-container name="container3" class="col-md-9"> 
+                                                    <wm-text placeholder="Enter CCF" name="txtSRCCCFNo"></wm-text> 
+                                                </wm-container> 
+                                            </wm-composite> 
+                                            <wm-composite name="composite4"> 
+                                                <wm-label caption="Src Order  :" name="label5" class="col-md-3 control-label"></wm-label> 
+                                                <wm-container name="container4" class="col-md-9"> 
+                                                    <wm-text placeholder="Enter Order" name="txtSRCOrder"></wm-text> 
+                                                </wm-container> 
+                                            </wm-composite> 
+                                            <wm-composite name="composite5"> 
+                                                <wm-label caption="Src Fab Seq :" name="label6" class="col-md-3 control-label"></wm-label> 
+                                                <wm-container name="container5" class="col-md-9"> 
+                                                    <wm-text minvalue="0" type="number" placeholder="Enter Fabric Sequence" name="txtSRCFabseq"></wm-text> 
+                                                </wm-container> 
+                                            </wm-composite> 
+                                        </wm-container> 
+                                        <wm-container name="containerDestDetails" show="bind:Widgets.radioSearchOption.datavalue === &quot;MATCH&quot;?true:false"> 
+                                            <wm-composite name="composite11_1"> 
+                                                <wm-label padding="14px unset unset unset" caption="Match Category :" name="label11" class="col-md-3 control-label"></wm-label> 
+                                                <wm-container name="container13" class="col-md-9"> 
+                                                    <wm-radioset margin="0px unset unset unset" selectedvalue="%" displayfield="display" datafield="datavalue" dataset="bind:Variables.statMatchCatFilter.dataSet" layout="inline" name="radiosetMatchCatFilter" height="auto"></wm-radioset> 
+                                                </wm-container> 
+                                            </wm-composite> 
+                                            <wm-composite name="composite5_1"> 
+                                                <wm-label name="label5_1" caption="CCF :" class="col-md-3 control-label"></wm-label> 
+                                                <wm-container name="container7" class="col-md-9"> 
+                                                    <wm-text name="txtMatchCCF" placeholder="Enter CCF"></wm-text> 
+                                                </wm-container> 
+                                            </wm-composite> 
+                                            <wm-composite name="composite6"> 
+                                                <wm-label name="label6_1" caption="Order  :" class="col-md-3 control-label"></wm-label> 
+                                                <wm-container name="container8" class="col-md-9"> 
+                                                    <wm-text name="txtMatchOrder" placeholder="Enter Order"></wm-text> 
+                                                </wm-container> 
+                                            </wm-composite> 
+                                            <wm-composite name="composite7"> 
+                                                <wm-label name="label7" caption="Fab Seq :" class="col-md-3 control-label"></wm-label> 
+                                                <wm-container name="container9" class="col-md-9"> 
+                                                    <wm-text name="txtMatchFabseq" minvalue="0" type="number" placeholder="Enter Fabric Sequence"></wm-text> 
+                                                </wm-container> 
+                                            </wm-composite> 
+                                        </wm-container> 
+                                    </wm-gridcolumn> 
+                                    <wm-gridcolumn name="gridcolumn19" columnwidth="2"></wm-gridcolumn> 
+                                </wm-gridrow> 
+                                <wm-gridrow padding="unset 0px unset unset" name="gridrow4"> 
+                                    <wm-gridcolumn name="gridcolumn7" columnwidth="4"> 
+                                        <wm-button on-click="btnQryCCFClick($event, $scope)" name="btnQryCCF" class="btn-default" caption="Search CCF" type="button" margin="unset 0.5em"></wm-button> 
+                                        <wm-button on-click="btnClearAllClick($event, $scope)" name="btnClearAll" class="btn-default" caption="Clear All" type="button" margin="unset 0.5em"></wm-button> 
+                                    </wm-gridcolumn> 
+                                    <wm-gridcolumn name="gridcolumn8" columnwidth="6"></wm-gridcolumn> 
+                                    <wm-gridcolumn name="gridcolumn9" columnwidth="2"></wm-gridcolumn> 
+                                </wm-gridrow> 
+                            </wm-layoutgrid> 
+                        </wm-panel> 
+                    </wm-gridcolumn> 
+                    <wm-gridcolumn name="gridcolumn12" columnwidth="6"></wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow3_1"> 
+                    <wm-gridcolumn name="gridcolumn6" columnwidth="12"> 
+                        <wm-table name="gridCCFList" navigation="Basic" dataset="bind:Variables.svProcKn1620pk0_ccfmqryQryCCF.dataSet.poutCcflist" title=""> 
+                            <wm-table-column-group col-class="blue-l1" caption="SOURCE FABRIC" name="group"> 
+                                <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" col-ng-class="{'red-d1':row.sintfabcertno===row.ccffilter}" width="75px" caption="CCF" binding="sintfabcertno"></wm-table-column> 
+                                <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" width="75px" caption="Order" binding="sccfOrdnum"></wm-table-column> 
+                                <wm-table-column readonly="false" show="true" type="byte" edit-widget-type="number" width="40px" caption="Fab Seq" binding="sccfFabseq"></wm-table-column> 
+                                <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="Fabric Details" binding="sccfFabdet"></wm-table-column> 
+                            </wm-table-column-group> 
+                            <wm-table-column-group col-class="green-l1" caption="DESTINATION FABRIC" name="group1"> 
+                                <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" col-ng-class="{'red-d1':row.dintfabcertno===row.ccffilter}" width="75px" caption="CCF" binding="dintfabcertno"></wm-table-column> 
+                                <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" width="75px" caption="Order" binding="dccfOrdnum"></wm-table-column> 
+                                <wm-table-column readonly="false" show="true" type="byte" edit-widget-type="number" width="40px" caption="Fab Seq" binding="dccfFabseq"></wm-table-column> 
+                                <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="Fabric Details" binding="dccfFabdet"></wm-table-column> 
+                            </wm-table-column-group> 
+                            <wm-table-column-group col-class="yellow-d1" caption="SIMILAR  FABRIC" name="group2"> 
+                                <wm-table-column readonly="false" show="true" searchable="false" type="string" edit-widget-type="text" caption="" binding="customField"> 
+                                    <wm-container content="partCCFMatchDetails" name="container15"> 
+                                        <wm-param name="p_sintfabcertno" value="{{row.sintfabcertno}}" type="string"></wm-param> 
+                                        <wm-param name="p_dintfabcertno" value="{{row.dintfabcertno}}" type="string"></wm-param> 
+                                        <wm-param name="m_filterOp" value="{{row.ccffilter}}" type="string"></wm-param> 
+                                    </wm-container> 
+                                </wm-table-column> 
+                            </wm-table-column-group> 
+                            <wm-table-column readonly="false" show="false" type="string" edit-widget-type="text" caption="Ccffilter" binding="ccffilter"></wm-table-column> 
+                            <wm-table-action widget-type="button" disabled="false" shortcutkey="" accessroles="PROVCCF_INSMATCH" action="Widgets.AddCCFMatch.open()" title="Add  CCF" iconclass="wi wi-plus" class="btn-primary" show="true" display-name="Add  CCF Match" key="addNewRow"></wm-table-action> 
+                        </wm-table> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+            </wm-layoutgrid> 
+        </wm-page-content> 
+    </wm-content> 
+    <wm-footer name="footer1" content="footer"></wm-footer> 
+    <wm-view name="view1" class="dialog-view"> 
+        <wm-dialog name="AddCCFMatch" dialogtype="design-dialog" modal="true" title="Enter  CCF Match Details" iconclass="wi wi-file-text"> 
+            <wm-layoutgrid name="layoutgrid3_1"> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow5_1"> 
+                    <wm-gridcolumn name="gridcolumn11_1" columnwidth="10"> 
+                        <wm-composite name="composite12"> 
+                            <wm-label padding="14px unset unset unset" caption="Match Category :" name="label12_1" class="col-md-3 control-label"></wm-label> 
+                            <wm-container name="container14" class="col-md-9"> 
+                                <wm-radioset orderby="display:desc" on-change="radiosetInsMatchCAtChange($event, $scope, newVal, oldVal)" selectedvalue="APPROX" displayfield="display" datafield="datavalue" dataset="bind:Variables.statMatchCatIns.dataSet" layout="inline" name="radiosetInsMatchCAt" height="auto"></wm-radioset> 
+                            </wm-container> 
+                        </wm-composite> 
+                    </wm-gridcolumn> 
+                    <wm-gridcolumn name="gridcolumn16_2" columnwidth="2"></wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow6"> 
+                    <wm-gridcolumn name="gridcolumn12_1" columnwidth="12"> 
+                        <wm-composite name="composite9"> 
+                            <wm-label caption="Source CCF :" name="label12" class="col-md-3 control-label"></wm-label> 
+                            <wm-container name="container10" class="col-md-9"> 
+                                <wm-text placeholder="Enter Source CCF No." name="txtAddSourceFab"></wm-text> 
+                            </wm-container> 
+                        </wm-composite> 
+                        <wm-composite name="composite10"> 
+                            <wm-label name="label13" caption="Destination CCF :" class="col-md-3 control-label"></wm-label> 
+                            <wm-container name="container11" class="col-md-9"> 
+                                <wm-text updateon="default" on-change="txtAddDestinationFabChange($event, $scope, newVal, oldVal)" name="txtAddDestinationFab" placeholder="Enter Destination CCF No."></wm-text> 
+                            </wm-container> 
+                        </wm-composite> 
+                        <wm-composite name="composite11"> 
+                            <wm-label name="label14" caption="Similar CCF :" class="col-md-3 control-label"></wm-label> 
+                            <wm-container name="container12" class="col-md-9"> 
+                                <wm-text updateon="blur" name="txtAddMatchingFab" placeholder="Enter Simllar CCF No."></wm-text> 
+                            </wm-container> 
+                        </wm-composite> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow7"> 
+                    <wm-gridcolumn name="gridcolumn14" columnwidth="4"></wm-gridcolumn> 
+                    <wm-gridcolumn name="gridcolumn15_1" columnwidth="4"></wm-gridcolumn> 
+                    <wm-gridcolumn horizontalalign="right" name="gridcolumn16_1" columnwidth="4"> 
+                        <wm-button on-click="Widgets.AddCCFMatch.close()" name="btnCancel" class="btn-default btn-warning" caption="Cancel" type="button" margin="unset 0.5em"></wm-button> 
+                        <wm-button on-click="btnAddClick($event, $scope)" name="btnAdd" class="btn-default btn-success" caption="Add" type="button" margin="unset 0.5em"></wm-button> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+            </wm-layoutgrid> 
+        </wm-dialog> 
+    </wm-view> 
+</wm-page>

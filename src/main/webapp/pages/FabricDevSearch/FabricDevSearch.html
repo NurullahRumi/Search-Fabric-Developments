@@ -1,0 +1,760 @@
+<wm-page name="page1" data-ng-controller="FabricDevSearchPageController" pagetitle="Fabric Dev Search">
+    <wm-header name="header1" content="header">
+        <wm-param name="pTitle" value="bind:Variables.statAppName.dataSet.dataValue" type="string"></wm-param>
+    </wm-header>
+    <wm-top-nav name="top_nav1" content="topnav"></wm-top-nav>
+    <wm-content height="800" name="content">
+        <wm-page-content padding="unset 15px" columnwidth="12" name="mainContent">
+            <wm-panel closable="false" autoclose="always" class="panel-primary" badgetype="default" collapsible="true" title="Fabric Search Parameters" name="panel1" iconclass="">
+                <wm-layoutgrid columns="6" name="layoutgrid1">
+                    <wm-gridrow padding="unset 0px unset unset" name="gridrow20">
+                        <wm-gridcolumn padding="unset unset 0px unset" name="gridcolumn38" columnwidth="12">
+                            <wm-composite name="composite25_1">
+                                <wm-label caption="Filter Option" name="lblFilterOpt" class="col-md-1 control-label"></wm-label>
+                                <wm-container margin="0px unset" class="col-md-1" name="container43_1">
+                                    <wm-radioset show="true" readonly="false" disabled="false" selectedvalue="Fabric Lib" margin="0px" dataset="Fabric Lib,Fabric Stock" layout="stacked" name="radiosetFilterOpt" height="auto"></wm-radioset>
+                                </wm-container>
+                                <wm-container padding="unset unset unset 5px" show="bind:Widgets.radiosetFilterOpt.datavalue === &quot;Fabric Lib&quot;?true:false" name="container47" class="col-md-9">
+                                    <wm-checkboxset selectedvalues="bind:(pageParams.pFabOpt==&quot;ALL&quot;)?Variables.statCheckAllFabOpt.dataSet[$i].dataValue:(pageParams.pFabOpt===undefined||pageParams.pFabOpt===null)?&quot;CCF&quot;:pageParams.pFabOpt" displayfield="itemdes" datafield="itemcod"
+                                        dataset="bind:Variables.svProcTt130pk0_fabdevlibGetFabFilterOpt.dataSet.poutFabFilterLov" layout="inline" name="checkboxsetFabCat" height="auto"></wm-checkboxset>
+                                </wm-container>
+                                <wm-container show="bind:Widgets.radiosetFilterOpt.datavalue === &quot;Fabric Stock&quot;?true:false" name="container46" class="col-md-2">
+                                    <wm-label caption="Store Location" name="label31" class="control-label"></wm-label>
+                                    <wm-select on-change="sltStoreChange($event, $scope, newVal, oldVal)" datavalue="MRUSSDF" height="100%" displayfield="itemdes" datafield="itemcod" dataset="bind:Variables.svQryStockLocation.dataSet" placeholder="Choose Store Location" name="sltStore"></wm-select>
+                                    <wm-container show="bind:Widgets.sltStore.datavalue === &quot;MRUDFWH&quot;?true: Widgets.sltStore.datavalue === &quot;MRUGF&quot;?true:false" name="container74" padding="1px unset unset unset">
+                                        <wm-label caption="Warehouse" class="control-label" name="label60"></wm-label>
+                                        <wm-select on-change="sltStoreChange($event, $scope, newVal, oldVal)" datavalue="MRUSSDF" height="100%" displayfield="detaildes" datafield="detaildes" dataset="bind:Variables.svQryWarehouseLoc.dataSet" placeholder="Choose Warehouse" name="sltWarehouse"></wm-select>
+                                    </wm-container>
+                                </wm-container>
+                                <wm-container show="bind:(Widgets.radiosetGF.datavalue !== &quot;Fabric Details&quot; &amp;&amp; Widgets.radiosetFilterOpt.datavalue === &quot;Fabric Stock&quot; &amp;&amp;Widgets.sltStore.datavalue === &quot;MRUGF&quot; )?false:true" class="col-md-4"
+                                    name="containerHO">
+                                    <wm-container name="container47_2" show="true" padding="unset 5px" class="col-md-6">
+                                        <wm-label name="label42_2" caption="Order" class="control-label"></wm-label>
+                                        <wm-text name="txtOrder" placeholder="Enter Order"></wm-text>
+                                    </wm-container>
+                                    <wm-container name="container48" show="bind:Widgets.radiosetFilterOpt.datavalue === &quot;Fabric Stock&quot;?true:false" padding="unset 5px" class="col-md-6">
+                                        <wm-label name="label44" caption="Client" class="control-label"></wm-label>
+                                        <wm-text name="txtClient" placeholder="Enter Client Code"></wm-text>
+                                    </wm-container>
+                                </wm-container>
+                            </wm-composite>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow padding="unset 0px 5px unset" name="gridrow29">
+                        <wm-gridcolumn name="gridcolumn67_1" columnwidth="2">
+                            <wm-composite show="bind:Widgets.radiosetFilterOpt.datavalue === &quot;Fabric Stock&quot;?false:true" name="composite28">
+                                <wm-checkbox margin="0px unset unset unset" class="col-md-12" datavalue="N" uncheckedvalue="N" checkedvalue="Y" name="cbBaseHanger" caption="With Base Hanger"></wm-checkbox>
+                                <wm-composite class="col-md-12" show="bind:Widgets.cbBaseHanger.datavalue === &quot;Y&quot;?true:false" name="composite29">
+                                    <wm-label caption="Choose Cligrp :" name="label56" class="col-md-12 control-label"></wm-label>
+                                    <wm-container name="container72" class="col-md-12">
+                                        <wm-select displayfield="cligrp" datafield="cligrp" dataset="bind:Variables.svProcRf2000pk0_OrlovGetCliGrp.dataSet.poutCligrpLov" name="sltCligrp"></wm-select>
+                                    </wm-container>
+                                </wm-composite>
+                            </wm-composite>
+                            <wm-radioset on-change="radiosetGFChange($event, $scope, newVal, oldVal)" show="bind:Widgets.radiosetFilterOpt.datavalue === &quot;Fabric Stock&quot; &amp;&amp;  Widgets.sltStore.datavalue === &quot;MRUGF&quot;?true:false" datafield="All Fields" selectedvalue="Fabric Details"
+                                dataset="Fabric Details,Match CCF No." layout="stacked" name="radiosetGF" height="auto"></wm-radioset>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn name="gridcolumn68" columnwidth="2">
+                            <wm-container name="container60" show="bind:(Widgets.checkboxsetFabCat.datavalue.length === 1 &amp;&amp; Widgets.checkboxsetFabCat.datavalue[0] )=== &quot;FABLIB&quot; ?false:(Widgets.radiosetGF.datavalue === &quot;Fabric Details&quot; &amp;&amp; Widgets.radiosetFilterOpt.datavalue === &quot;Fabric Stock&quot; &amp;&amp;Widgets.sltStore.datavalue === &quot;MRUGF&quot; )?false:true"
+                                padding="unset 5px">
+                                <wm-label name="label50" caption="CCF No" class="control-label"></wm-label>
+                                <wm-text name="txtCCF" placeholder="Enter CCF No"></wm-text>
+                            </wm-container>
+                            <wm-container show="bind:(Widgets.checkboxsetFabCat.datavalue.length === 1 &amp;&amp; Widgets.checkboxsetFabCat.datavalue[0] )=== &quot;FABLIB&quot; ?false:(Widgets.radiosetGF.datavalue === &quot;Match CCF No.&quot; &amp;&amp; Widgets.radiosetFilterOpt.datavalue === &quot;Fabric Stock&quot; &amp;&amp;Widgets.sltStore.datavalue === &quot;MRUGF&quot; )?false:true"
+                                padding="unset 5px" name="container78">
+                                <wm-label caption="Pattern Code" class="control-label" name="label64"></wm-label>
+                                <wm-text placeholder="Enter Pattern Code" name="txtPatternCode"></wm-text>
+                            </wm-container>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn name="gridcolumn69" columnwidth="3">
+                            <wm-composite show="bind:(Widgets.radiosetFilterOpt.datavalue === &quot;Fabric Stock&quot; &amp;&amp; Widgets.sltStore.datavalue === &quot;MRUGF&quot; &amp;&amp; Widgets.container60.show === true)?true:false" name="composite27">
+                                <wm-container name="container70" class="col-md-9">
+                                    <wm-label caption="Match Category :" name="label55" class="col-md-3 control-label"></wm-label>
+                                    <wm-radioset selectedvalue="EXACT" layout="inline" displayfield="display" datafield="datavalue" dataset="bind:Variables.statCCFFilterOpt.dataSet" name="radiosetCCFMatchCat" height="auto"></wm-radioset>
+                                </wm-container>
+                            </wm-composite>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn name="gridcolumn70" columnwidth="1"></wm-gridcolumn>
+                        <wm-gridcolumn name="gridcolumn71" columnwidth="4"></wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow padding="unset 0px unset unset" name="gridrow30">
+                        <wm-gridcolumn name="gridcolumn72" columnwidth="12">
+                            <wm-container show="bind:(Widgets.radiosetGF.datavalue !== &quot;Fabric Details&quot; &amp;&amp; Widgets.radiosetFilterOpt.datavalue === &quot;Fabric Stock&quot; &amp;&amp;Widgets.sltStore.datavalue === &quot;MRUGF&quot; )?false:true" name="containerFabDetails">
+                                <wm-layoutgrid name="layoutgrid15">
+                                    <wm-gridrow padding="unset 0px unset unset" name="gridrow31">
+                                        <wm-gridcolumn name="gridcolumn77" columnwidth="2">
+                                            <wm-layoutgrid name="layoutgrid5_1">
+                                                <wm-gridrow name="gridrow9"></wm-gridrow>
+                                                <wm-gridrow name="gridrow10_2">
+                                                    <wm-container name="container23_1">
+                                                        <wm-label name="label37_2" backgroundrepeat="no-repeat" borderstyle="none" fontweight="bold" caption="Fabric Type" class="col-md-7 control-label" padding="unset 0.5em"></wm-label>
+                                                        <wm-label color="#ffffff" backgroundrepeat="no-repeat" borderstyle="none" fontweight="bold" caption="." class="col-md-7 control-label" name="label30_2" padding="unset 0.5em"></wm-label>
+                                                        <wm-gridcolumn columnwidth="12" name="gridcolumn31">
+                                                            <wm-container name="container21_1">
+                                                                <wm-search on-blur="searchFabtypBlur($event, $scope)" limit="25" show="true" orderby="FABTYP:asc" datafield="FABTYP" displaylabel="FABDES" dataset="bind:Variables.svgetFabtyp.dataSet[$i].p_out_lov_fabtyp" placeholder="Search Fabric type" type="autocomplete"
+                                                                    name="searchFabtyp"></wm-search>
+                                                            </wm-container>
+                                                        </wm-gridcolumn>
+                                                    </wm-container>
+                                                </wm-gridrow>
+                                            </wm-layoutgrid>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn name="gridcolumn81" columnwidth="2">
+                                            <wm-layoutgrid name="layoutgrid6_1">
+                                                <wm-gridrow padding="unset 0px unset unset" name="gridrow11">
+                                                    <wm-gridcolumn padding="unset 0px" columnwidth="12" name="gridcolumn29_1">
+                                                        <wm-container name="container22_1">
+                                                            <wm-label columnwidth="5" horizontalalign="left" caption="G/M2" name="label30" class="col-md-7 control-label"></wm-label>
+                                                            <wm-layoutgrid name="layoutgrid6">
+                                                                <wm-gridrow padding="unset 0px" name="gridrow10_1">
+                                                                    <wm-gridcolumn padding="unset 5px unset unset" name="gridcolumn25" columnwidth="6">
+                                                                        <wm-container name="container25">
+                                                                            <wm-label padding="unset 0.5em unset unset" name="label20_1" caption="Between"></wm-label>
+                                                                            <wm-text datavalue="0" hint="gm2 between" placeholder="Type a number" type="number" name="txtFabwgtFrom" minvalue="1" maxvalue="1000"></wm-text>
+                                                                        </wm-container>
+                                                                    </wm-gridcolumn>
+                                                                    <wm-gridcolumn padding="unset unset unset 5px" class="standard condensed" name="gridcolumn26_2" columnwidth="6">
+                                                                        <wm-container name="container26">
+                                                                            <wm-label padding="unset 0.5em unset unset" name="label21_6" caption="and"></wm-label>
+                                                                            <wm-text datavalue="500" updatedelay="0" hint="and" placeholder="Type a number" type="number" name="txtFabwgtTo" minvalue="1" maxvalue="3500"></wm-text>
+                                                                        </wm-container>
+                                                                    </wm-gridcolumn>
+                                                                </wm-gridrow>
+                                                            </wm-layoutgrid>
+                                                        </wm-container>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                                <wm-gridrow name="gridrow12_1"></wm-gridrow>
+                                            </wm-layoutgrid>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn name="gridcolumn82" columnwidth="2">
+                                            <wm-layoutgrid name="layoutgrid7">
+                                                <wm-gridrow padding="unset 0px unset unset" name="gridrow13">
+                                                    <wm-gridcolumn padding="unset 0px" columnwidth="12" name="gridcolumn30_1">
+                                                        <wm-container name="container23_3">
+                                                            <wm-label caption="BSF G/M2" name="label5" class="col-md-7 control-label"></wm-label>
+                                                            <wm-layoutgrid name="layoutgrid4">
+                                                                <wm-gridrow padding="unset 0px unset unset" name="gridrow10">
+                                                                    <wm-gridcolumn padding="unset 5px unset unset" name="gridcolumn35" columnwidth="6">
+                                                                        <wm-container name="container20_2">
+                                                                            <wm-label padding="unset 0.5em unset unset" name="label22" caption="Between"></wm-label>
+                                                                            <wm-text readonly="false" placeholder="Type a number" type="number" name="txtBsfFrom" maxvalue="1000" minvalue="1"></wm-text>
+                                                                        </wm-container>
+                                                                    </wm-gridcolumn>
+                                                                    <wm-gridcolumn padding="unset unset unset 0px" name="gridcolumn36" columnwidth="6">
+                                                                        <wm-container name="container21_2">
+                                                                            <wm-label padding="unset 0.5em unset unset" name="label23_2" caption="and"></wm-label>
+                                                                            <wm-text placeholder="Type a number" type="number" name="txtBsfTo" minvalue="1" maxvalue="1000"></wm-text>
+                                                                        </wm-container>
+                                                                    </wm-gridcolumn>
+                                                                </wm-gridrow>
+                                                            </wm-layoutgrid>
+                                                        </wm-container>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                            </wm-layoutgrid>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn name="gridcolumn83" columnwidth="2">
+                                            <wm-layoutgrid name="layoutgrid8">
+                                                <wm-gridrow padding="unset 0px" name="gridrow14">
+                                                    <wm-gridcolumn columnwidth="12" name="gridcolumn32">
+                                                        <wm-container name="container24_1">
+                                                            <wm-label caption="Gauge" name="label17_1" class="col-md-7 control-label"></wm-label>
+                                                            <wm-layoutgrid name="layoutgrid5">
+                                                                <wm-gridrow padding="unset 0px unset unset" name="gridrow12">
+                                                                    <wm-gridcolumn padding="unset 5px unset unset" name="gridcolumn39" columnwidth="6">
+                                                                        <wm-container name="container22">
+                                                                            <wm-label textalign="left" padding="unset 0.5em unset unset" name="label24" caption="Between"></wm-label>
+                                                                            <wm-text placeholder="Type a number" type="number" name="txtMchGauFrom" maxvalue="1000" minvalue="1"></wm-text>
+                                                                        </wm-container>
+                                                                    </wm-gridcolumn>
+                                                                    <wm-gridcolumn padding="unset unset unset 5px" name="gridcolumn40" columnwidth="6">
+                                                                        <wm-container name="container23">
+                                                                            <wm-label textalign="left" padding="unset 0.5em unset unset" name="label25" caption="and"></wm-label>
+                                                                            <wm-text placeholder="Type a number" type="number" name="txtMchGauTo" minvalue="1" maxvalue="1000"></wm-text>
+                                                                        </wm-container>
+                                                                    </wm-gridcolumn>
+                                                                </wm-gridrow>
+                                                            </wm-layoutgrid>
+                                                        </wm-container>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                            </wm-layoutgrid>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn name="gridcolumn78" columnwidth="4">
+                                            <wm-button on-click="btnPlainFabricClick($event, $scope)" name="btnPlainFabric" class="btn-success" caption="Set to Plain Fabric" type="button" margin="unset 0.5em"></wm-button>
+                                            <wm-button on-click="btnOpenCopyDetailsClick($event, $scope)" name="btnOpenCopyDetails" class="btn-success" caption="Copy Fabric Details" type="button" margin="unset 0.5em"></wm-button>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow padding="unset 0px unset unset" name="gridrow32">
+                                        <wm-gridcolumn name="gridcolumn79" columnwidth="2">
+                                            <wm-composite show="true" name="composite20_4">
+                                                <wm-container name="container50" class="col-md-9">
+                                                    <wm-label name="label45" caption="Fab Sub Category" class="col-md-0 control-label"></wm-label>
+                                                    <wm-select displayfield="subcatdes" dataset="bind:Variables.svQryFabSubCat.dataSet" name="sltFabSubCat" height="100%" on-focus="wgselectOutsideFocus($event, $scope)" placeholder="Choose Fabric Sub cat" datafield="All Fields"></wm-select>
+                                                </wm-container>
+                                            </wm-composite>
+                                            <wm-composite name="composite22">
+                                                <wm-container name="container52" class="col-md-9">
+                                                    <wm-label name="label47" caption="Fab Right Face" class="col-md-0 control-label"></wm-label>
+                                                    <wm-select disabled="false" name="wgselectOutside" height="100%" on-focus="wgselectOutsideFocus($event, $scope)" placeholder="Choose Fabric Right Face" orderby="ITEMDES:desc" displayfield="ITEMDES" datafield="All Fields" dataset="bind:Variables.svgetOutside.dataSet[$i].p_out_lov_outside"></wm-select>
+                                                </wm-container>
+                                            </wm-composite>
+                                            <wm-container class="col-md-9" name="container53" show="true">
+                                                <wm-label name="label48" caption="Sku No" class="control-label"></wm-label>
+                                                <wm-text name="txtSkuno" placeholder="Enter Sku No."></wm-text>
+                                            </wm-container>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn name="gridcolumn84" columnwidth="2">
+                                            <wm-composite name="composite20_1">
+                                                <wm-container name="container17" class="col-md-9">
+                                                    <wm-label caption="Special Finish" name="label18" class="col-md-0 control-label"></wm-label>
+                                                    <wm-select disabled="false" displayfield="ITEMDES" height="100%" on-focus="wgselectSpfinishFocus($event, $scope)" placeholder="Choose SP Finish" datafield="All Fields" dataset="bind:Variables.svgetSpFinish.dataSet[$i].p_out_lov_spfinish" name="wgselectSpfinish"></wm-select>
+                                                </wm-container>
+                                            </wm-composite>
+                                            <wm-composite name="composite23_1">
+                                                <wm-container name="container19_2" class="col-md-9">
+                                                    <wm-label caption="Fab Wrong Face" name="label21_1" class="col-md-0 control-label"></wm-label>
+                                                    <wm-select disabled="false" height="100%" on-focus="wgselectInsideFocus($event, $scope)" placeholder="Choose Fab Wrong Face" displayfield="ITEMDES" datafield="All Fields" dataset="bind:Variables.svgetInside.dataSet[$i].p_out_lov_inside" name="wgselectInside"></wm-select>
+                                                </wm-container>
+                                            </wm-composite>
+                                            <wm-composite name="composite20">
+                                                <wm-container class="col-md-9" name="container58" show="true">
+                                                    <wm-label name="label21" horizontalalign="left" caption="Stripe ID" class="col-md-0 control-label"></wm-label>
+                                                    <wm-text disabled="false" on-change="txtStripeidChange($event, $scope, newVal, oldVal)" placeholder="Type stripe ID" name="txtStripeid"></wm-text>
+                                                </wm-container>
+                                            </wm-composite>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn name="gridcolumn85" columnwidth="2">
+                                            <wm-composite name="composite24">
+                                                <wm-container class="col-md-9" name="container25_1">
+                                                    <wm-label caption="Enzyme" name="label27" class="col-md-3 control-label"></wm-label>
+                                                    <wm-select height="100%" on-focus="wgselectEnzymeFocus($event, $scope)" displayfield="ITEMDES" placeholder="Choose an enzyme" orderby="ITEMDES:desc" datafield="All Fields" dataset="bind:Variables.svgetEnzyme.dataSet[$i].p_out_lov_enzyme" name="wgselectEnzyme"></wm-select>
+                                                </wm-container>
+                                            </wm-composite>
+                                            <wm-composite name="composite21_2">
+                                                <wm-container name="container19_4" class="col-md-9">
+                                                    <wm-label caption="Stripe" name="label21_3" class="col-md-0 control-label"></wm-label>
+                                                    <wm-select disabled="false" height="100%" on-focus="wgselectStrFocus($event, $scope)" placeholder="Choose a type of stripe" orderby="ITEMDES:desc" displayfield="ITEMDES" datafield="All Fields" dataset="bind:Variables.svgetStr.dataSet[$i].p_out_lov_str"
+                                                        name="wgselectStr"></wm-select>
+                                                </wm-container>
+                                            </wm-composite>
+                                            <wm-composite name="composite21" show="true">
+                                                <wm-container class="col-md-9" name="container56" show="true">
+                                                    <wm-label name="label46" caption="Fab Deco List" class="col-md-0 control-label"></wm-label>
+                                                    <wm-text disabled="false" name="txtFabDecoList" placeholder="Enter Deco List"></wm-text>
+                                                </wm-container>
+                                            </wm-composite>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn name="gridcolumn86" columnwidth="2">
+                                            <wm-composite margin="unset unset 15px unset" name="composite20_3">
+                                                <wm-container name="container34" class="col-md-9">
+                                                    <wm-label caption="DC Code" name="label37_1" class="col-md-7 control-label"></wm-label>
+                                                    <wm-search disabled="false" searchkey="DCCODE,LDESC" on-blur="searchDccodeBlur($event, $scope)" limit="25" orderby="LABEL:asc" datafield="All Fields" displaylabel="LABEL" dataset="bind:Variables.svgetDccode.dataSet[$i].p_out_lov_dccode" placeholder="Search Dccode"
+                                                        type="autocomplete" name="searchDccode"></wm-search>
+                                                </wm-container>
+                                            </wm-composite>
+                                            <wm-container margin="unset unset 16px unset" class="col-md-9" name="container58_1">
+                                                <wm-label class="col-md-7 control-label" caption="Decoration Sub Process" name="label36" padding="unset 0.5em unset unset"></wm-label>
+                                                <wm-search disabled="false" on-blur="searchLDecorouteBlur($event, $scope)" limit="25" placeholder="Search Sub process" type="autocomplete" displaylabel="LDECOROUTE" dataset="bind:Variables.svgetLdecoroute.dataSet[$i].p_out_lov_ldecoroute" datafield="LDECOROUTE"
+                                                    name="searchLDecoroute"></wm-search>
+                                            </wm-container>
+                                            <wm-container class="col-md-9" name="container54" show="true">
+                                                <wm-label name="label47_1" caption="C/S" class="control-label"></wm-label>
+                                                <wm-text on-blur="txtcalstnBlur($event, $scope)" name="txtcalstn" placeholder="Enter C/S value"></wm-text>
+                                            </wm-container>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn name="gridcolumn80" columnwidth="4">
+                                            <wm-layoutgrid name="layoutgrid10">
+                                                <wm-gridrow padding="unset 0px unset unset" name="gridrow19_1">
+                                                    <wm-gridcolumn name="gridcolumn38_1" columnwidth="12">
+                                                        <wm-container backgroundcolor="#ffffff" padding="0px" class="bordered well" name="container31_1">
+                                                            <wm-layoutgrid name="layoutgrid10_1">
+                                                                <wm-gridrow padding="unset 0px unset unset" name="gridrow20_1">
+                                                                    <wm-gridcolumn name="gridcolumn39_2" columnwidth="12">
+                                                                        <wm-container padding="unset unset unset 5px" class="col-md-12" name="container30_1">
+                                                                            <wm-label padding="10px unset unset unset" fontweight="bold" textalign="left" caption="Search Fab composition" name="label42" class="col-md-4 text-right"></wm-label>
+                                                                            <wm-container name="container33" class="col-md-7">
+                                                                                <wm-radioset displayfield="dataDesc" datafield="dataValue" usekeys="false" layout="inline" dataset="bind:Variables.statCpstypLov.dataSet" name="rdsCpstyp" height="auto"></wm-radioset>
+                                                                            </wm-container>
+                                                                        </wm-container>
+                                                                    </wm-gridcolumn>
+                                                                </wm-gridrow>
+                                                                <wm-gridrow padding="unset 0px unset unset" name="gridrow21_1">
+                                                                    <wm-gridcolumn padding="unset unset unset 5px" name="gridcolumn41_1" columnwidth="5">
+                                                                        <wm-composite name="composite19_1">
+                                                                            <wm-container name="container25_2" class="col-md-9">
+                                                                                <wm-select on-change="wgselectYrncpsAChange($event, $scope, newVal, oldVal)" height="100%" on-focus="wgselectYrncpsAFocus($event, $scope)" orderby="NCPSTYPDES:asc" displayfield="NCPSTYPDES" datafield="NCPSTYP" dataset="bind:Variables.svgetYrncps.dataSet[$i].p_out_lov_ncpstyp"
+                                                                                    placeholder="Choose Composition" name="wgselectYrncpsA"></wm-select>
+                                                                            </wm-container>
+                                                                        </wm-composite>
+                                                                    </wm-gridcolumn>
+                                                                    <wm-gridcolumn name="gridcolumn43_1" columnwidth="4">
+                                                                        <wm-composite name="composite17_2">
+                                                                            <wm-label caption="Between" name="label31_1" class="col-md-3 control-label input-sm text-center lead"></wm-label>
+                                                                            <wm-container name="container23_4" class="col-md-9">
+                                                                                <wm-text disabled="bind:Widgets.wgselectYrncpsA.datavalue === null || Widgets.wgselectYrncpsA.datavalue === undefined?true:false" placeholder="Type a number" maxvalue="130" minvalue="0" type="number" name="txtYrncpsaFrom"></wm-text>
+                                                                            </wm-container>
+                                                                        </wm-composite>
+                                                                    </wm-gridcolumn>
+                                                                    <wm-gridcolumn padding="unset 5px unset unset" name="gridcolumn42_1" columnwidth="3">
+                                                                        <wm-composite name="composite18">
+                                                                            <wm-label caption="and" name="label32" class="col-md-3 control-label input-sm text-center lead"></wm-label>
+                                                                            <wm-container name="container24" class="col-md-9">
+                                                                                <wm-text disabled="bind:Widgets.wgselectYrncpsA.datavalue === null || Widgets.wgselectYrncpsA.datavalue === undefined?true:false" placeholder="Type a number" maxvalue="130" minvalue="0" type="number" name="txtYrncpsaTo"></wm-text>
+                                                                            </wm-container>
+                                                                        </wm-composite>
+                                                                    </wm-gridcolumn>
+                                                                </wm-gridrow>
+                                                                <wm-gridrow padding="unset 0px unset unset" name="gridrow21">
+                                                                    <wm-gridcolumn padding="unset unset unset 5px" name="gridcolumn41" columnwidth="5">
+                                                                        <wm-composite name="composite20_2">
+                                                                            <wm-container name="container26_1" class="col-md-9">
+                                                                                <wm-select disabled="bind:Widgets.wgselectYrncpsA.datavalue === null || Widgets.wgselectYrncpsA.datavalue === undefined?true:false" on-change="wgselectYrncpsBChange($event, $scope, newVal, oldVal)" height="100%" orderby="NCPSTYP:asc" displayfield="NCPSTYPDES"
+                                                                                    datafield="NCPSTYP" dataset="bind:Variables.svgetYrncps.dataSet[$i].p_out_lov_ncpstyp" placeholder="Choose Composition" name="wgselectYrncpsB"></wm-select>
+                                                                            </wm-container>
+                                                                        </wm-composite>
+                                                                    </wm-gridcolumn>
+                                                                    <wm-gridcolumn name="gridcolumn42" columnwidth="4">
+                                                                        <wm-composite name="composite22_2">
+                                                                            <wm-label caption="Between" name="label37" class="col-md-3 control-label input-sm text-center lead"></wm-label>
+                                                                            <wm-container name="container28" class="col-md-9">
+                                                                                <wm-text disabled="bind:Widgets.wgselectYrncpsB.datavalue === null || Widgets.wgselectYrncpsB.datavalue === undefined?true:false" placeholder="Type a number" maxvalue="130" minvalue="0" type="number" name="txtYrncpsbFrom"></wm-text>
+                                                                            </wm-container>
+                                                                        </wm-composite>
+                                                                    </wm-gridcolumn>
+                                                                    <wm-gridcolumn padding="unset 5px unset unset" name="gridcolumn43" columnwidth="3">
+                                                                        <wm-composite name="composite23">
+                                                                            <wm-label caption="and" name="label38" class="col-md-3 control-label input-sm text-center lead"></wm-label>
+                                                                            <wm-container name="container29" class="col-md-9">
+                                                                                <wm-text disabled="bind:Widgets.wgselectYrncpsB.datavalue === null || Widgets.wgselectYrncpsB.datavalue === undefined?true:false" placeholder="Type a number" maxvalue="130" minvalue="0" type="number" name="txtYrncpsbTo"></wm-text>
+                                                                            </wm-container>
+                                                                        </wm-composite>
+                                                                    </wm-gridcolumn>
+                                                                </wm-gridrow>
+                                                                <wm-gridrow padding="unset 0px unset unset" name="gridrow22">
+                                                                    <wm-gridcolumn padding="unset unset unset 5px" name="gridcolumn44" columnwidth="5">
+                                                                        <wm-composite name="composite21_3">
+                                                                            <wm-container name="container27" class="col-md-9">
+                                                                                <wm-select disabled="bind:Widgets.wgselectYrncpsB.datavalue === null || Widgets.wgselectYrncpsB.datavalue === undefined?true:false" on-change="wgselectYrncpsCChange($event, $scope, newVal, oldVal)" height="100%" orderby="NCPSTYP:asc" displayfield="NCPSTYPDES"
+                                                                                    datafield="NCPSTYP" dataset="bind:Variables.svgetYrncps.dataSet[$i].p_out_lov_ncpstyp" placeholder="Choose Composition" name="wgselectYrncpsC"></wm-select>
+                                                                            </wm-container>
+                                                                        </wm-composite>
+                                                                    </wm-gridcolumn>
+                                                                    <wm-gridcolumn name="gridcolumn45" columnwidth="4">
+                                                                        <wm-composite name="composite24_2">
+                                                                            <wm-label caption="Between" name="label39" class="col-md-3 control-label input-sm text-center lead"></wm-label>
+                                                                            <wm-container name="container30" class="col-md-9">
+                                                                                <wm-text disabled="bind:Widgets.wgselectYrncpsC.datavalue === null || Widgets.wgselectYrncpsC.datavalue === undefined?true:false" placeholder="Type a number" maxvalue="130" minvalue="0" type="number" name="txtYrncpscFrom"></wm-text>
+                                                                            </wm-container>
+                                                                        </wm-composite>
+                                                                    </wm-gridcolumn>
+                                                                    <wm-gridcolumn padding="unset 5px unset unset" name="gridcolumn46" columnwidth="3">
+                                                                        <wm-composite name="composite25">
+                                                                            <wm-label caption="and" name="label40" class="col-md-3 control-label input-sm text-center lead"></wm-label>
+                                                                            <wm-container name="container31" class="col-md-9">
+                                                                                <wm-text disabled="bind:Widgets.wgselectYrncpsC.datavalue === null || Widgets.wgselectYrncpsC.datavalue === undefined?true:false" placeholder="Type a number" maxvalue="130" minvalue="0" type="number" name="txtYrncpscTo"></wm-text>
+                                                                            </wm-container>
+                                                                        </wm-composite>
+                                                                    </wm-gridcolumn>
+                                                                </wm-gridrow>
+                                                            </wm-layoutgrid>
+                                                        </wm-container>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                            </wm-layoutgrid>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                </wm-layoutgrid>
+                            </wm-container>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow padding="unset 0px unset unset" name="gridrow23">
+                        <wm-gridcolumn name="gridcolumn49" columnwidth="12">
+                            <wm-container show="bind:(Widgets.radiosetGF.datavalue !== &quot;Fabric Details&quot; &amp;&amp; Widgets.radiosetFilterOpt.datavalue === &quot;Fabric Stock&quot; &amp;&amp;Widgets.sltStore.datavalue === &quot;MRUGF&quot; )?false:true" name="containerGFY">
+                                <wm-layoutgrid name="layoutgrid16">
+                                    <wm-gridrow padding="unset 0px unset unset" name="gridrow31_1">
+                                        <wm-gridcolumn name="gridcolumn73" columnwidth="8">
+                                            <wm-panel show="bind:Widgets.radiosetFilterOpt.datavalue === &quot;Fabric Stock&quot;?true:false
+" class="panel-primary" name="panel3" iconclass="" autoclose="outsideClick" title="Stock Filter Option">
+                                                <wm-layoutgrid name="layoutgrid12">
+                                                    <wm-gridrow padding="unset 0px unset unset" name="gridrow23_1">
+                                                        <wm-gridcolumn name="gridcolumn56_1" columnwidth="2">
+                                                            <wm-container name="container47_1">
+                                                                <wm-label name="label42_1" caption="Lab Reference" class="control-label"></wm-label>
+                                                                <wm-text name="txtStockLabRef" placeholder="Type Stock Clr Ref"></wm-text>
+                                                            </wm-container>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn name="gridcolumn51" columnwidth="2">
+                                                            <wm-composite name="composite19">
+                                                                <wm-label caption="Search Color :" name="label38_1" class="col-md-6 control-label"></wm-label>
+                                                                <wm-container name="container42" class="col-md-6">
+                                                                    <wm-checkbox uncheckedvalue="N" checkedvalue="Y" on-change="togglestockChange($event, $scope, newVal, oldVal)" name="togglestock" caption="Toggle" type="toggle"></wm-checkbox>
+                                                                </wm-container>
+                                                            </wm-composite>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn name="gridcolumn65" columnwidth="6">
+                                                            <wm-container show="bind:Widgets.togglestock.datavalue===&quot;Y&quot;?true:false" name="containerSearchColour">
+                                                                <wm-layoutgrid name="layoutgrid14">
+                                                                    <wm-gridrow padding="unset 0px unset unset" name="gridrow28">
+                                                                        <wm-gridcolumn name="gridcolumn66" columnwidth="6">
+                                                                            <wm-composite name="composite23_2">
+                                                                                <wm-label caption="Options" name="label51" class="col-md-3 control-label"></wm-label>
+                                                                                <wm-container name="container61" class="col-md-9">
+                                                                                    <wm-radioset on-change="radiosetClrFilterOptChange($event, $scope, newVal, oldVal)" datafield="All Fields" selectedvalue="Choose Colour on Screen" dataset="Choose Colour on Screen, Input L.A.B values,Pantone C,Pantone TPX,Pantone TCX" name="radiosetClrFilterOpt"
+                                                                                        height="auto"></wm-radioset>
+                                                                                </wm-container>
+                                                                            </wm-composite>
+                                                                        </wm-gridcolumn>
+                                                                        <wm-gridcolumn padding="unset 10px unset 5px" name="gridcolumn67" columnwidth="6">
+                                                                            <wm-container padding="unset unset 5px unset" show="bind:Widgets.radiosetClrFilterOpt.displayValue === &quot;Choose Colour on Screen&quot;?true:false" name="container63">
+                                                                                <wm-colorpicker show="true" name="clrpickerstock"></wm-colorpicker>
+                                                                            </wm-container>
+                                                                            <wm-search show="bind:Widgets.radiosetClrFilterOpt.displayValue === &quot;Pantone C&quot; || Widgets.radiosetClrFilterOpt.displayValue === &quot;Pantone TPX&quot; || Widgets.radiosetClrFilterOpt.displayValue === &quot;Pantone TCX&quot; ? true  : false"
+                                                                                on-change="searchPantoneChange($event, $scope, newVal, oldVal)" datafield="All Fields" displaylabel="clrcode" dataset="bind:Variables.svProcRf020pk0GetClrOpt.dataSet.poutLov"
+                                                                                placeholder="Search Pantone" type="autocomplete" name="searchPantone"></wm-search>
+                                                                            <wm-container show="bind:Widgets.radiosetClrFilterOpt.displayValue === &quot;Input L.A.B values&quot;?true:false" padding="5px unset unset unset" name="containerLABClrsInpt">
+                                                                                <wm-composite name="composite24_1">
+                                                                                    <wm-label textalign="center" caption="L :" name="label52" class="col-md-3 control-label"></wm-label>
+                                                                                    <wm-container name="container65" class="col-md-9">
+                                                                                        <wm-text maxvalue="100.00" minvalue="0.00" placeholder="0.00 to 100.00" type="number" name="txtLclrvalue"></wm-text>
+                                                                                    </wm-container>
+                                                                                </wm-composite>
+                                                                                <wm-composite name="composite25_2">
+                                                                                    <wm-label caption="A :" textalign="center" name="label53" class="col-md-3 control-label"></wm-label>
+                                                                                    <wm-container name="container66" class="col-md-9">
+                                                                                        <wm-text maxvalue="128.00" minvalue="-128.00" placeholder="-128.00 to 128.00" type="number" name="txtAclrvalue"></wm-text>
+                                                                                    </wm-container>
+                                                                                </wm-composite>
+                                                                                <wm-composite name="composite26">
+                                                                                    <wm-label caption="B :" textalign="center" name="label54" class="col-md-3 control-label"></wm-label>
+                                                                                    <wm-container name="container67" class="col-md-9">
+                                                                                        <wm-text maxvalue="128.00" minvalue="-128.00" type="number" placeholder="-128.00 to 128.00" name="txtBclrvalue"></wm-text>
+                                                                                    </wm-container>
+                                                                                </wm-composite>
+                                                                            </wm-container>
+                                                                        </wm-gridcolumn>
+                                                                    </wm-gridrow>
+                                                                </wm-layoutgrid>
+                                                            </wm-container>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn name="gridcolumn55_2" columnwidth="2">
+                                                            <wm-container show="bind:Widgets.togglestock.datavalue===&quot;Y&quot;?true:false" name="container44">
+                                                                <wm-label fontweight="bold" class="col-md-6" name="label40_1" padding="unset 0.5em unset unset" caption="Tolerance Delta E"></wm-label>
+                                                                <wm-container class="col-md-6" name="container45">
+                                                                    <wm-text name="txtTolereance" readonly="false" placeholder="Type a number" type="number" maxvalue="15" minvalue="1"></wm-text>
+                                                                </wm-container>
+                                                            </wm-container>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                    <wm-gridrow padding="unset 0px unset unset" name="gridrow24_2">
+                                                        <wm-gridcolumn name="gridcolumn54_1" columnwidth="2">
+                                                            <wm-container name="container50_1" class="col-md-12">
+                                                                <wm-label name="label45_1" caption="Themes" class="col-md-7 control-label"></wm-label>
+                                                                <wm-search name="searchThemes" searchkey="pTheme" on-blur="searchDccodeBlur($event, $scope)" limit="25" datafield="theme" displaylabel="theme" dataset="bind:Variables.svQryGetThemes.dataSet" placeholder="Search  Themes" type="autocomplete"></wm-search>
+                                                            </wm-container>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn name="gridcolumn55_3" columnwidth="4"></wm-gridcolumn>
+                                                        <wm-gridcolumn name="gridcolumn56_2" columnwidth="3"></wm-gridcolumn>
+                                                        <wm-gridcolumn name="gridcolumn57_1" columnwidth="3"></wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                </wm-layoutgrid>
+                                            </wm-panel>
+                                        </wm-gridcolumn>
+                                        <wm-gridcolumn name="gridcolumn74" columnwidth="4"></wm-gridcolumn>
+                                    </wm-gridrow>
+                                    <wm-gridrow padding="unset 0px unset unset" name="gridrow32_1">
+                                        <wm-gridcolumn name="gridcolumn75" columnwidth="12">
+                                            <wm-panel class="panel-primary" name="panelYrn" iconclass="" autoclose="outsideClick" title="Yarn Filter Option">
+                                                <wm-layoutgrid name="layoutgrid11">
+                                                    <wm-gridrow padding="unset 0px unset unset" name="gridrow24">
+                                                        <wm-gridcolumn padding="unset 5px" name="gridcolumn57" columnwidth="1">
+                                                            <wm-container name="container32">
+                                                                <wm-label width="100" caption="Yarn Count" name="label21_5" class="control-label"></wm-label>
+                                                                <wm-search on-blur="searchYrncntBlur($event, $scope)" width="100%" limit="25" orderby="YRNCNT:asc" datafield="YRNCNT" displaylabel="YRNCNTDES" searchkey="YRNCNTDES" dataset="bind:Variables.svgetYrncnt.dataSet[$i].p_out_lov_yrncnt" placeholder="Search Yrn Count"
+                                                                    type="autocomplete" name="searchYrncnt"></wm-search>
+                                                            </wm-container>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn padding="unset 5px" name="gridcolumn54" columnwidth="1">
+                                                            <wm-container name="container40">
+                                                                <wm-label name="label39_1" caption="Yarn Composition" class="control-label"></wm-label>
+                                                                <wm-search orderby="description:desc" on-blur="searchYrncpsBlur($event, $scope)" name="searchYrncps" width="100%" limit="25" datafield="fcpsdes" displaylabel="fcpsdes" dataset="bind:Variables.svProcTt130pk0_fabdevlibGetYrnCps.dataSet.poutYrnCps" placeholder="Search Yrn Composition"
+                                                                    type="autocomplete"></wm-search>
+                                                            </wm-container>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn padding="unset 5px unset unset" horizontalalign="center" name="gridcolumn58" columnwidth="1">
+                                                            <wm-container horizontalalign="left" name="container33_2">
+                                                                <wm-label caption="Yarn Colour" name="label28_1" class="control-label"></wm-label>
+                                                                <wm-search readonly="false" on-blur="searchYrnclrBlur($event, $scope)" placeholder="Search Yrn Cllr" limit="25" on-change="searchYrnclrChange($event, $scope, newVal, oldVal)" orderby="NYRNCLR:asc" datafield="All Fields" displaylabel="NYRNCLR" dataset="bind:Variables.svgetYrnclr.dataSet[$i].p_out_lov_yrnclr"
+                                                                    type="autocomplete" name="searchYrnclr" on-select="searchYrnclrSelect($event, $scope, selectedValue)"></wm-search>
+                                                            </wm-container>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn padding="unset 5px unset unset" name="gridcolumn56" columnwidth="2">
+                                                            <wm-container horizontalalign="left" name="container35">
+                                                                <wm-label caption="Colour Desc" name="label29_1" class="control-label"></wm-label>
+                                                                <wm-search on-blur="txtYrncdesBlur($event, $scope)" placeholder="Search Clr Desc" limit="25" orderby="YRNSHADE:asc" displaylabel="YRNSHADE" dataset="bind:Variables.svgetYrncdes.dataSet[$i].p_out_lov_yrncdes" datafield="YRNSHADE" type="autocomplete" name="txtYrncdes"></wm-search>
+                                                            </wm-container>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn padding="unset 5px unset unset" name="gridcolumn48" columnwidth="1">
+                                                            <wm-container name="container39">
+                                                                <wm-label width="100" caption="Yarn Quality" name="label21_4" class="control-label"></wm-label>
+                                                                <wm-search on-blur="txtYrnqltyBlur($event, $scope)" on-select="txtYrnqltySelect($event, $scope, selectedValue)" limit="25" placeholder="Search Yarn quality" orderby="NYRNQLTY:asc" datafield="NYRNQLTY" displaylabel="NYRNQLTY" searchkey="NYRNQLTY" dataset="bind:Variables.svgetYrnqlty.dataSet[$i].p_out_lov_yrnqlty"
+                                                                    type="autocomplete" name="txtYrnqlty"></wm-search>
+                                                            </wm-container>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn padding="unset 5px unset unset" name="gridcolumn50" columnwidth="2">
+                                                            <wm-container name="container43">
+                                                                <wm-container name="container41">
+                                                                    <wm-label class="control-label" caption="Sub Quality A" name="label27_1" padding="unset 0.5em"></wm-label>
+                                                                    <wm-search on-blur="txtYrnsubqltyaBlur($event, $scope)" limit="25" placeholder="Search sub qual A" orderby="LABEL:asc" displaylabel="LABEL" dataset="bind:Variables.svgetYrnsubqltya.dataSet[$i].p_out_lov_yrnsubqlty" datafield="All Fields" type="autocomplete"
+                                                                        name="txtYrnsubqltya"></wm-search>
+                                                                </wm-container>
+                                                                <wm-label class="control-label" caption="Sub Quality B" name="label28" padding="unset 0.5em"></wm-label>
+                                                                <wm-search on-blur="txtYrnsubqltybBlur($event, $scope)" limit="25" placeholder="Search sub qual B" orderby="LABEL:asc" displaylabel="LABEL" dataset="bind:Variables.svgetYrnsubqltyb.dataSet[$i].p_out_lov_yrnsubqlty" datafield="All Fields" type="autocomplete"
+                                                                    name="txtYrnsubqltyb"></wm-search>
+                                                            </wm-container>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn padding="unset 5px unset unset" name="gridcolumn52" columnwidth="2">
+                                                            <wm-container name="container37">
+                                                                <wm-label width="100" caption="FF Code" name="label20" class="control-label"></wm-label>
+                                                                <wm-search on-blur="txtYrnffcodBlur($event, $scope)" imagewidth="16px" height="100%" limit="25" placeholder="Search FFcode" orderby="YRNFFCOD:asc" datafield="YRNFFCOD" displaylabel="YRNFFDESC" searchkey="YRNFFDESC" dataset="bind:Variables.svgetYrnffcod.dataSet[$i].p_out_lov_yrnffcod"
+                                                                    type="autocomplete" name="txtYrnffcod"></wm-search>
+                                                            </wm-container>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn padding="unset 5px unset unset" name="gridcolumn53" columnwidth="1">
+                                                            <wm-container name="container55">
+                                                                <wm-container show="true" name="container21">
+                                                                    <wm-label name="label43" caption="Yarn Lab Reference" class="control-label"></wm-label>
+                                                                    <wm-text placeholder="Type Lab Reference" name="txtClrref"></wm-text>
+                                                                </wm-container>
+                                                            </wm-container>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn horizontalalign="right" name="gridcolumn55_1" columnwidth="1">
+                                                            <wm-button margin="unset unset 5px unset" width="100%" iconclass="" on-click="btnSaveCombiClick($event, $scope)" name="btnSaveCombi" class="btn-success" caption="Add  Yrn Combination" type="button"></wm-button>
+                                                            <wm-button width="100%" on-click="btnClearFiltersClick($event, $scope)" iconclass="wi wi-clear fa-lg" name="btnClearFilters" class="btn-default" caption="Clear Selection" type="button"></wm-button>
+                                                        </wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                    <wm-gridrow padding="unset 0px unset unset" name="gridrow25">
+                                                        <wm-gridcolumn padding="5px unset unset unset" name="gridcolumn55" columnwidth="11">
+                                                            <wm-table showrowindex="false" spacing="condensed" showheader="true" name="gridSearchCombination" navigation="None" dataset="bind:Variables.statSearchCombi.dataSet" title="">
+                                                                <wm-table-column readonly="false" show="true" searchkey="YRNCNT" displaylabel="YRNCNTDES" datafield="YRNCNT" dataset="bind:Variables.svgetYrncnt.dataSet[$i].p_out_lov_yrncnt" type="string" edit-widget-type="autocomplete" caption="Yarn Count" binding="YrnCnt"></wm-table-column>
+                                                                <wm-table-column readonly="false" show="true" displaylabel="fcpsdes" datafield="fcpsdes" dataset="bind:Variables.svProcTt130pk0_fabdevlibGetYrnCps.dataSet.poutYrnCps" type="string" edit-widget-type="autocomplete" caption="Yarn Composition" binding="YrnCombination"></wm-table-column>
+                                                                <wm-table-column readonly="false" show="true" displaylabel="NYRNCLR" datafield="All Fields" dataset="bind:Variables.svgetYrnclr.dataSet[$i].p_out_lov_yrnclr" type="string" edit-widget-type="autocomplete" caption="Clr" binding="YrnClr"></wm-table-column>
+                                                                <wm-table-column readonly="false" show="true" displaylabel="YRNSHADE" datafield="YRNSHADE" dataset="bind:Variables.svGetYrncdesEdit.dataSet[$i].p_out_lov_yrncdes" type="string" edit-widget-type="autocomplete" caption="Colour" binding="ClrDes"></wm-table-column>
+                                                                <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="Yrn Quality" binding="YrnQual"></wm-table-column>
+                                                                <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="Sub Quality A" binding="SubYrnQualA"></wm-table-column>
+                                                                <wm-table-column readonly="false" show="false" type="string" edit-widget-type="text" caption="Sub Yrn Qual A Stk" binding="SubYrnQualAStk"></wm-table-column>
+                                                                <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="Sub Quality B" binding="SubYrnQualB"></wm-table-column>
+                                                                <wm-table-column readonly="false" show="false" type="string" edit-widget-type="text" caption="Sub Yrn Qual B Stk" binding="SubYrnQualBStk"></wm-table-column>
+                                                                <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="FF Code" binding="FFcod"></wm-table-column>
+                                                                <wm-table-column readonly="false" show="false" type="string" edit-widget-type="text" caption="" binding="YrnCombinationData"></wm-table-column>
+                                                                <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" caption="Lab Ref" binding="LabRef"></wm-table-column>
+                                                                <wm-table-column readonly="false" show="false" type="string" edit-widget-type="text" caption="Yrn Qual Ldesc" binding="YrnQualLdesc"></wm-table-column>
+                                                                <wm-table-column readonly="false" show="false" type="string" edit-widget-type="text" caption="Yrn Qual2" binding="YrnQual2"></wm-table-column>
+                                                                <wm-table-column readonly="false" show="true" searchable="false" type="string" edit-widget-type="text" width="100px" widget-type="button" caption="" binding="customField">
+                                                                    <wm-button caption="Copy Details" show="true" class="btn-sm btn-primary" iconclass="" on-click="customFieldAction(selectedItemData)" data-ng-class=""></wm-button>
+                                                                </wm-table-column>
+                                                                <wm-table-column readonly="false" show="false" type="string" edit-widget-type="text" caption="Yrncdes Lov" binding="Yrncdes_lov"></wm-table-column>
+                                                                <wm-table-column show="true" searchable="false" sortable="false" readonly="true" type="custom" edit-widget-type="text" width="120px" caption="" binding="rowOperations"></wm-table-column>
+                                                                <wm-table-row-action disabled="false" action="deleterowAction($event)" title="Delete" iconclass="wi wi-trash" class="btn-transparent" show="true" display-name="" key="deleterow"></wm-table-row-action>
+                                                            </wm-table>
+                                                        </wm-gridcolumn>
+                                                        <wm-gridcolumn name="gridcolumn59" columnwidth="1"></wm-gridcolumn>
+                                                    </wm-gridrow>
+                                                </wm-layoutgrid>
+                                            </wm-panel>
+                                        </wm-gridcolumn>
+                                    </wm-gridrow>
+                                </wm-layoutgrid>
+                            </wm-container>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow50">
+                        <wm-gridcolumn name="gridcolumn113" columnwidth="3">
+                            <wm-button show="bind:Widgets.radiosetFilterOpt.datavalue === &quot;Fabric Stock&quot;?false:true" on-click="btnSearchClick($event, $scope)" name="btnSearch" class="btn-default" caption="Search Fabric Library" type="button" margin="unset 0.5em"></wm-button>
+                            <wm-button show="bind:Widgets.radiosetFilterOpt.datavalue === &quot;Fabric Stock&quot;?true:false" on-click="btnSearchStockClick($event, $scope)" name="btnSearchStock" class="btn-default" caption="Search Farbic Stock" type="button" margin="unset 0.5em"></wm-button>
+                            <wm-button on-click="btnClearClick($event, $scope)" name="btnClear" class="btn-default" caption="Clear search criteria" type="button" margin="unset 0.5em"></wm-button>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="3" name="gridcolumn74_1"></wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="6" name="gridcolumn75_1"></wm-gridcolumn>
+                    </wm-gridrow>
+                </wm-layoutgrid>
+            </wm-panel>
+            <wm-table class="panel-primary theme-a2" show="bind:Widgets.radiosetFilterOpt.datavalue === &quot;Fabric Stock&quot; || Variables.svFindfab.dataSet.length === 0 ?false:true" showheader="true" pagesize="10" showrowindex="false" showrecordcount="true" enablecolumnselection="true"
+                spacing="condensed" name="gridSearchResult" navigation="Classic" dataset="bind:Variables.svFindfab.dataSet[$i].pFabrics" title="Fabric Search Results">
+                <wm-table-column-group caption="Fabric Source" name="group">
+                    <wm-table-column show="true" readonly="true" type="string" edit-widget-type="text" textalignment="center" width="80px" caption="From" binding="TABSRC"></wm-table-column>
+                    <wm-table-column show="true" readonly="true" type="string" edit-widget-type="text" textalignment="center" width="150px" caption="Desc" binding="TABSOURCEDET"></wm-table-column>
+                </wm-table-column-group>
+                <wm-table-column show="true" searchable="false" accessroles="UPD_FABASSESS,FABDEV_UPD_FABASSESS" readonly="true" type="string" edit-widget-type="text" textalignment="center" width="150px" widget-type="button" caption="Update Fab <br>Analysis</br>" binding="customField">
+                    <wm-button caption="{{row.getProperty('customField2') || 'Choose Fabric'}}" show="true" class="btn-sm btn-primary" iconclass="" on-click="updateFabdev(selectedItemData)" data-ng-class=""></wm-button>
+                </wm-table-column>
+                <wm-table-column readonly="false" show="true" type="string" edit-widget-type="text" width="300px" caption="Fabric Details" binding="INIFABDETAILS"></wm-table-column>
+                <wm-table-column show="true" readonly="true" type="string" edit-widget-type="text" textalignment="center" width="250px" widget-type="image" caption="Picture" binding="PICURL">
+                    <wm-picture picturesource="{{row.PICURL}}" hint="{{row.getProperty('PICURL')}}" class="" data-ng-class="" ng-if="columnValue != null"></wm-picture>
+                </wm-table-column>
+            </wm-table>
+            <wm-table pagesize="10" on-select="gridSearchStockResultSelect($event, $scope, $rowData)" on-beforedatarender="gridSearchStockResultBeforedatarender($scope, $data, $columns)" enablecolumnselection="false" multiselect="true" radioselect="false" show="bind:Widgets.radiosetFilterOpt.datavalue === &quot;Fabric Lib&quot; || Variables.svFabricsStock.dataSet.length == 0?false:true"
+                class="panel-primary" name="gridSearchStockResult" navigation="Basic" dataset="bind:Variables.svFabricsStock.dataSet" title="Fabric Stock Results">
+                <wm-table-column binding="ordnum" caption="Order No" width="80px" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                <wm-table-column binding="ccfdet" caption="CCF Det/<br>Pattern Code" width="80px" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                <wm-table-column binding="clicod" caption="Client" width="80px" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                <wm-table-column binding="fabimageref" caption="Image" widget-type="image" width="120px" edit-widget-type="text" type="string" show="true" readonly="false">
+                    <wm-picture picturesource="services/pfsdb/procedureExecutor/procedure/execute/ProcSr741pk0SprocGetFabImages?p_ordnum={{row.ordnum}}&amp;p_fabseq={{row.fabseq}}&amp;downloadAsAttachment=true" show="true" hint="" class="" data-ng-class="" on-click="imageAction(selectedItemData)"
+                        width="400"></wm-picture>
+                </wm-table-column>
+                <wm-table-column-group name="group" caption="Fabric Details">
+                    <wm-table-column binding="fabseq" caption="Sq" width="30px" edit-widget-type="number" type="byte" show="true" readonly="false"></wm-table-column>
+                    <wm-table-column binding="fabtyp" caption="Typ" width="60px" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                    <wm-table-column binding="fabwgt" caption="gm2" width="50px" edit-widget-type="number" type="integer" show="true" readonly="false"></wm-table-column>
+                    <wm-table-column binding="fabwid" caption="Wid" width="50px" edit-widget-type="number" type="long" show="true" readonly="false"></wm-table-column>
+                    <wm-table-column binding="mchgau" caption="GG" width="50px" edit-widget-type="number" type="long" show="true" readonly="false"></wm-table-column>
+                    <wm-table-column binding="calstn" caption="CS" width="40px" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                    <wm-table-column binding="fabcompo" caption="Compo" width="90px" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                    <wm-table-column binding="stripeid" caption="Stripeid" width="100px" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                    <wm-table-column binding="skuno" caption="Skuno" width="80px" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                </wm-table-column-group>
+                <wm-table-column-group name="group1" caption="Colour">
+                    <wm-table-column binding="clrseq" caption="Sq" width="30px" edit-widget-type="number" type="byte" show="true" readonly="false"></wm-table-column>
+                    <wm-table-column binding="clrdes" caption="Colour" width="100px" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                    <wm-table-column binding="customField1" caption="Lab Ref" width="100px" edit-widget-type="text" type="string" readonly="true" searchable="false" show="true">
+                        <wm-label caption="{{row.clrref}}" class="" data-ng-class=""></wm-label><br>
+                        <wm-label caption="------------" class="" data-ng-class="" color="{{row.hexcolor}}" backgroundcolor="{{row.hexcolor}}"></wm-label>
+                    </wm-table-column>
+                    <wm-table-column binding="labvalue" caption="L.A.B" width="100px" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                    <wm-table-column binding="deltae" caption="Delta E" width="50px" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                </wm-table-column-group>
+                <wm-table-column-group name="group2" caption="Finishing">
+                    <wm-table-column binding="spfinish" caption="Sp<br>finish" width="60px" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                    <wm-table-column binding="outside" caption="Right Face" width="60px" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                    <wm-table-column binding="inside" caption="Wrong Face" width="60px" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                    <wm-table-column binding="enzymewash" caption="Enzyme" width="60px" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                    <wm-table-column binding="ldecoroute" caption="Decoration" width="100px" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                    <wm-table-column binding="fabdcodelist" caption="Dcode List" width="80px" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                </wm-table-column-group>
+                <wm-table-column-group name="group3" caption="Stock">
+                    <wm-table-column binding="storeloc" caption="Store Loc" width="50px" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                    <wm-table-column binding="stock" caption="Stock" width="140px" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                </wm-table-column-group>
+                <wm-table-column binding="yrnid" caption="Yarn" widget-type="button" width="80px" edit-widget-type="number" type="long" show="true" readonly="false">
+                    <wm-button on-click="yrnidAction(selectedItemData)" data-ng-class="" caption="Show Yarn" show="{{row.getProperty('yrnid')!=null}}" class="btn-sm btn-info" name="buttonShowYarn" hint="Double click to show"></wm-button>
+                </wm-table-column>
+                <wm-table-column binding="strcod" caption="Strcod" edit-widget-type="text" type="string" show="false" readonly="false"></wm-table-column>
+                <wm-table-column binding="similarccfdet" caption="Similar CCF Details" edit-widget-type="text" type="string" show="true" readonly="false"></wm-table-column>
+                <wm-table-action key="customButton" display-name="Request Swatch" show="bind:(Widgets.gridSearchStockResult.selecteditem.length === 0)?false:true" class="btn-info" iconclass="" title="Swatch Request" action="customButtonAction($event)" accessroles="FABSTOCK_SWATCHREQUEST"
+                    shortcutkey="" disabled="false" widget-type="button"></wm-table-action>
+            </wm-table>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer name="footer1" content="footer"></wm-footer>
+    <wm-view name="view1" class="dialog-view">
+        <wm-alertdialog iconclass="wi wi-error" on-close="variableOnClose()" on-ok="variableOnOk()" alerttype="{{notification.alerttype}}" oktext="{{notification.okButtonText}}" title="{{notification.title}}" message="{{notification.text}}" notificationdialog="alert"
+            controller="NotificationDialogController" name="notificationalertdialog"></wm-alertdialog>
+    </wm-view>
+    <wm-view name="view2" class="dialog-view">
+        <wm-pagedialog iconclass="wi wi-file-text" title="Swatch Request" width="75%" content="PartRequestSwatch" showactions="false" name="SwatchRequestPop">
+            <wm-param name="pDisplayOrder" value="bind:Variables.statDisplayOrder.dataSet.dataValue" type="string"></wm-param>
+            <wm-param name="pOrdFabClrSq" value="bind:Variables.statOrdFabClrSeq.dataSet.dataValue" type="string"></wm-param>
+            <wm-param name="pLcnStrCod" value="bind:Variables.statLcnStrCod.dataSet.dataValue" type="string"></wm-param>
+        </wm-pagedialog>
+    </wm-view>
+    <wm-view name="view4" class="dialog-view">
+        <wm-dialog width="800" name="YarnDetailsPop" dialogtype="design-dialog" modal="true" title="bind:&quot;Yarn Id : &quot;+Widgets.gridSearchStockResult.selecteditem.yrnid" iconclass="wi wi-file-text">
+            <wm-container content="partYrnDetails" name="container52_1">
+                <wm-param name="pOrdnum" value="bind:Variables.statYrnOrdnum.dataSet.dataValue" type="string"></wm-param>
+                <wm-param name="pYrnId" value="bind:Variables.statYrnid.dataSet.dataValue" type="integer"></wm-param>
+            </wm-container>
+        </wm-dialog>
+    </wm-view>
+    <wm-view name="view4_1" class="dialog-view">
+        <wm-dialog width="80%" name="dialogPicture" dialogtype="design-dialog" modal="true" title="bind:&quot;Image Uploaded for &quot; + Widgets.gridSearchStockResult.selecteditem.ordnum + &quot; &quot; + Widgets.gridSearchStockResult.selecteditem.fabtyp" iconclass="wi wi-photo-camera">
+            <wm-container horizontalalign="center" height="100%" width="100%" name="container53_1">
+                <wm-picture pictureplaceholder="resources/images/imagelists/default-image.png" pictureaspect="None" picturesource="bind:window.location+&quot;services/pfsdb/procedureExecutor/procedure/execute/ProcSr741pk0SprocGetFabImages?p_ordnum=&quot;+Variables.statImageFabRef.dataSet.dataValue.ordnum+&quot;&amp;p_fabseq=&quot;+Variables.statImageFabRef.dataSet.dataValue.fabseq+&quot;&amp;downloadAsAttachment=true&quot;"
+                    name="pictureAnimationBox"></wm-picture>
+            </wm-container>
+        </wm-dialog>
+    </wm-view>
+    <wm-view name="view5" class="dialog-view">
+        <wm-dialog width="800" name="CopyOrderFabDetails" dialogtype="design-dialog" modal="true" title="Copy Details" iconclass="wi wi-file-text">
+            <wm-layoutgrid name="layoutgrid13">
+                <wm-gridrow name="gridrow32_2" padding="unset 0px unset unset">
+                    <wm-gridcolumn columnwidth="2" name="gridcolumn76"></wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="8" name="gridcolumn77_1">
+                        <wm-composite name="composite32_1">
+                            <wm-label class="col-md-3 control-label" name="label61_1" caption="Copy From :"></wm-label>
+                            <wm-container class="col-md-9" name="container75_1">
+                                <wm-radioset height="auto" name="radioCopyFrom" layout="inline" dataset="Order, CCF" selectedvalue="Order"></wm-radioset>
+                            </wm-container>
+                        </wm-composite>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn columnwidth="2" name="gridcolumn78_1"></wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow25_1">
+                    <wm-gridcolumn name="gridcolumn62" columnwidth="2"></wm-gridcolumn>
+                    <wm-gridcolumn name="gridcolumn56_3" columnwidth="8">
+                        <wm-composite name="composite21_1" show="bind:Widgets.radioCopyFrom.datavalue === &quot;Order&quot;?true:false">
+                            <wm-label name="label48_1" caption="Order Number :" class="col-md-3 control-label"></wm-label>
+                            <wm-container name="container58_2" class="col-md-9">
+                                <wm-text name="txtCopyOrdnum" height="100%" placeholder="Enter Order"></wm-text>
+                            </wm-container>
+                        </wm-composite>
+                        <wm-composite show="bind:Widgets.radioCopyFrom.datavalue === &quot;CCF&quot;?true:false" name="composite33">
+                            <wm-label caption="CCF :" class="col-md-3 control-label" name="label62"></wm-label>
+                            <wm-container class="col-md-9" name="container76">
+                                <wm-text height="100%" placeholder="Enter CCF" name="txtCopyCCF"></wm-text>
+                            </wm-container>
+                        </wm-composite>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn name="gridcolumn61" columnwidth="2"></wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow26">
+                    <wm-gridcolumn name="gridcolumn58_2" columnwidth="2"></wm-gridcolumn>
+                    <wm-gridcolumn name="gridcolumn59_1" columnwidth="8">
+                        <wm-composite name="composite22_1" show="bind:Widgets.radioCopyFrom.datavalue === &quot;Order&quot;?true:false">
+                            <wm-label name="label49" caption="Fabric Seq :" class="col-md-3 control-label"></wm-label>
+                            <wm-container name="container59" class="col-md-9">
+                                <wm-text name="txtCopyFabseq" datavalue="1" minvalue="1" height="100%" type="number" placeholder="Enter Fab Seq"></wm-text>
+                            </wm-container>
+                        </wm-composite>
+                    </wm-gridcolumn>
+                    <wm-gridcolumn name="gridcolumn60" columnwidth="2"></wm-gridcolumn>
+                </wm-gridrow>
+                <wm-gridrow padding="unset 0px unset unset" name="gridrow27">
+                    <wm-gridcolumn name="gridcolumn62_1" columnwidth="2"></wm-gridcolumn>
+                    <wm-gridcolumn name="gridcolumn64" columnwidth="6"></wm-gridcolumn>
+                    <wm-gridcolumn horizontalalign="right" name="gridcolumn63" columnwidth="4">
+                        <wm-button on-click="btnCopyOrderDetailsClick($event, $scope)" name="btnCopyOrderDetails" class="btn-success" caption="Copy Details" type="button" margin="unset 0.5em"></wm-button>
+                        <wm-button on-click="Widgets.CopyOrderFabDetails.close()" name="btnCancelCopy" class="btn-warning" caption="Cancel" type="button" margin="unset 0.5em"></wm-button>
+                    </wm-gridcolumn>
+                </wm-gridrow>
+            </wm-layoutgrid>
+        </wm-dialog>
+    </wm-view>
+    <wm-view class="dialog-view" name="view6">
+        <wm-dialog dialogtype="design-dialog" modal="true" title="Send CCF mail Request" iconclass="wi wi-file-text" name="dialogSndMail">
+            <wm-dialogactions name="dialogactions1">
+                <wm-button class="btn-default" caption="Send mail" type="button" margin="unset 0.5em" name="btnSendmail" on-click="btnSendmailClick($event, $scope)"></wm-button>
+                <wm-button class="btn-primary" caption="Exit" on-click="closeDialog()" name="button11" iconclass="wi wi-close"></wm-button>
+            </wm-dialogactions>
+            <wm-composite name="composite31">
+                <wm-label name="label58" caption="Client" class="col-md-2 control-label" width="20%" textalign="left"></wm-label>
+                <wm-search name="searchClicod" type="autocomplete" width="60%" datafield="clicod" dataset="bind:Variables.svGetProcTT130PK0_FABDEVLIB_Clicod.dataSet.poutClient" displaylabel="clinam"></wm-search>
+            </wm-composite>
+            <wm-composite name="composite32">
+                <wm-label class="col-md-2 control-label" name="label61" caption="Remarks" width="20%" textalign="left"></wm-label>
+                <wm-container class="col-md-9" name="container75">
+                    <wm-textarea name="txtRemakrs"></wm-textarea>
+                </wm-container>
+            </wm-composite>
+        </wm-dialog>
+    </wm-view>
+    <wm-view class="dialog-view" name="view7">
+        <wm-dialog dialogtype="design-dialog" modal="true" title="bind:Variables.statPrgname.dataSet.dataValue" iconclass="" name="dialogCCFmailSend">
+            <wm-dialogactions name="dialogactions2">
+                <wm-button class="btn-default" caption="Send CCF Mail Request" type="button" margin="unset 0.5em" name="btnSndMailCCF" on-click="btnSndMailCCFClick($event, $scope)"></wm-button>
+                <wm-button class="btn-primary" caption="Exit" on-click="closeDialog()" name="button13" iconclass="wi wi-close"></wm-button>
+            </wm-dialogactions>
+            <wm-label padding="unset 0.5em" name="label63" caption="There is no fabric with such criteria." class="col-md-0 control-label"></wm-label>
+        </wm-dialog>
+    </wm-view>
+</wm-page>

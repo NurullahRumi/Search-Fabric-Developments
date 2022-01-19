@@ -1,0 +1,33 @@
+{
+  "svQryYarnDetails" : {
+    "_id" : "wm-svQryYarnId-wm.ServiceVariable-1521694139265",
+    "name" : "svQryYarnDetails",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "pOrdnum",
+      "value" : "bind:pageParams.pOrdnum",
+      "type" : "string"
+    }, {
+      "target" : "pYrnid",
+      "value" : "bind:pageParams.pYrnId",
+      "type" : "integer"
+    } ],
+    "type" : "com.mu.cmt.pfs.pfsdb.models.query.QryYarnIdResponse",
+    "service" : "pfsdb",
+    "operation" : "executeQryYarnId",
+    "operationId" : "QueryExecutionController_executeQryYarnId",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "orderBy" : "SEQNUM",
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  }
+}
